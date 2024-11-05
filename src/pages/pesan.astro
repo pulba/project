@@ -1,0 +1,510 @@
+---
+import Noheader from "../layouts/noheader.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Noheader title="Pesan">
+  <section
+    class="bg-blue-950 relative overflow-hidden bg-cover bg-center bg-[url('/assets/img-28.webp')] before:content-[''] before:absolute before:h-full before:w-full before:bg-gray-900 before:opacity-90"
+  >
+    <div class="container relative px-6 py-12 mx-auto">
+      <h1 class="font-josefin text-4xl text-center sm:text-5xl text-white">
+        Let's get started
+      </h1>
+      <p class="font-poppins text-center text-white mx-auto mb-5">
+        Harap isi formulir untuk melanjutkan pemesanan.
+      </p>
+      <form id="orderForm" class="space-y-6 pt-5">
+        <div
+          class="flex flex-col md:flex-row gap-4 item-center justify-center mx-auto max-w-screen-lg text-center *:w-full"
+        >
+          <div class="flex flex-row items-center justify-between gap-4">
+            <label for="username" class="w-1/4 text-md font-bold text-white">
+              Pemesan</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="block w-3/4 mx-auto px-3 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div class="flex flex-row items-center justify-between gap-4">
+            <label for="whatsapp" class="w-1/4 text-md font-bold text-white">
+              Whatsapp</label
+            >
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              class="block w-3/4 mx-auto px-3 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <select
+            id="theme"
+            class="p-3 rounded-md w-full mx-auto border-b-2 bg-blue-900 focus:outline-none focus:ring focus:ring-0 font-bold text-white"
+          >
+            <option selected hidden class="text-white">Pilih Tema</option>
+            <option value="Tema 01">Tema 01</option>
+            <option value="Tema 02">Tema 02</option>
+            <option value="Tema 03">Tema 03</option>
+            <option value="Tema 04">Tema 04</option>
+            <option value="Tema 05">Tema 05</option>
+            <option value="Tema 06">Tema 06</option>
+            <option value="Tema 07">Tema 07</option>
+            <option value="Tema 08">Tema 08</option>
+            <option value="Tema 09">Tema 09</option>
+            <option value="Tema 10">Tema 10</option>
+          </select>
+        </div>
+        <h5 class="font-bold text-xl text-white text-center font-poppins pt-12">
+          Data Mempelai
+        </h5>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 item-center justify-center w-full max-w-screen-lg mx-auto"
+        >
+          <div class="">
+            <h6 class="font-bold text-md text-white font-poppins mb-4">
+              Pengantin Wanita
+            </h6>
+            <label for="femaleFullname" class="font-poppins text-white"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="femaleFullname"
+              name="femaleFullname"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="female" class="font-poppins text-white"
+              >Nama Panggilan</label
+            >
+            <input
+              type="text"
+              id="female"
+              name="female"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="femaleFather" class="font-poppins text-white"
+              >Nama Bapak</label
+            >
+            <input
+              type="text"
+              id="femaleFather"
+              name="femaleFather"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="femaleMother" class="font-poppins text-white"
+              >Nama Ibu</label
+            >
+            <input
+              type="text"
+              id="femaleMother"
+              name="femaleMother"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="femaleChild" class="font-poppins text-white"
+              >Anak ke</label
+            >
+            <input
+              type="text"
+              id="femaleChild"
+              name="femaleChild"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="femaleAdd" class="font-poppins text-white">Alamat</label
+            >
+            <input
+              type="text"
+              id="femaleAdd"
+              name="femaleAdd"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="femaleMedsos" class="font-poppins text-white"
+              >Media Sosial</label
+            >
+            <input
+              type="text"
+              id="femaleMedsos"
+              name="femaleMedsos"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div class="*:mt-2">
+            <h6 class="font-bold text-md text-white font-poppins mb-4">
+              Pengantin Pria
+            </h6>
+            <label for="maleFullname" class="font-poppins text-white"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="maleFullname"
+              name="maleFullname"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="male" class="font-poppins text-white"
+              >Nama Panggilan</label
+            >
+            <input
+              type="text"
+              id="male"
+              name="male"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="maleFather" class="font-poppins text-white"
+              >Nama Bapak</label
+            >
+            <input
+              type="text"
+              id="maleFather"
+              name="maleFather"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="maleMother" class="font-poppins text-white"
+              >Nama Ibu</label
+            >
+            <input
+              type="text"
+              id="maleMother"
+              name="maleMother"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="maleChild" class="font-poppins text-white"
+              >Anak ke</label
+            >
+            <input
+              type="text"
+              id="maleChild"
+              name="maleChild"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="maleAdd" class="font-poppins text-white">Alamat</label>
+            <input
+              type="text"
+              id="maleAdd"
+              name="maleAdd"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="maleMedsos" class="font-poppins text-white"
+              >Media Sosial</label
+            >
+            <input
+              type="text"
+              id="maleMedsos"
+              name="maleMedsos"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div class="*:mt-2">
+            <h6 class="font-bold text-md text-white font-poppins mb-4">Akad</h6>
+            <label for="date" class="font-poppins text-white"
+              >Tanggal Pernikahan</label
+            >
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="venue" class="font-poppins text-white"
+              >Tempat Pernikahan</label
+            >
+            <input
+              type="text"
+              id="venue"
+              name="venue"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: Rumah Mempelai Wanita"
+              required
+            />
+            <label for="address" class="font-poppins text-white"
+              >Alamat Pernikahan</label
+            >
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: jl. kencana, desa melayu kec. dst"
+              required
+            />
+            <label for="maps" class="font-poppins text-white"
+              >Maps Pernikahan</label
+            >
+            <input
+              type="text"
+              id="maps"
+              name="maps"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="time" class="font-poppins text-white">Waktu Akad</label>
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div class="*:mt-2">
+            <h6 class="font-bold text-md text-white font-poppins mb-4">
+              Resepsi
+            </h6>
+            <label for="datesc" class="font-poppins text-white"
+              >Tanggal Resepsi</label
+            >
+            <input
+              type="date"
+              id="datesc"
+              name="datesc"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="venuesc" class="font-poppins text-white"
+              >Tempat Resepsi</label
+            >
+            <input
+              type="text"
+              id="venuesc"
+              name="venuesc"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: Rumah Mempelai Pria"
+              required
+            />
+            <label for="addresssc" class="font-poppins text-white"
+              >Alamat Resepsi</label
+            >
+            <input
+              type="text"
+              id="addresssc"
+              name="addresssc"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: jl. kencana, desa melayu kec. dst"
+              required
+            />
+            <label for="maspsc" class="font-poppins text-white"
+              >Maps Resepsi</label
+            >
+            <input
+              type="text"
+              id="maspsc"
+              name="maspsc"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+            <label for="timesc" class="font-poppins text-white"
+              >Waktu Akad</label
+            >
+            <input
+              type="time"
+              id="timesc"
+              name="timesc"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div class="*:mt-2">
+            <h6 class="font-bold text-md text-white font-poppins mb-4">
+              Amplop Digital
+            </h6>
+            <label for="bank" class="font-poppins text-white"
+              >Nomor Rekening</label
+            >
+            <input
+              type="text"
+              id="bank"
+              name="bank"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: BRI/12345567890/surya kencana"
+              required
+            />
+            <label for="wallet" class="font-poppins text-white"
+              >Nomor E-wallet</label
+            >
+            <input
+              type="text"
+              id="wallet"
+              name="wallet"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="contoh: Gopay/12345567890/surya kencana"
+              required
+            />
+            <label for="music" class="font-poppins text-white">Musik/Lagu</label
+            >
+            <input
+              type="text"
+              id="music"
+              name="music"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="Link YT / Judul Lagu"
+              required
+            />
+            <label for="photo" class="font-poppins text-white"
+              >Link Drive Foto Prewedding</label
+            >
+            <input
+              type="text"
+              id="photo"
+              name="photo"
+              class="block w-full px-3 py-3 mt-2 mb-3 border border-gray-300 w-full rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+              placeholder="Kosongkan/Kirim WA"
+            />
+            <label for="quote" class="font-poppins text-white">Quote</label>
+            <textarea
+              id="quote"
+              rows="4"
+              name="quote"
+              class="mt-2 block mt-2 p-5 w-full text-sm text-gray-800 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+              placeholder="Bisa kirim Whatsapp"></textarea>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-6 py-2 rounded-full font-poppins tracking-wider font-bold hover:bg-blue-700"
+          >
+            Kirim Data
+          </button>
+        </div>
+      </form>
+      <div
+        class="w-full flex max-[350px]:flex-col gap-4 flex-row justify-between max-w-screen-md mx-auto mt-16"
+      >
+        <a href="/">
+          <div
+            class="py-2 px-4 rounded-full bg-gray-800 text-white w-max flex flex-row gap-[1px]"
+          >
+            <Icon name="mdi:home" class="h-5 w-5" />Home
+          </div>
+        </a>
+        <a
+          href="https://wa.me/6281532094978?text=Hallo Admin, saya ingin bertanya tentang *Pengisian Form Undangan Digital* dong!"
+          class="w-fit py-2 px-4 rounded-full bg-gray-800 flex flex-row items-center justify-center gap-[1px] text-center text-white"
+        >
+          <Icon name="mdi:whatsapp" class="w-5 h-5 text-white" />Tanya Admin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document
+      .getElementById("orderForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah form submit secara default
+
+        // Mengambil data dari form
+        const username = document.getElementById("username")?.value || "";
+        const whatsapp = document.getElementById("whatsapp")?.value || "";
+        const theme = document.getElementById("theme")?.value || "";
+
+        const femaleFullname =
+          document.getElementById("femaleFullname")?.value || "";
+        const female = document.getElementById("female")?.value || "";
+        const femaleFather =
+          document.getElementById("femaleFather")?.value || "";
+        const femaleMother =
+          document.getElementById("femaleMother")?.value || "";
+        const femaleChild = document.getElementById("femaleChild")?.value || "";
+        const femaleMedsos =
+          document.getElementById("femaleMedsos")?.value || "";
+
+        const maleFullname =
+          document.getElementById("maleFullname")?.value || "";
+        const male = document.getElementById("male")?.value || "";
+        const maleFather = document.getElementById("maleFather")?.value || "";
+        const maleMother = document.getElementById("maleMother")?.value || "";
+        const maleChild = document.getElementById("maleChild")?.value || "";
+        const maleMedsos = document.getElementById("maleMedsos")?.value || "";
+
+        const date = document.getElementById("date")?.value || "";
+        const venue = document.getElementById("venue")?.value || "";
+        const address = document.getElementById("address")?.value || "";
+        const time = document.getElementById("time")?.value || "";
+        const maps = document.getElementById("maps")?.value || "";
+
+        const datesc = document.getElementById("datesc")?.value || "";
+        const venuesc = document.getElementById("venuesc")?.value || "";
+        const timesc = document.getElementById("timesc")?.value || "";
+        const addresssc = document.getElementById("addresssc")?.value || "";
+        const mapssc = document.getElementById("mapssc")?.value || "";
+
+        const bank = document.getElementById("bank")?.value || "";
+        const wallet = document.getElementById("wallet")?.value || "";
+        const music = document.getElementById("music")?.value || "";
+        const photo = document.getElementById("photo")?.value || "";
+        const quote = document.getElementById("quote")?.value || "";
+
+        // Memastikan semua data penting terisi
+        if (!username || !whatsapp || theme === "Pilih Tema") {
+          alert("Harap isi semua field yang diperlukan.");
+          return;
+        }
+
+        // Membuat URL WhatsApp dengan semua data
+        const url = `https://web.whatsapp.com/send?phone=6281532094978&text=Berikut%20data%20pemesanan%20undangan%20digital%3A%0A
+  Nama%20Pemesan%3A%20*${username}*%0A
+  Whatsapp%3A%20*${whatsapp}*%0A
+  Tema%3A%20*${theme}*%0A%0A
+
+  Pengantin%20Wanita%0A
+  Nama%20Lengkap%3A%20*${femaleFullname}*%0A
+  Nama%20Panggilan%3A%20*${female}*%0A
+  Nama%20Bapak%3A%20*${femaleFather}*%0A
+  Nama%20Ibu%3A%20*${femaleMother}*%0A
+  Anak%20Ke%3A%20*${femaleChild}*%0A
+  Akun%20Medsos%3A%20*${femaleMedsos}*%0A%0A
+
+  Pengantin%20Pria%0A
+  Nama%20Lengkap%3A%20*${maleFullname}*%0A
+  Nama%20Panggilan%3A%20*${male}*%0A
+  Nama%20Bapak%3A%20*${maleFather}*%0A
+  Nama%20Ibu%3A%20*${maleMother}*%0A
+  Anak%20Ke%3A%20*${maleChild}*%0A
+  Akun%20Medsos%3A%20*${maleMedsos}*%0A%0A
+
+  Akad%20Nikah%0A
+  Tanggal%20Akad%3A%20*${date}*%0A
+  Tempat%20Akad%3A%20*${venue}*%0A
+  Alamat%20Akad%3A%20*${address}*%0A
+  Waktu%20Akad%3A%20*${time}*%0A
+  Link%20Maps%3A%20*${maps}*%0A%0A
+
+  Resepsi%20Nikah%0A
+  Tanggal%20Resepsi%3A%20*${datesc}*%0A
+  Tempat%20Resepsi%3A%20*${venuesc}*%0A
+  Alamat%20Resepsi%3A%20*${addresssc}*%0A
+  Waktu%20Resepsi%3A%20*${timesc}*%0A
+  Link%20Maps%3A%20*${mapssc}*%0A%0A
+
+  Amplop%20Digital%0A
+  Rekening%3A%20*${bank}*%0A
+  E-Wallet%3A%20*${wallet}*%0A%0A
+
+  Musik%0ALink%20Musik%3A%20*${music}*%0A%0A
+  Foto%20Prewedding%0ALink%20Foto%3A%20*${photo}*%0A%0A
+  Quote%3A%20*${quote}*`;
+
+        window.open(url, "_blank");
+      });
+  </script>
+</Noheader>

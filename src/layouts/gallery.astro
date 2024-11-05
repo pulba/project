@@ -1,0 +1,86 @@
+---
+const { txsc, imgstory1, imgstory2, imgstory3, imgstory4, imgstory5, imgstory6, imgstory7, imgstory8, font, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8 } = Astro.props;
+
+---
+
+<div class="container mx-auto px-6 py-20">
+  <h2 class=`fade-right opacity-0 text-center font-${font} text-5xl lg:text-8xl text-center my-5 mb-10 ${txsc}`>
+    Gallery
+  </h2>
+<div
+  class="grid grid-cols-2 md:grid-cols-4 justify-center gap-2 pb-20 mt-5 max-w-3xl mx-auto"
+>
+  <div class="fade-right">
+    <div class="truncate">
+      <img
+        src={imgstory1}
+        alt="Foto 1"
+        class=`object-cover object-${obj1} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-down opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory2}
+        alt="Foto 1"
+        class=`object-cover object-${obj2} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-up opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory3}
+        alt="Foto 1"
+        class=`object-cover object-${obj3} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-left opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory4}
+        alt="Foto 1"
+        class=`object-cover object-${obj4} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-right opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory5}
+        alt="Foto 1"
+        class=`object-cover object-${obj5} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-up opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory6}
+        alt="Foto 1"
+        class=`object-cover object-${obj6} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-down opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory7}
+        alt="Foto 1"
+        class=`object-cover object-${obj7} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+  <div class="fade-left opacity-0">
+    <div class="truncate">
+      <img
+        src={imgstory8}
+        alt="Foto 1"
+        class=`object-cover object-${obj8} aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear`
+      />
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,205 @@
+---
+import Animation from "./animation.astro";
+const { color } = Astro.props;
+---
+
+<div x-data="Rsvp">
+  <form
+    @submit.prevent="sendRsvp"
+    class="fade-left w-full max-w-xl px-4 py-8 sm:px-12 mx-auto mb-10 bg-white rounded-md shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] border">
+    <div
+      class="mt-4 space-y-8 [&>*]:font-poppins [&>*]:text-left [&>*]:text-gray-800/50 [&>*]:space-y-2">
+      <div>
+        <label for="username">Nama</label>
+        <input
+          value=""
+          required
+          id="username"
+          type="text"
+          name="name"
+          class="block w-full px-4 py-4 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none"
+          x-model="username"
+        />
+      </div>
+      <div>
+        <label for="message">Ucapan</label>
+        <textarea
+          id="message"
+          required
+          rows="4"
+          name="content"
+          class="block p-5 w-full text-sm text-gray-800 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+          placeholder="Selamat untuk acaranya..."
+          x-model="message"></textarea>
+      </div>
+      <div>
+        <div class="flex items-center mb-4 font-poppins">
+          <input
+            checked
+            id="default-radio-1"
+            name="present"
+            type="radio"
+            value="1"
+            name="default-radio"
+            class={`radio w-4 h-4 accent-${color}`}
+            x-model="present"
+          />
+          <label
+            for="default-radio-1"
+            class={`ms-2 text-base font-medium text-${color}`}>Hadir</label
+          >
+        </div>
+        <div class="flex items-center font-poppins">
+          <input
+            id="default-radio-2"
+            name="present"
+            type="radio"
+            value="0"
+            name="default-radio"
+            class={`radio w-4 h-4 accent-${color}`}
+            x-model="present"
+          />
+          <label
+            for="default-radio-2"
+            class={`ms-2 text-base font-medium text-${color}`}
+            >Tidak Hadir</label
+          >
+        </div>
+      </div>
+
+      <div class="flex justify-center min-[400px]:justify-end mt-6">
+        <button
+          id="send"
+          type="submit"
+          class={`px-4 py-2 z-50 relative bg-${color} rounded-full text-white font-poppins flex gap-1 transition-all duration-700 ease-linear`}
+          >Kirim Pesan</button
+        >
+      </div>
+    </div>
+  </form>
+  <div
+    id="output"
+    class="fade-right w-full max-w-xl mx-auto overflow-auto bg-white rounded-md space-y-6 px-2 sm:p-6 overflow-y-scroll h-96 mb-12 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+    x-show="hasData">
+    <!--<div class="flex flex-col leading-1.5 w-full p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl font-poppins" id="display">
+          <div class="flex items-center justify-between">
+            <p x-text="username" class="text-md font-semibold text-gray-800 capitalize"></p>
+            <p x-text="present == '1' ? 'Hadir' : 'Tidak Hadir'"
+               x-bind:class="{'text-white bg-gray-800': present == '1', 'text-white bg-gray-400': present != '1'}"
+               class="text-sm font-normal px-3 py-1 rounded-full"></p>
+          </div>
+          <p x-text="message" class="text-base italic text-left py-5 text-gray-800/50 font-medium"></p>
+        </div>-->
+
+    <template x-for="user in data" :key="user.id" class="">
+      <div
+        class="flex flex-col leading-1.5 w-full p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl font-poppins"
+        id="display">
+        <div class="flex items-center justify-between">
+          <p
+            x-text="user.name"
+            class="text-md font-semibold text-gray-800 capitalize">
+          </p>
+          <p
+            x-text="user.present ? 'Hadir' : 'Tidak Hadir'"
+            x-bind:class="{'text-white bg-gray-800': user.present, 'text-white bg-gray-400': !user.present}"
+            class="text-sm font-normal px-3 py-1 rounded-full">
+          </p>
+        </div>
+        <p
+          x-text="user.content"
+          class="text-base italic text-left py-5 text-gray-800/50 font-medium">
+        </p>
+      </div>
+    </template>
+  </div>
+</div>
+
+<Animation />
+
+<script>
+  import Alpine from "alpinejs";
+
+  document.addEventListener("alpine:init", function () {
+    Alpine.data("Rsvp", function () {
+      return {
+        username: "",
+        message: "",
+        present: 0,
+
+        data: [],
+        hasData: false,
+
+        getRsvp() {
+          var data = {
+            url: window.location.pathname,
+          };
+          var query = new URLSearchParams(data).toString();
+
+          var _this = this;
+
+          fetch("/api/rsvp-get?" + query, {
+            method: "GET",
+          })
+            .then(function (resp) {
+              return resp.json();
+            })
+            .then(function (data) {
+              _this.data = data;
+
+              if (data.length > 0) {
+                _this.hasData = true;
+              }
+
+              (_this.username = ""),
+                (_this.message = ""),
+                (_this.present = 1),
+                console.log(data);
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+        },
+
+        sendRsvp() {
+          var data = {
+            name: this.username,
+            content: this.message,
+            present: this.present,
+            url: window.location.pathname,
+          };
+
+          var query = new URLSearchParams(data).toString();
+
+          var _this = this;
+
+          fetch("/api/rsvp-send?" + query, {
+            method: "GET",
+          })
+            .then(function (resp) {
+              if (resp.ok) {
+                _this.getRsvp();
+
+                console.log(resp.ok);
+
+                setTimeout(() => {
+                  document.getElementById("output").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start", 
+                    inline: "nearest",
+                  });
+                }, 100);
+              }
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+        },
+
+        init() {
+          this.getRsvp();
+        },
+      };
+    });
+  });
+</script>

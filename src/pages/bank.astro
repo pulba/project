@@ -1,0 +1,58 @@
+---
+import Page from '../layouts/page.astro';
+import '@fontsource/poppins';
+import Payment from '../layouts/payment.astro'
+---
+
+<Page title="Pembayaran |" name="Pembayaran" desc="Ini halaman harga dari undangan jejak bahagia" subs="Silahkan melakukan pembayaran melalui bank atau e-wallet berikut dan kirimkan bukti transfer ke whatsapp admin">
+    
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center relative w-full h-max mx-auto *:py-12 *:px-4 *:md:px-12 *:mx-auto *:w-full *:justify-center *:md:flex *:mx-auto *:gap-5 *:bg-gray-50 *:rounded-lg *:border *:border-blue-300 *:shadow-lg">
+    <div class="">
+      <div class="text-center font-poppins flex flex-col items-center">
+        <img class="h-auto max-w-12" src="/assets/bri.png" alt="JejakBahagia">
+        <div class="mt-5 font-josefin space-y-5">
+          <p class="text-blue-600 mb-2">Syaiful Bahri</p>
+          <span class="copy-content font-bold">565601016109531</span>
+          <div class="btn-copy">
+            <button class="px-5 py-2 rounded-lg bg-blue-600 text-white">Copy Rekening</button>
+          </div>
+          <span class="copy-message absolute hidden inset-x-0">Rekening dicopy</span>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="text-center font-poppins flex flex-col items-center">
+        <img class="h-auto max-w-12" src="/assets/sea.png" alt="JejakBahagia">
+        <div class="mt-5 font-josefin space-y-5">
+          <p class="text-blue-600 mb-2">Syaiful Bahri</p>
+          <span class="copy-content font-bold">901239499580</span>
+          <div class="btn-copy">
+            <button class="px-5 py-2 rounded-lg bg-blue-600 text-white">Copy Rekening</button>
+          </div>
+          <span class="copy-message absolute hidden inset-x-0">Rekening dicopy</span>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="text-center font-poppins flex flex-col items-center">
+        <div class="grid grid-cols-2 gap-4 justify-center items-center *:h-auto *:max-w-16">
+          <img class="" src="/assets/gopay.png" alt="JejakBahagia">
+          <img class="" src="/assets/shopee.png" alt="JejakBahagia">
+          <img class="" src="/assets/dana.png" alt="JejakBahagia">
+          <img class="" src="/assets/ovo.png" alt="JejakBahagia">
+        </div>
+        <div class="mt-5 font-josefin space-y-5">
+          <p class="text-blue-600 mb-2">Syaiful Bahri</p>
+          <span class="copy-content font-bold">085840294989</span>
+          <div class="btn-copy">
+            <button class="px-5 py-2 rounded-lg bg-blue-600 text-white">Copy Rekening</button>
+          </div>
+          <span class="copy-message absolute hidden inset-x-0">Rekening dicopy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <Payment /> 
+</Page>

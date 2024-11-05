@@ -1,0 +1,418 @@
+---
+import Noheader from '../../layouts/noheader.astro';
+import { Icon } from 'astro-icon/components';
+import Namatamu from '../../layouts/namatamu.astro'
+import Payment from '../../layouts/payment.astro'
+import Rsvp from '../../layouts/rsvp.astro'
+import Countdown from '../../layouts/countdown.astro'
+import Footerpost from '../../layouts/footer-post.astro'
+import Audio from '../../layouts/audio.astro'
+import Animation from '../../layouts/animation.astro';
+import Card from '../../layouts/card.astro';
+
+
+let {frontmatter, count} = Astro.props;
+
+if(!frontmatter) {
+  let data = {};
+  data["title"] = 'wedding-7'
+  data["type"] = 'Tanpa Foto'
+  data["desc"] = 'wedding-7'
+  data["countdown"] = 'Jun 26, 2024 15:37:25'
+
+  data["bgfs"] = 'bg-pink-100'
+  data["bgsc"] = 'bg-pink-600'
+  data["bgth"] = 'bg-pink-800'
+  data["bgfr"] = 'bg-pink-100'
+
+  data["txfs"] = 'text-pink-200'
+  data["txsc"] = 'text-pink-600'
+  data["txth"] = 'text-pink-950'
+
+  data["bdr"] = 'border-pink-200'
+  data["from"] = 'from-pink-100'
+  data["before"] = 'before:bg-black'
+
+  data["cover"] = '/assets/img-12.webp'
+  data["imgsc"] = '/assets/img-25.webp'
+  data["bg"] = '/assets/dekor-24.webp'
+  // Img kedua mempelai
+  data["dekorfs"] = '/assets/dekor34.webp'
+  data["dekorsc"] = '/assets/dekor36.webp'
+  data["dekorth"] = '/assets/dekor35.webp'
+  // Img kedua mempelai
+  data["pm1"] = '/assets/img-27.webp'
+  data["pm2"] = '/assets/img-26.webp'
+  // Img kedua mempelai
+  data["imgstory1"] = '/assets/img-5.webp'
+  data["imgstory2"] = '/assets/img-6.webp'
+  data["imgstory3"] = '/assets/img-7.webp'
+  data["imgstory4"] = '/assets/img-8.webp'
+  data["imgstory5"] = '/assets/img-9.webp'
+  data["imgstory6"] = '/assets/img-10.webp'
+  data["imgstory7"] = '/assets/img-11.webp'
+  data["imgstory8"] = '/assets/img-12.webp'
+  data["add1"] = '/assets/img-25.webp'
+  data["add2"] = '/assets/img-4.webp'
+
+  //img story love
+  data["imgstory9"] = '/assets/img-16.webp'
+  data["imgstory10"] = '/assets/img-17.webp'
+  data["imgstory11"] = '/assets/img-18.webp'
+
+  // data mempelai
+  data["male"] = "Remeo"
+  data["ml"] = "R"
+  data["fullmale"] = "Remeo Alexa"
+  data["female"] = "Juliet"
+  data["fml"] = "J"
+  data["fullfemale"] = "Juliet Kapolo"
+  data["music"] = "yovie-nuno-janji-suci"
+  data["countdown"] = "June 5, 2025 15:37:25"
+
+  data["childmale"] = "Putra kelima dari Pasangan"
+  data["childfemale"] = "Putri Pertama dari Pasangan"
+  data["parentmale"] = "Joko & Siti"
+  data["parentfemale"] = "Bambang & Mulyani"
+  data["instagrammale"] = "instagram"
+  data["instagramfemale"] = "instagram"
+  data["facebookmale"] = "facebook"
+  data["facebookfemale"] = "facebook"
+  data["citymale"] = "Palembang"
+  data["cityfemale"] = "Makkasar"
+
+  //bank
+  data["logoml"] = "/assets/bri.png"
+  data["bankml"] = "BRI"
+  data["namebankml"] = "Remeo Alexa"
+  data["numberbankml"] = "123456789"
+  data["logofml"] = "/assets/bca.png"
+  data["bankfml"] = "BCA"
+  data["namebankfml"] = "Juliet Kapolo"
+  data["numberbankfml"] = "123456789"
+
+//waktu & tempat acara
+data["datefs"] = "Jumat, 05 Januari 2030"
+  data["datesc"] = "Jumat, 05 Januari 2030"
+  data["dateth"] = "Jumat, 05 Januari 2030"
+  data["timefs"] = "08:00 - 09:00 WIB"
+  data["timesc"] = "10:00 - 11:00 WIB"
+  data["timeth"] = "13:00 - end WIB"
+  data["addressfs"] = "Masjid Kampus UGM"
+  data["addresssc"] = "Jogja Expo Center"
+  data["addressth"] = "Rumah Mempelai Wanita"
+  data["locationfs"] = "Rumah Mempelai Wanita"
+  data["locationsc"] = "Rumah Mempelai Wanita"
+  data["locationth"] = "Rumah Mempelai Wanita"
+  data["mapsfs"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468" 
+  data["mapssc"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["mapsth"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["linkmaps"] = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041!2d110.3807054!3d-7.7744606!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b4fe07a7f9%3A0x2f7c4fd3d72616bb!2sJl.%20Prof.%20DR.%20Drs%20Notonagoro%2C%20Karang%20Malang%2C%20Caturtunggal%2C%20Kec.%20Depok%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281!5e0!3m2!1sid!2sid!4v1717643524613!5m2!1sid!2sid"
+  data["akad"] = "Akad"
+  data["resepsi"] = "Resepsi"
+
+//story love
+  data["storyfs"] = "Di sebuah kafe yang nyaman di tengah kota, dua orang asing, Yanti dan Yanto, tak sengaja bertemu. Yanto, seorang fotografer yang sedang mencari inspirasi untuk proyek terbarunya, sedangkan Yanti, seorang penulis lepas yang sedang mencatat ide-ide baru untuk novel romantisnya, tak menyadari bahwa matanya sedang bertatapan dengan seorang pria tampan di sisi lain kafe."
+  data["storysc"] = "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehilangan Juliet dari hidupnya. Dengan hati yang penuh harap, dia menyiapkan proposal yang tak terlupakan. Di bawah langit malam yang cerah, di taman yang dihiasi dengan ratusan lentera, Romeo berlutut di hadapan Juliet."
+  data["storyth"] = "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
+
+  data["quote"] = "Dengan segala kerendahan hati, kami sangat berbahagia bisa membagi saat-saat penting ini kepada Bapak/Ibu/Saudara/i. Besar harapan kami atas kehadiran serta iringan doa dan restunya agar pernikahan yang akan digelar bisa berjalan sebagaimana mestinya. Terimakasih."
+
+  frontmatter=data;
+  
+}
+---
+
+<Noheader title={frontmatter.title} desc={frontmatter.desc}>
+  <input type="checkbox" id="toggle" class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear"/>
+  <section class=`animasi hero relative w-full bg-cover bg-center flex items-center overflow-hidden peer-checked:h-0 peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear peer-checked:delay-500` style={`background-image:url(${frontmatter.cover})`}>
+    <div
+      class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+      <div class="fade-right opacity-0 -right-5 -top-5">
+        <img
+          src=`${frontmatter.dekorfs}`
+          class="right-0 top-0"
+          alt="JejakBahagia"
+        />
+      </div>
+      <div class="fade-left opacity-0 -bottom-5 -left-5">
+        <img
+          src=`${frontmatter.dekorfs}`
+          class="rotate-180"
+          alt="JejakBahagia"
+        />
+      </div>
+    </div>
+    <div class="container mx-auto px-6 relative z-20">
+      <div class="text-black relative overflow-hidden">
+        <div class="py-20 max-w-screen-md mx-auto text-center h-screen w-full flex flex-col justify-between items-center">
+          <div class="w-full ">
+            <div class="flex flex-row h-24">
+              <h1 class={`fade-down opacity-0 ${frontmatter.txsc} text-8xl text-left font-montecarlo w-1/2`}>{frontmatter.fml}</h1>
+              <div class=`fade-left opacity-0 border-r-2 border-t-2 ${frontmatter.bdr} w-1/2`></div>
+          </div>
+          <div class={`flex flex-row ${frontmatter.txsc} *:text-2xl *:md:text-3xl *:lg:text-4xl *:font-montecarlo *:w-full`}>
+              <p class="fade-right opacity-0 text-left">{ frontmatter.fullfemale } </p>
+              <p class="fade-left opacity-0 text-end ">{ frontmatter.fullmale } </p>
+          </div>
+          <div class="flex flex-row h-24">
+              <div class=`fade-right opacity-0 border-l-2 border-b-2 ${frontmatter.bdr} w-1/2 flex flex-col justify-end`>
+                <p class=`fade-right opacity-0 font-poppins text-center ${frontmatter.txsc}`>{frontmatter.date}</p> </div>
+              <h1 class=`fade-up opacity-0 ${frontmatter.txsc} text-8xl text-center sm:text-end font-montecarlo w-1/2`>{frontmatter.ml}</h1>
+          </div>
+          </div>
+          <div class="fade-left opacity-0 bg-white/75 w-fit mx-auto py-2 px-8 rounded-lg border text-gray-800 text-center">
+            <p class="font-josefin text-sm">Kpd Bpk/Ibu/Saudara/i</p>
+          <h4 id="invite-name" class="text-xl capitalize">
+          <Namatamu /> nama tamu
+          </h4>
+          <p class="font-josefin text-sm">di Tempat</p>
+          </div>
+          <label for="toggle" id="toaudio"
+          class=`fade-down opacity-0 mt-5 px-4 py-2 w-max mx-auto relative rounded-full flex gap-1 ${frontmatter.txfs} ${frontmatter.bgth}`
+          ><Icon name="mdi:love-letter" class="w-6 h-6" />Buka Undangan 
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main id="myDIV" class=`hidden peer-checked:block ${frontmatter.bgsc}`>
+    <section class="animasi1 relative bg-cover bg-center overflow-hidden" style={`background-image:url(${frontmatter.cover})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+      <div class="container px-6 mx-auto relative">
+          <div class="h-screen flex flex-col items-center justify-center">
+            <div class=`fade-down opacity-0 flex flex-col items-center justify-center text-center sm:flex-row gap-3 lg:gap-8 w-full text-center font-montecarlo text-center text-6xl lg:text-8xl ${frontmatter.txsc}`>
+              <span>{frontmatter.female }</span>
+              <span class=`${frontmatter.txsc} ${frontmatter.bgfs} rounded-full p-1`> & </span> 
+              <span> {frontmatter.male } </span> 
+            </div>
+              <p class=`fade-right opacity-0 font-poppins text-center tracking-widest ${frontmatter.txsc}`>{frontmatter.date}</p>   
+              <p class=`fade-up opacity-0 mt-8 text-center max-w-prose ${frontmatter.txsc}`>{frontmatter.quote}</p>   
+          </div>
+      </div>
+    </section>
+    <section class="animasi2 relative bg-cover bg-center overflow-hidden" style={`background-image:url(${frontmatter.cover})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+      <div class=`container mx-auto relative py-20 px-6 ${frontmatter.txsc}`>
+        <div class="flex flex-col text-center items-center">
+          <p class="fade-left opacity-0 text-center font-montecarlo text-2xl sm:text-4xl">
+              Bismillahirrahmanirrahim
+          </p>
+          <p class="fade-up opacity-0 font-medium max-w-prose py-8">
+              Dengan memohon Rahmat dan Ridho Allah Subhanahu wa ta'ala kami bermaksud menyelenggarakan Syukuran Pernikahan Putra-Putri kami
+          </p>
+        </div>
+        <div class="mx-auto p-4">
+          <div class="flex flex-col lg:flex-row justify-center items-center gap-y-16 max-w-4xl mx-auto mt-5 *:text-center *:w-full *:flex *:flex-col *:items-center">
+            <div>
+              <div class="fade-right opacity-0">
+                <div class="relative flex items-center justify-center w-full">
+                    <div class="relative flex items-center justify-center w-64 md:w-72">
+                      <div
+                      class="w-56 h-56 md:w-64 md:h-64 bg-cover bg-center relative rounded-full"
+                      style=`background-image: url('${frontmatter.pm1}')`>
+                      </div>
+                      <img src=`${frontmatter.dekorsc}` alt="JejakBahagia" class="absolute">
+                    </div>
+                </div>
+              </div>
+              <h3 class=`fade-left opacity-0 text-5xl mt-12 font-nautigal ${frontmatter.txsc}`>{ frontmatter.fullfemale }</h3>
+              <div class=`fade-right opacity-0 space-y-3 ${frontmatter.txsc}`>
+                <p class="text-lg">{frontmatter.childfemale}</p>
+                <p class="text-lg font-medium">
+                  { frontmatter.parentfemale }</p>
+                <p>{frontmatter.cityfemale}</p>
+                <div class="flex text-center justify-center mt-4">
+                  <a href={`https://www.instagram.com/${frontmatter.instagramfemale}`} class="flex flex-row gap-2 items-center">
+                    <Icon name="mdi:instagram" class=`w-10 h-10 p-2 rounded-full ${frontmatter.txsc} ${frontmatter.bgfs}` />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="fade-left opacity-0">
+                <div class="relative flex items-center justify-center w-full">
+                    <div class="relative flex items-center justify-center w-64 md:w-72">
+                      <div
+                      class="w-56 h-56 md:w-64 md:h-64 bg-cover bg-center relative rounded-full"
+                      style=`background-image: url('${frontmatter.pm2}')`>
+                      </div>
+                      <img src=`${frontmatter.dekorsc}` alt="JejakBahagia" class="absolute">
+                    </div>
+                </div>
+              </div>
+              <h3 class=`fade-right opacity-0 text-6xl mt-12 font-nautigal ${frontmatter.txsc}`>{ frontmatter.fullmale }</h3>
+              <div class=`fade-left opacity-0 space-y-3 ${frontmatter.txsc}`>
+                <p class="text-lg">{frontmatter.childmale}</p>
+                <p class="text-lg font-medium">
+                  { frontmatter.parentmale }</p>
+                <p>{frontmatter.citymale}</p>
+                <div class="flex text-center justify-center mt-4">
+                  <a href={`https://www.instagram.com/${frontmatter.instagrammale}`} class="flex flex-row gap-2 items-center">
+                    <Icon name="mdi:instagram" class=`w-10 h-10 p-2 rounded-full ${frontmatter.txsc} ${frontmatter.bgfs}` />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class=`animasi3 relative bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden before:content-[''] before:bg-gradient-to-b before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}`
+      style={`background-image:url(${frontmatter.add1})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+      <div class="container py-32 mx-auto relative z-50">
+        <div class=`text-center my-5 ${frontmatter.txfs}`>
+          <h2 class="fade-left opacity-0 text-2xl/50 font-bold mt-5 md:mt-0 mb-3">
+            Save The Date</h2>
+          <h1 class="fade-right opacity-0 text-center font-montecarlo text-5xl md:text-6xl lg:text-8xl">
+            Our Happy Day
+          </h1>
+        </div>
+        <div  data-count={frontmatter.countdown} id="timer" class=`fade-left opacity-0 px-6 grid grid-cols-2 md:grid-cols-4 gap-8 justify-center text-center items-center mt-20 sm:px-20 max-w-3xl mx-auto *:text-center *:text-5xl *:sm:text-6xl *:font-medium *:border *:p-4 ${frontmatter.txfs}`>
+        </div>
+      </div>
+    </section>
+    <section class="animasi4 relative bg-cover bg-center overflow-hidden" style={`background-image:url(${frontmatter.cover})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+    <div class="container relative mx-auto py-20 px-6 z-50">
+      <div class=`text-center my-5 mb-10 ${frontmatter.txsc}`>
+        <h2 class="fade-left opacity-0 text-2xl font-bold mt-5 md:mt-0 mb-3">Where & When</h2>
+        <h1 class="fade-down opacity-0 text-center font-montecarlo text-5xl lg:text-8xl">
+          Wedding Day
+        </h1>
+      </div>
+      <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgth} before={frontmatter.before} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} cols="2" />
+      <iframe src=`${frontmatter.linkmaps}` style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class=`fade-up opacity-0 mx-auto mt-12 w-full max-w-3xl h-96 p-2 rounded-lg ${frontmatter.bgfs}`></iframe>
+    </div>
+  </section>
+    <section class="animasi5 relative bg-cover bg-center overflow-hidden" style={`background-image:url(${frontmatter.cover})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+      <div class="container py-20 px-6 text-center mx-auto relative z-50">
+        <div class=`text-center my-10 ${frontmatter.txsc}`>
+          <h2 class="fade-right opacity-0 text-5xl lg:text-8xl font-nautigal">Wedding Gift</h2>
+          <p class="fade-left opacity-0 max-w-prose mx-auto font-bold mt-5">Doa & restu anda di pernikahan kami cukuplah sebagai bingkisan, namun jika anda ingin memberi lebih, kami dengan senang hati menerimanya dan akan semakin melengkapi kebahagiaan kami.</p>
+        </div>
+        <Payment txfs={frontmatter.txfs} txth={frontmatter.txth} bgth={frontmatter.bgth} before={frontmatter.before} numberbankml={frontmatter.numberbankml} numberbankfml={frontmatter.numberbankfml} namebankml={frontmatter.namebankml} namebankfml={frontmatter.namebankfml} logoml={frontmatter.logoml} logofml={frontmatter.logofml} row="row"  />
+      </div>
+    </section>
+    <section class="animasi6 relative bg-cover bg-center overflow-hidden" style={`background-image:url(${frontmatter.cover})`}>
+      <div
+        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
+        <div class="fade-right opacity-0 -right-5 -top-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="right-0 top-0"
+            alt="JejakBahagia"
+          />
+        </div>
+        <div class="fade-left opacity-0 -bottom-5 -left-5">
+          <img
+            src=`${frontmatter.dekorfs}`
+            class="rotate-180"
+            alt="JejakBahagia"
+          />
+        </div>
+      </div>
+      <div class="container py-20 z-50 px-6 text-center mx-auto relative">
+        <div class:list={[`text-center my-5 mb-10 ${frontmatter.txsc}`]}>
+          <h2 class="fade-right opacity-0 text-4xl md:text-8xl font-nautigal">
+            Ucapan & Doa
+          </h2>
+          <h2 class="fade-right opacity-0 text-xl md:text-2xl font-bold mt-5">Please Confirm Your Attendance</h2>
+        </div>
+
+        <Rsvp color="gray-600" />
+          
+      </div>
+      <Footerpost />
+    </section>
+    <Audio />
+    <audio id="myAudio" loop class="hidden">
+      <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">
+    </audio>
+    <Animation /> 
+    <Countdown count={frontmatter.countdown} />
+  </main>
+</Noheader>
+

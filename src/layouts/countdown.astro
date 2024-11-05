@@ -1,0 +1,37 @@
+---
+
+---
+
+<script>
+
+const timer = document.querySelector("#timer");
+
+if(timer){
+    const tanggalTujuan = new Date(timer.dataset.count).getTime()
+
+    const hitungMundur = setInterval(function(){
+
+
+    const sekarang = new Date().getTime();
+    const selisih = tanggalTujuan - sekarang;
+
+    const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+    const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+    const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60));
+    const detik = Math.floor(selisih % (1000 * 60) / (1000));
+
+    timer.innerHTML = 
+        '<div><div class="leading-8">' + hari + '<br><span class="text-xl">Hari</span></div></div>' +
+        '<div><div class="leading-8">' + jam + '<br><span class="text-xl">Jam</span></div></div>' +
+        '<div><div class="leading-8">' + menit + '<br><span class="text-xl">Menit</span></div></div>' +
+        '<div><div class="leading-8">' + detik + '<br><span class="text-xl">Detik</span></div></div>';
+            if (selisih < 0) {
+            const end = document.createElement("div");
+            end.innerHTML = '<div class="absolute leading-8 bg-gray-100 text-gray-800 text-xl inset-x-0 capitalize border rounded-md w-max px-4 py-2 mx-auto">Acara telah berakhir</div>';
+            timer.innerHTML = "";
+            timer.appendChild(end);
+            }
+
+    });
+}
+</script>

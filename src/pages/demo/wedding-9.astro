@@ -1,0 +1,322 @@
+---
+import Noheader from '../../layouts/noheader.astro';
+import {Icon } from 'astro-icon/components';
+import Namatamu from '../../layouts/namatamu.astro'
+import Payment from '../../layouts/payment.astro'
+import Rsvp from '../../layouts/rsvp.astro'
+import Countdown from '../../layouts/countdown.astro'
+import Footerpost from '../../layouts/footer-post.astro'
+import Audio from '../../layouts/audio.astro'
+import Animation from '../../layouts/animation.astro';
+import Gallery from '../../layouts/gallery.astro';
+import Card from '../../layouts/card.astro';
+
+
+let {frontmatter, count} = Astro.props;
+
+if(!frontmatter) {
+  let data = {};
+  data["title"] = 'wedding-9'
+  data["type"] = 'Basic 03'
+  data["desc"] = 'wedding-9'
+  data["countdown"] = 'Jun 26, 2024 15:37:25'
+
+  data["bgfs"] = 'bg-pink-200'
+  data["bgsc"] = 'bg-pink-600'
+  data["bgth"] = 'bg-pink-800'
+
+  data["txfs"] = 'text-pink-100'
+  data["txsc"] = 'text-pink-600'
+  data["txth"] = 'text-pink-800'
+
+  data["bdr"] = 'border-pink-800'
+  data["from"] = 'from-pink-200'
+  data["before"] = 'before:bg-pink-800'
+
+  data["cover"] = '/assets/img-6.webp'
+  data["imgsc"] = '/assets/img-19.webp'
+  data["bg"] = '/assets/dekor-24.webp'
+  
+  // dekor
+  data["dekorfs"] = '/assets/dekor33.webp'
+  data["dekorsc"] = '/assets/dekor32.webp'
+  data["dekorth"] = '/assets/dekor24.webp'
+  data["dekorfr"] = '/assets/dekor29.webp'
+  data["dekorfv"] = '/assets/dekor26.webp'
+
+  // Img kedua mempelai
+  data["pm1"] = '/assets/img-27.webp'
+  data["pm2"] = '/assets/img-26.webp'
+
+  // Img kedua mempelai
+  data["imgstory1"] = '/assets/img-5.webp'
+  data["imgstory2"] = '/assets/img-6.webp'
+  data["imgstory3"] = '/assets/img-7.webp'
+  data["imgstory4"] = '/assets/img-8.webp'
+  data["imgstory5"] = '/assets/img-9.webp'
+  data["imgstory6"] = '/assets/img-10.webp'
+  data["imgstory7"] = '/assets/img-11.webp'
+  data["imgstory8"] = '/assets/img-12.webp'
+  data["add1"] = '/assets/img-30.webp'
+  data["add2"] = '/assets/img-4.webp'
+
+  //img story love
+  data["imgstory9"] = '/assets/img-16.webp'
+  data["imgstory10"] = '/assets/img-17.webp'
+  data["imgstory11"] = '/assets/img-18.webp'
+
+  // data mempelai
+  data["male"] = "Remeo"
+  data["fullmale"] = "Remeo Alexa"
+  data["female"] = "Juliet"
+  data["fullfemale"] = "Juliet Kapolo"
+  data["music"] = "yovie-nuno-janji-suci"
+  data["countdown"] = "June 5, 2025 15:37:25"
+
+  data["childmale"] = "Putra kelima dari Pasangan"
+  data["childfemale"] = "Putri Pertama dari Pasangan"
+  data["parentmale"] = "Joko & Siti"
+  data["parentfemale"] = "Bambang & Mulyani"
+  data["instagrammale"] = "instagram"
+  data["instagramfemale"] = "instagram"
+  data["facebookmale"] = "facebook"
+  data["facebookfemale"] = "facebook"
+  data["citymale"] = "Palembang"
+  data["cityfemale"] = "Makkasar"
+
+  //bank
+  data["logoml"] = "/assets/bri.png"
+  data["bankml"] = "BRI"
+  data["namebankml"] = "Remeo Alexa"
+  data["numberbankml"] = "123456789"
+  data["logofml"] = "/assets/bca.png"
+  data["bankfml"] = "BCA"
+  data["namebankfml"] = "Juliet Kapolo"
+  data["numberbankfml"] = "123456789"
+
+//waktu & tempat acara
+data["datefs"] = "Jumat, 05 Januari 2030"
+  data["datesc"] = "Jumat, 05 Januari 2030"
+  data["dateth"] = "Jumat, 05 Januari 2030"
+  data["timefs"] = "08:00 - 09:00 WIB"
+  data["timesc"] = "10:00 - 11:00 WIB"
+  data["timeth"] = "13:00 - end WIB"
+  data["addressfs"] = "Masjid Kampus UGM"
+  data["addresssc"] = "Jogja Expo Center"
+  data["addressth"] = "Rumah Mempelai Wanita"
+  data["locationfs"] = "Rumah Mempelai Wanita"
+  data["locationsc"] = "Rumah Mempelai Wanita"
+  data["locationth"] = "Rumah Mempelai Wanita"
+  data["mapsfs"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468" 
+  data["mapssc"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["mapsth"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["linkmaps"] = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041!2d110.3807054!3d-7.7744606!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b4fe07a7f9%3A0x2f7c4fd3d72616bb!2sJl.%20Prof.%20DR.%20Drs%20Notonagoro%2C%20Karang%20Malang%2C%20Caturtunggal%2C%20Kec.%20Depok%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281!5e0!3m2!1sid!2sid!4v1717643524613!5m2!1sid!2sid"
+  data["akad"] = "Akad"
+  data["resepsi"] = "Resepsi"
+
+//story love
+  data["storyfs"] = "Di sebuah kafe yang nyaman di tengah kota, dua orang asing, Yanti dan Yanto, tak sengaja bertemu. Yanto, seorang fotografer yang sedang mencari inspirasi untuk proyek terbarunya, sedangkan Yanti, seorang penulis lepas yang sedang mencatat ide-ide baru untuk novel romantisnya, tak menyadari bahwa matanya sedang bertatapan dengan seorang pria tampan di sisi lain kafe."
+  data["storysc"] = "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehilangan Juliet dari hidupnya. Dengan hati yang penuh harap, dia menyiapkan proposal yang tak terlupakan. Di bawah langit malam yang cerah, di taman yang dihiasi dengan ratusan lentera, Romeo berlutut di hadapan Juliet."
+  data["storyth"] = "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
+
+  data["quote"] = "Dengan segala kerendahan hati, kami sangat berbahagia bisa membagi saat-saat penting ini kepada Bapak/Ibu/Saudara/i. Besar harapan kami atas kehadiran serta iringan doa dan restunya agar pernikahan yang akan digelar bisa berjalan sebagaimana mestinya. Terimakasih."
+
+  frontmatter=data;
+}
+---
+
+<Noheader title={frontmatter.title} desc={frontmatter.desc}>
+
+  <input type="checkbox" id="toggle" class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear " />
+  <section class=`animasi11 relative h-screen bg-cover bg-center overflow-hidden flex items-center peer-checked:h-0 peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear peer-checked:delay-500 before:content-[''] before:bg-gradient-to-t ${frontmatter.from} before:to-transparent before:inset-0 before:bg-cover before:absolute`
+    style={`background-image:url(${frontmatter.bg})`}>
+    <div class="absolute overflow-hidden w-full h-full *:absolute *:object-cover *:w-1/2 *:sm:w-1/3 *:md:w-1/4 *:lg:w-1/5">
+      <div class="left-0 bottom-0 -rotate-90">
+        <img src=`${frontmatter.dekorfs}` alt="JejakBahagia" />
+      </div>
+      <div class="right-0 bottom-0">
+        <img src=`${frontmatter.dekorfs}` class="rotate-180 right-0 top-0" alt="JejakBahagia" />
+      </div>
+    </div>
+    <div class=`container h-screen pb-20 mx-auto flex flex-col justify-between items-center relative z-50 ${frontmatter.txth}`>
+      <h6 class=`fade-down opacity-0 text-sm md:text-xl mt-8 tracking-widest font-semibold ${frontmatter.txth}`>
+          WEDDING INVITATION
+      </h1>
+      <div class="text-center">
+          
+          <div
+          class="flip-right opacity-0 flex flex-col sm:flex-row gap-2 text-center font-nautigal font-thin text-center text-6xl lg:text-9xl">
+          <span>{frontmatter.female }</span>
+          <span> & </span> 
+          <span> {frontmatter.male } </span> 
+        </div>
+          <p class="fade-right opacity-0 mt-2 font-poppins">Kpd Bpk/Ibu/Saudara/i</p>
+          <h4 id="invite-name" class="animate-fadeleft font-bold text-xl my-3 capitalize">
+            <Namatamu /> nama tamu
+          </h4>
+          <label
+            for="toggle" id="toaudio"
+            class=`fade-left opacity-0 w-fit mx-auto mt-5 px-6 py-2 relative rounded-full font-bold flex gap-1 ${frontmatter.txfs} ${frontmatter.bgth}`>Open Invitation </label>
+      </div>
+    </div>
+  </section>
+  <main id="myDIV" class="hidden peer-checked:block scroll-smooth">
+    <section class=`animasi2 relative bg-cover bg-center overflow-hidden  before:content-[''] before:bg-gradient-to-t ${frontmatter.from} before:to-transparent before:inset-0 before:bg-cover before:absolute` style={`background-image:url(${frontmatter.imgsc})`}>
+      <div class=`container h-screen py-12 px-6 mx-auto flex flex-col justify-center items-center relative ${frontmatter.txsc}`>        
+          <div class="text-center">
+              <h1 class="fade-down opacity-0 text-sm md:text-xl mt-8 tracking-widest font-bold">THE WEDDING OFF
+              </h1>
+              <div
+              class="flip-right opacity-0 flex flex-col sm:flex-row gap-2 text-center font-nautigal font-thin text-center text-7xl lg:text-9xl">
+              <span>{frontmatter.female }</span>
+              <span> & </span> 
+              <span> {frontmatter.male } </span> 
+            </div>
+          </div>
+          <div  data-count={frontmatter.countdown} id="timer" class=`fade-up opacity-0 grid grid-cols-4 md:grid-cols-4 gap-4 justify-center text-center items-center mt-20 sm:px-20 max-w-xl mx-auto *:text-center *:text-2xl *:font-bold *:bg-red-100 *:rounded-lg *:p-2 ${frontmatter.txsc}`>
+          </div>
+        </div>
+    </section>
+    <section class=`animasi3 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+      </div>
+        <div class="container px-6 py-20 mx-auto relative">
+          <div class=`${frontmatter.txsc}`>
+            <div class="text-center w-full max-w-screen-md mx-auto">
+              <h1 class="fade-left opacity-0 text-center font-nautigal text-6xl lg:text-8xl">
+                Quote
+              </h1>
+              <p class="italic fade-right opacity-0">{frontmatter.quote}</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class=`animasi4 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+      <div class="container py-20 px-6 mx-auto relative z-50">
+        <div class=` ${frontmatter.txsc}`>
+          <h1 class="fade-right opacity-0 text-center font-nautigal text-6xl lg:text-8xl">Groom & Bride
+          </h1>
+        </div>
+        <div class="mx-auto p-4">
+          <div
+            class=`flex flex-col sm:flex-row justify-center items-center gap-11 gap-y-11 mx-auto *:rounded-lg *:relative *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]`
+          >
+            <div class="fade-right opacity-0">
+              <div
+                class="rounded-t-lg w-full h-full aspect-square bg-cover bg-center bg-white flex justify-center items-center"
+                style={`background-image:url(${frontmatter.pm1})`}
+              >
+              </div>
+              <h3
+                class={`fade-down opacity-0 text-left text-6xl px-6 mt-6 font-nautigal ${frontmatter.txsc}`}
+              >
+                {frontmatter.female}
+              </h3>
+              <div class="fade-up opacity-0 px-6 pb-6 space-y-3">
+                <div class={`${frontmatter.txth}`}>
+                  <p class={`text-xl font-bold border-b-2 ${frontmatter.bdr}`}>
+                    {frontmatter.fullfemale}
+                  </p>
+                  <p>{frontmatter.childfemale}</p>
+                  <p class={`text-lg font-bold ${frontmatter.txsc}`}>
+                    {frontmatter.parentfemale}
+                  </p>
+                  <p>{frontmatter.cityfemale}</p>
+                  <div class="mt-4">
+                    <a
+                      href={`https://www.instagram.com/${frontmatter.instagramfemale}`}
+                      class="flex flex-row gap-2 items-center"
+                    >
+                      <Icon
+                        name="mdi:instagram"
+                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fade-left opacity-0">
+              <div
+                class="rounded-t-lg w-full h-full aspect-square bg-cover bg-center bg-white flex justify-center items-center"
+                style={`background-image:url(${frontmatter.pm2})`}
+              >
+              </div>
+              <h3
+                class={`fade-down opacity-0 text-left text-6xl px-6 mt-6 font-nautigal ${frontmatter.txsc}`}
+              >
+                {frontmatter.male}
+              </h3>
+              <div class="fade-up opacity-0 px-6 pb-6 space-y-3">
+                <div class={`${frontmatter.txth}`}>
+                  <p class={`text-xl font-bold border-b-2 ${frontmatter.bdr}`}>
+                    {frontmatter.fullmale}
+                  </p>
+                  <p>{frontmatter.childmale}</p>
+                  <p class={`text-lg font-bold ${frontmatter.txsc}`}>
+                    {frontmatter.parentmale}
+                  </p>
+                  <p>{frontmatter.citymale}</p>
+                  <div class="mt-4">
+                    <a
+                      href={`https://www.instagram.com/${frontmatter.instagrammale}`}
+                      class="flex flex-row gap-2 items-center"
+                    >
+                      <Icon
+                        name="mdi:instagram"
+                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class=`animasi5 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+    <div class="container relative mx-auto py-20 px-6 z-50">
+      <div class=`text-center my-5 mb-10 ${frontmatter.txth}`>
+        <h1 class="fade-down opacity-0 text-center font-nautigal text-5xl lg:text-8xl">
+          Wedding Day
+        </h1>
+      </div>
+      <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgth} before={frontmatter.before} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} cols="2" />
+      <iframe src=`${frontmatter.linkmaps}` style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class=`fade-up opacity-0 mx-auto mt-12 w-full max-w-3xl h-72 rounded-xl p-2 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${frontmatter.bgfs}`></iframe>
+    </div>
+  </section>
+    <section class=`animasi6 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+      <Gallery txsc={frontmatter.txsc} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} imgstory4={frontmatter.imgstory4} imgstory5={frontmatter.imgstory5} imgstory6={frontmatter.imgstory6} imgstory7={frontmatter.imgstory7} imgstory8={frontmatter.imgstory8} font="nautigal" />
+    </section>
+    <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+      <div class="container py-20 px-6 text-center mx-auto relative z-50">
+        <div class=`text-center my-10 ${frontmatter.txsc}`>
+          <h2 class="fade-right opacity-0 text-5xl lg:text-8xl font-nautigal">Wedding Gift</h2>
+          <p class="fade-left opacity-0 max-w-prose mx-auto mt-5">Tanpa mengurangi rasa hormat kami bagi tamu yang ingin mengirimkan hadiah kepada kedua mempelai dapat mengirimkannya melalui :</p>
+        </div>
+        <Payment txfs={frontmatter.txfs} txth={frontmatter.txth} bgth={frontmatter.bgth} before={frontmatter.before} numberbankml={frontmatter.numberbankml} numberbankfml={frontmatter.numberbankfml} namebankml={frontmatter.namebankml} namebankfml={frontmatter.namebankfml} logoml={frontmatter.logoml} logofml={frontmatter.logofml} row="row" />
+      </div>
+    </section>
+    <section class=`animasi8 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
+      <div class="container py-20 z-50 px-6 text-center mx-auto relative">
+        <div class:list={[`text-center my-5 mb-10 ${frontmatter.txsc}`]}>
+          <h2 class="fade-right opacity-0 text-6xl md:text-8xl font-nautigal">
+            Doa & Ucapan
+          </h2>
+          <h2 class="fade-right opacity-0 mt-5">Mohon Konfirmasi Kehadiran Anda</h2>
+        </div>
+
+        <Rsvp color="gray-600" />
+          
+      </div>
+      <Footerpost />
+    </section>
+    <Audio />
+    <audio id="myAudio" loop class="hidden">
+      <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">
+    </audio>
+    <Animation /> 
+    <Countdown count={frontmatter.countdown} />
+  </main>
+</Noheader>
+

@@ -1,0 +1,40 @@
+---
+import '@fontsource/poppins';
+import '@fontsource/mr-de-haviland';
+import '@fontsource/the-nautigal';
+import Logo from './logo.astro';
+import { Icon } from 'astro-icon/components';
+
+---
+
+<nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="flex items-center justify-between bg-neutral-50 border-b border-neutral-300 px-6 py-4" aria-label="penguin ui menu">
+  <Logo file="JejakBahagia"/>
+	<!-- Desktop Menu -->
+	<ul class="hidden items-center gap-4 md:flex *:w-full *:tracking-wider *:text-md *:text-black *:focus:none *:font-bold hover:*:text-blue-700">
+		<a href="/" class="" aria-current="page"><li class="py-4">Home</li></a>
+		<a href="katalog" class=""><li class="py-4">Katalog</li></a>
+		<a href="fitur" class=""><li class="py-4">Fitur</li></a>
+		<a href="contact" class=""><li class="py-4">Contact</li></a>
+	</ul>
+  <div id="btn" class="relative w-max mt-5 md:mt-0 hidden md:flex justify-end">
+    <a href="https://wa.me/6281532094978?text=Hallo kak, saya mau konsultasi terkait undangan digital dong!" class="flex flex-row items-center justify-center gap-1 px-4 py-3 rounded-md tracking-wider text-center text-white transition-colors duration-300 bg-blue-700 hover:bg-blue-700">Konsultasi<Icon name="mdi:whatsapp" class="w-5 h-5 text-white" /></a>
+  </div>
+	<!-- Mobile Menu Button -->
+	<button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-neutral-600 md:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
+		<svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		</svg>
+		<svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+		</svg>
+	</button>
+	<!-- Mobile Menu -->
+	<ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-md border-b border-neutral-300 bg-neutral-50 px-6 pb-6 pt-20 md:hidden *:w-full *:tracking-wider *:text-lg *:text-black *:focus:none">
+		<a href="/" class="" aria-current="page"><li class="py-4">Home</li></a>
+		<a href="katalog" class=""><li class="py-4">Katalog</li></a>
+		<a href="fitur" class=""><li class="py-4">Fitur</li></a>
+		<a href="contact" class=""><li class="py-4">Contact</li></a>
+	</ul>
+</nav>
+
+

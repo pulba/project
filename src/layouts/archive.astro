@@ -1,0 +1,12 @@
+---
+import Main from './main.astro';
+import { Image } from 'astro:assets';
+//const posts = await Astro.glob('../pages/posts/*.md');
+const posts = await Astro.glob('../pages/demo/*.astro');
+const { title, desc, subs } = Astro.props;
+---
+
+<Main title={title} desc={desc} subs={subs}>
+  
+  <slot />
+</Main>

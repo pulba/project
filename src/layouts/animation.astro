@@ -1,0 +1,115 @@
+---
+
+---
+
+<script>
+    import anime from "animejs";
+
+    let observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                let element = entry.target;
+
+                if (entry.isIntersecting) {
+                    if (!element.classList.contains("animated")) {
+                        element.classList.add("animated");
+
+                        if (element.classList.contains("fade-left")) {
+                            anime({
+                                targets: element,
+                                translateX: [-150, 0],
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+
+                        if (element.classList.contains("fade-right")) {
+                            anime({
+                                targets: element,
+                                translateX: [150, 0],
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+
+                        if (element.classList.contains("fade-up")) {
+                            anime({
+                                targets: element,
+                                translateY: [150, 0],
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+
+                        if (element.classList.contains("fade-down")) {
+                            anime({
+                                targets: element,
+                                translateY: [-150, 0],
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+                        if (element.classList.contains("flip-up")) {
+                            anime({
+                                targets: element,
+                                rotateX: [90, 0], 
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+                        if (element.classList.contains("flip-down")) {
+                            anime({
+                                targets: element,
+                                rotateX: [-90, 0], 
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+                        if (element.classList.contains("flip-left")) {
+                            anime({
+                                targets: element,
+                                rotateY: [90, 0], 
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+                        if (element.classList.contains("flip-right")) {
+                            anime({
+                                targets: element,
+                                rotateY: [-90, 0], 
+                                opacity: [0, 1],
+                                duration: 2000,
+                                easing: "easeInOutSine",
+                            });
+                        }
+                    }
+                } else {
+                    element.classList.remove("animated");
+
+                    anime.set(element, {
+                        opacity: 0,
+                        translateX: 0,
+                        translateY: 0,
+                    });
+                }
+            });
+        },
+        { threshold: 0.1 },
+    );
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+            ".fade-left, .fade-right, .fade-up, .fade-down, .flip-left, .flip-right, .flip-up, .flip-down",
+        );
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    });
+</script>

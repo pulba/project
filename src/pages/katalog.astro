@@ -1,0 +1,65 @@
+---
+import Page from '../layouts/page.astro';
+import '@fontsource-variable/josefin-sans';
+import { Icon } from 'astro-icon/components';
+const posts = await Astro.glob('../pages/posts/*.md');
+---
+
+<Page title="Katalog |" name="Katalog" subs="Dengan adanya preset kamu tinggal pilih design undangan sesuai dengan yang kamu mau!">
+
+  <div class="mx-auto mt-5 w-full">
+    <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Reguler</h5>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
+      {
+        posts
+          .filter(post => post.frontmatter.number !== undefined) 
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+          .slice(0, 30)
+          .map((post) => (
+            <div class="relative px-2 py-4 sm:px-6 bg-white rounded-lg shadow-[4.0px_8.0px_8.0px_rgba(29,78,216,0.38)]">
+              <div class="relative">
+                <div class="overflow-hidden rounded-lg">
+                  <div class="w-full object-cover">
+                    <a href={post.frontmatter.slug}>
+                      <img
+                        src={post.frontmatter.img?.url}
+                        alt={post.frontmatter.img?.alt}
+                      />
+                    </a>
+                  </div>
+                </div>
+                <p class="flex flex-row gap-2 items-center font-bold text-lg sm:text-xl pt-4 text-left text-gray-600 capitalize">
+                  <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-2">
+                  <p class="w-full font-bold text-red-700 text-start text-sm line-through">
+                    {post.frontmatter.unprice}
+                  </p>
+                <p class="w-full font-bold text-blue-700 text-xl sm:text-2xl">
+                  {post.frontmatter.price}
+                </p>
+                </div>
+                <div class="mt-4 space-y-4 sm:space-y-0 sm:flex flex-row items-center justify-between gap-2 *:w-full *:sm:w-max *:flex *:flex-row *:items-center *:justify-center *:gap-1 *:text-white *:px-4 *:py-2 *:rounded-md">
+                  <a href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${post.frontmatter.name}* ya`
+                    class="bg-blue-700">
+                    <Icon
+                      name="mdi:navigation-variant"
+                      class="w-6 h-6 text-white"
+                    />
+                    Pesan
+                  </a>
+                  <a
+                    href={post.frontmatter.slug}
+                    class="bg-gray-600">
+                    {post.frontmatter.link}{" "}
+                    <Icon name="mdi:eye" class="w-4 h-4" />
+                    Preview
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</Archive>
