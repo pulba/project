@@ -99,7 +99,7 @@ const klien = await Astro.glob('../pages/undangan/*.md');
       </div>
       <div class="mx-auto mt-5 w-full">
         <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Reguler</h5>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
           {
             posts
               .filter(post => post.frontmatter.number !== undefined) 
@@ -154,7 +154,7 @@ const klien = await Astro.glob('../pages/undangan/*.md');
       </div>
       <div class="mx-auto mt-8 w-full">
         <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Adat</h5>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
           {
             posts
               .filter(post => post.frontmatter.number !== undefined) 
