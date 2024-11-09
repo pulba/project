@@ -26,7 +26,7 @@ const posts = await Astro.glob('../pages/posts/*.md');
                         alt={post.frontmatter.img?.alt}
                       />
                     </a>
-                  </div>
+                  </div> 
                 </div>
                 <p class="flex flex-row gap-2 items-center font-bold text-lg sm:text-xl pt-4 text-left text-gray-600 capitalize">
                   <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
