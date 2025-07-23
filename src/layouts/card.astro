@@ -1,68 +1,104 @@
 ---
-import { Icon } from 'astro-icon/components';
-const { txfs, txth, bgfs, bgth, before, datefs, datesc, timefs, timesc, locationfs, locationsc, addressfs, addresssc, mapsfs, mapssc, akad, resepsi, cols } = Astro.props;
+import Icon from '../components/icon.astro';
+import Button from '../components/button.astro';
+const { important, animation, txfs, txth, bgfs, bgth, font, datefs, datesc, timefs, timesc, locationfs, locationsc, addressfs, addresssc, mapsfs, mapssc, akad, resepsi, dekorfv, imgstory1, imgstory2, dekorsx, dayfs, daysc, month, year, button, title,  path, primary } = Astro.props;
+const primaryClassesFirst = primary === "hidden" ? "hidden" : "block";
+const primaryClassesSecond = primary === "hidden" ? "block" : "hidden";
 
 ---
-<div class=`grid gird-cols-1 md:grid-cols-${cols} max-w-2xl w-full mx-auto justify-center items-center gap-4 mt-5 *:mx-auto *:border-[1px] *:rounded-2xl *:h-full *:w-full *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] *:before:content-[''] *:before:absolute *:before:opacity-25 *:before:left-0 *:before:w-full *:before:h-full *:before:rounded-2xl`>
-  <div class=`flip-right opacity-0 relative ${before} ${txth}`>
-    <div class="space-y-3 px-6 md:px-12 py-8 relative z-10">
-      <h2 class="text-center font-dyna text-4xl">{akad}</h2>
-      <p class="text-lg font-bold flex gap-2">
-        <Icon name="mdi:date-range" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
+<div class=`grid gird-cols-1 md:grid-cols-2 max-w-2xl w-full mx-auto justify-center items-center gap-4 mt-5 *:mx-auto *:border-[1px] *:rounded-2xl *:h-full *:w-full *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] *:before:content-[''] *:before:absolute *:before:opacity-25 *:before:left-0 *:before:w-full *:before:h-full *:before:rounded-2xl ${important} ${primaryClassesFirst}`>
+  <div class=`flip-right opacity-0 relative ${animation} ${bgfs} ${txth}`>
+    <div class="space-y-3 px-6 py-8 md:px-12 relative z-10">
+      <h2 class=`text-center ${font}`>{akad}</h2>
+      <p class="font-bold flex gap-2">
+        <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
         {datefs}
       </p>
       <p class="text-md flex gap-2">
-        <Icon name="mdi:clock-time-eight-outline" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
+        <Icon path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" primary="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
         {timefs}
       </p>
       <p class="flex gap-2">
-        <Icon name="mdi:home" class="w-6 h-6 flex-shrink-0 min-w-max" />
+        <Icon path="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" primary="w-6 h-6 flex-shrink-0 min-w-max" />
         {locationfs}
       </p>
       <p class="flex gap-2 text-left">
-        <Icon name="mdi:google-maps" class="w-6 h-6 flex-shrink-0 min-w-max" />
+        <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-6 h-6 flex-shrink-0 min-w-max" />
         {addressfs}
       </p>
-      <div class="group">
-        <a href={mapsfs}>
-          <button
-            class={`mx-auto mt-8 flex items-center justify-center rounded-full px-4 py-2 text-center text-sm font-medium shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${txfs} ${bgth}`}
-          >
-            Google Maps
-            <Icon name="mdi:google-maps" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
-          </button>
-        </a>
-      </div>
+      <Button href={mapsfs} button={button} txfs={txfs} bgth={bgth} title="Google Maps" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4">
     </div>
   </div>
-  <div class=`flip-left opacity-0 relative ${before} ${txth}`>
+  <div class=`flip-left opacity-0 relative ${animation} ${bgfs} ${txth}`>
     <div class="space-y-3 px-6 md:px-12 py-8 relative z-10">
-      <h2 class="text-center font-dyna text-4xl">{resepsi}</h2>
-      <p class="text-lg font-bold flex gap-2">
-        <Icon name="mdi:date-range" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
+      <h2 class=`text-center ${font}`>{resepsi}</h2>
+      <p class="font-bold flex gap-2">
+        <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
         {datesc}
       </p>
       <p class="text-md flex gap-2">
-        <Icon name="mdi:clock-time-eight-outline" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
+        <Icon path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" primary="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
         {timesc}
       </p>
       <p class="flex gap-2">
-        <Icon name="mdi:home" class="w-6 h-6 flex-shrink-0 min-w-max" />
+        <Icon path="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" primary="w-6 h-6 flex-shrink-0 min-w-max" />
         {locationsc}
       </p>
       <p class="flex gap-2 text-left">
-        <Icon name="mdi:google-maps" class="w-6 h-6 flex-shrink-0 min-w-max" />
+        <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-6 h-6 flex-shrink-0 min-w-max" />
         {addresssc}
       </p>
-      <div class="group">
-        <a href={mapssc}>
-          <button
-            class={`mx-auto mt-8 flex items-center justify-center rounded-full px-4 py-2 text-center text-sm font-medium shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${txfs} ${bgth}`}
-          >
-            Google Maps
-            <Icon name="mdi:google-maps" class="w-6 h-6 flex-shrink-0 min-w-[1.5rem]" />
-          </button>
-        </a>
+      <Button href={mapssc} button={button} txfs={txfs} bgth={bgth} title="Google Maps" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4">
+    </div>
+  </div>
+  
+</div>
+
+<div class=`relative flex flex-col sm:flex-row gap-6 items-center justify-center max-w-sm sm:max-w-xl mx-auto mt-12 ${important} ${primaryClassesSecond}`>
+  <div class=`flip-left opacity-0 relative bg-cover bg-center rounded-full my-auto flex flex-col items-center w-full h-screen before:content-[''] before:absolute before:h-full before:w-full before:bg-black/50 before:rounded-full before:z-10 ${animation}`
+  style=`background-image: url('${dekorfv}')`> 
+    <img src=`${imgstory1}` alt="JejakBahagia" class="absolute w-full h-full p-2 bg-cover bg-center rounded-full">
+    <div class=`relative flex flex-col items-center justify-center w-full h-full py-6 px-6 font-poppins my-auto z-20 mx-auto text-center ${txfs}`>
+      <h2 class=`text-center text-4xl ${font}`>{akad}</h2>
+      <img src=`${dekorsx}` class="w-28 h-28" alt="JejakBahagia">
+      <p class="text-lg uppercase">{dayfs}</p>
+      <div class=`flip-up opacity-0 flex flex-row jusfity-evenly items-center w-full border-y-2 py-3 *:w-full *:text-md *:uppercase ${animation}`>
+        <p>{month}</p>
+        <div class="!text-5xl font-bold uppercase">{datefs}</div>
+        <p>{year}</p>
+      </div>
+      <div class="text-sm pt-5 flex flex-col items-center">
+        <p class="flex items-center">
+          <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+          {timefs}
+        </p>
+        <p>{locationfs}</p>
+        <p>{addressfs}</p>
+        <Button href={mapsfs} button={button} txfs={txfs} bgth={bgth} title="Google Maps" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4">
+      </div>
+    </div>
+  </div>
+  <div
+  class=`flip-right opacity-0 relative z-50 bg-cover bg-center rounded-full my-auto flex flex-col items-center w-full h-screen before:content-[''] before:absolute before:h-full before:w-full before:bg-black/50 before:rounded-full before:z-10 ${animation}`
+  style=`background-image: url('${dekorfv}')`>
+    <img src=`${imgstory2}` alt="JejakBahagia" class="absolute w-full h-full p-2 bg-cover bg-center rounded-full">
+    <div class=`relative flex flex-col items-center justify-center w-full h-full py-6 px-6 font-poppins my-auto z-20 mx-auto text-center ${txfs}`>
+      <h2 class=`text-center text-4xl ${font}`>{resepsi}</h2>
+      <img src=`${dekorsx}` class="w-28 h-28" alt="JejakBahagia">
+      <p class="text-lg uppercase">{daysc}</p>
+      <div class=`flip-up opacity-0 flex flex-row jusfity-evenly items-center w-full border-y-2 py-3 *:w-full *:text-md *:uppercase ${animation}`>
+        <p>{month}</p>
+        <div class="!text-5xl font-bold uppercase">{datesc}</div>
+        <p>{year}</p>
+      </div>
+      <div class="text-sm pt-5 flex flex-col items-center">
+        <p class="flex items-center">
+          <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+          {timesc}
+        </p>
+        <p>{locationsc}</p>
+        <p>{addresssc}</p>
+        <Button href={mapssc} button={button} txfs={txfs} bgth={bgth} title="Google Maps" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4">
       </div>
     </div>
   </div>

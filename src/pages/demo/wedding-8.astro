@@ -1,6 +1,6 @@
 ---
 import Noheader from '../../layouts/noheader.astro';
-import { Icon } from 'astro-icon/components';
+import Icon from "../../components/icon.astro";
 import Namatamu from '../../layouts/namatamu.astro'
 import Payment from '../../layouts/payment.astro'
 import Rsvp from '../../layouts/rsvp.astro'
@@ -10,6 +10,7 @@ import Audio from '../../layouts/audio.astro'
 import Animation from '../../layouts/animation.astro';
 import Gallery from "../../layouts/gallery.astro";
 import Card from '../../layouts/card.astro';
+import Decor from '../../layouts/decor.astro';
 
 let {frontmatter, count} = Astro.props;
 
@@ -31,6 +32,7 @@ if(!frontmatter) {
   data["bdr"] = 'border-sky-100'
   data["from"] = 'from-sky-800'
   data["before"] = 'before:bg-sky-800'
+  data["display"] = 'block'
 
   data["cover"] = '/assets/img-6.webp'
   data["imgsc"] = '/assets/img-20.webp'
@@ -129,30 +131,14 @@ data["datefs"] = "Jumat, 05 Januari 2030"
 
   <input type="checkbox" id="toggle" class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear " />
   <section class=`animasi1 relative h-screen bg-cover bg-center overflow-hidden peer-checked:h-0 peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear peer-checked:delay-500 before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.imgsc})`}>
-    <div
-      class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-      <div class="fade-right opacity-0 -right-5 -top-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="right-0 top-0"
-          alt="JejakBahagia"
-        />
-      </div>
-      <div class="fade-left opacity-0 -bottom-5 -left-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="rotate-180"
-          alt="JejakBahagia"
-        />
-      </div>
-    </div>
+    <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
     <div class=`container h-screen py-20 mx-auto flex flex-col justify-between items-center relative z-50 ${frontmatter.txfs}`>
-      <h4 class="fade-left opacity-0 text-sm md:text-xl mt-8 tracking-widest font-poppins font-semibold">
-          WEDDING INVITATION
+      <h4 class="fade-left opacity-0 text-sm md:text-xl mt-8 tracking-widest font-poppins font-semibold uppercase">
+          Undangan Pernikahan
       </h4>
-      <div class="fade-down opacity-0 flex flex-col sm:flex-row gap-2 text-center font-great font-thin text-center text-6xl lg:text-7xl">
+      <div class="fade-down opacity-0 flex flex-col sm:flex-row gap-2 text-center font-alex font-thin text-center text-6xl lg:text-7xl">
         <span>{frontmatter.female }</span>
-        <span> & </span> 
+        <span class="font-alex font-normal"> & </span> 
         <span> {frontmatter.male } </span> 
       </div>
       <div class="text-center">
@@ -165,163 +151,89 @@ data["datefs"] = "Jumat, 05 Januari 2030"
           
           <label
             for="toggle" id="toaudio"
-            class=`fade-left opacity-0 w-fit mx-auto mt-5 px-6 py-2 relative rounded-full font-bold flex gap-1 ${frontmatter.txth} ${frontmatter.bgfs}`>Open Invitation </label>
+            class=`fade-left opacity-0 w-fit mx-auto mt-5 px-6 py-2 relative rounded-full font-bold flex gap-1 ${frontmatter.txth} ${frontmatter.bgfs}`>Buka Undangan </label>
       </div>
     </div>
   </section>
   <main id="myDIV" class="hidden peer-checked:block scroll-smooth">
     <section class=`animasi2 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.bg})`}>
-      <div
-        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-        <div class="fade-right opacity-0 -right-5 -top-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-        <div class="fade-left opacity-0 -bottom-5 -left-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="rotate-180"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
       <div class=`container h-screen pb-20 mx-auto flex flex-col justify-center items-center relative z-50 ${frontmatter.txfs}`>        
           <div class="text-center">
               <h1 class="fade-down opacity-0 text-sm md:text-xl mt-8 tracking-widest font-poppins font-semibold">THE WEDDING OFF
               </h1>
               <div
-              class="fade-down opacity-0 flex flex-col sm:flex-row gap-2 text-center font-great font-thin text-center text-6xl lg:text-7xl">
+              class="fade-down opacity-0 flex flex-col sm:flex-row gap-2 text-center font-alex font-thin text-center text-6xl lg:text-7xl">
               <span>{frontmatter.female }</span>
-              <span> & </span> 
+              <span class="font-alex font-normal"> & </span> 
               <span> {frontmatter.male } </span> 
             </div>
           </div>
-          <div  data-count={frontmatter.countdown} id="timer" class=`fade-up opacity-0 grid grid-cols-2 md:grid-cols-4 gap-8 justify-center text-center items-center mt-20 sm:px-20 max-w-screen-lg mx-auto *:text-center *:text-4xl *:sm:text-6xl *:font-bold *:p-1 ${frontmatter.txsc}`>
-          </div>
+          <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
         </div>
     </section>
     <section class=`animasi3 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
-      <div
-        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-        <div class="fade-right opacity-0 -right-5 -top-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-        <div class="fade-left opacity-0 -bottom-5 -left-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="rotate-180"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
-      </div>
-        <div class="container h-screen px-6 py-20 mx-auto relative">
-          <div class=`${frontmatter.txsc}`>
-            <div class="text-center pt-20 w-full max-w-screen-md mx-auto">
-              <h1 class="fade-down opacity-0 text-center font-great text-6xl lg:text-8xl">
-                Quote
-              </h1>
-              <p class="italic font-poppins fade-right opacity-0">{frontmatter.quote}</p>
-            </div>
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
+      <div class="container h-[50vh] px-6 py-20 mx-auto relative">
+        <div class=`${frontmatter.txsc}`>
+          <div class="text-center w-full max-w-screen-md mx-auto">
+            <h1 class="fade-left opacity-0 text-center font-alex text-6xl lg:text-8xl">
+              Quote
+            </h1>
+            <p class="fade-right opacity-0 italic font-poppins pt-5 px-6">{frontmatter.quote}</p>
           </div>
         </div>
+      </div>
     </section>
     <section class=`animasi3 relative bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden before:content-[''] before:bg-gradient-to-b before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}`
     style={`background-image:url(${frontmatter.cover})`}>
-    <div
-      class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-      <div class="fade-right opacity-0 -right-5 -top-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="right-0 top-0"
-          alt="JejakBahagia"
-        />
-      </div>
-      <div class="fade-left opacity-0 -bottom-5 -left-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="rotate-180"
-          alt="JejakBahagia"
-        />
-      </div>
-    </div>
-      <div class="container mx-auto px-6 py-20 relative">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-12 md:gap-y-40 gap-x-16 max-w-4xl mx-auto mt-12">
-          <div class="relative items-center justify-center mx-auto w-full">
-            <div class="text-center overflow-hidden flex items-center justify-center md:items-end md:justify-end">
-              <div class="fade-right relative flex items-center justify-center w-72">
-                <div class=`w-56 h-64 bg-cover bg-center relative rounded-t-full border-4 ${frontmatter.bdr}`
-                style={`background-image:url('${frontmatter.pm1}')`}>
-                </div>
-              </div>
+    <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
+      <div class="container mx-auto px-2 sm:px-6 py-20 relative">
+        <div class="grid grid-cols-2 gap-y-12 md:gap-y-20 gap-x-4 max-w-4xl mx-auto mt-12 *:w-full">
+          <div class="fade-right relative flex items-center justify-center md:items-end md:justify-end">
+            <div class=`w-56 h-64 bg-cover bg-center relative rounded-t-full border-4 ${frontmatter.bdr}`
+            style={`background-image:url('${frontmatter.pm1}')`}>
             </div>
           </div>
-          <div class="relative text-center sm:text-start mx-auto w-full">
-            <h3 class=`fade-down opacity-0 text-6xl mt-6 font-great ${frontmatter.txfs}`>{ frontmatter.female }</h3>
-            <div class=`fade-up opacity-0 space-y-3 ${frontmatter.txfs}`>
-              <p class=`text-xl font-bold mx-auto sm:mx-0 border-b w-max ${frontmatter.bdr}`>{ frontmatter.fullfemale }</p>
+          <div class="fade-down opacity-0 relative mx-auto">
+            <h3 class=`text-6xl font-alex ${frontmatter.txfs}`>{ frontmatter.female }</h3>
+            <div class=`space-y-3 ${frontmatter.txfs}`>
+              <p class=`text-xl font-bold mx-auto sm:mx-0 border-b sm:w-max ${frontmatter.bdr}`>{ frontmatter.fullfemale }</p>
               <p class="text-lg">{frontmatter.childfemale}</p>
               <p class=`text-lg font-bold`>
                 { frontmatter.parentfemale }</p>
               <p>{frontmatter.cityfemale}</p>
-              <a href={`https://www.instagram.com/${frontmatter.instagramfemale}`} class="flex flex-row gap-2 items-center justify-center sm:justify-start">
-                <Icon name="mdi:instagram" class=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}` />
+              <a href={`https://www.instagram.com/${frontmatter.instagramfemale}`} class="flex flex-row gap-2 items-center">
+                <Icon path="mdi:instagram" primary=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}` />
               </a>
             </div>
           </div>
-          <div class="relative items-center justify-center mx-auto w-full sm:order-last">
-            <div class="text-center overflow-hidden flex items-center justify-center md:items-start md:justify-start">
-              <div class="fade-right relative flex items-center justify-center w-72">
-                <div class=`w-56 h-64 bg-cover bg-center relative rounded-t-full border-4 ${frontmatter.bdr}`
-                style={`background-image:url('${frontmatter.pm2}')`}>
-                </div>
-              </div>
+          <div class="fade-down opacity-0 relative text-right mx-auto w-full">
+            <h3 class=`text-6xl font-alex ${frontmatter.txfs}`>{ frontmatter.male }</h3>
+            <div class=`space-y-3 ${frontmatter.txfs}`>
+              <p class=`text-xl mx-auto sm:mx-0 font-bold border-b sm:w-max ${frontmatter.bdr} sm:ml-auto`>{ frontmatter.fullmale }</p>
+              <p class="text-lg">{frontmatter.childmale}</p>
+              <p class="text-lg font-bold">
+                { frontmatter.parentmale }</p>
+              <p>{frontmatter.citymale}</p>
+              <a href={`https://www.instagram.com/${frontmatter.instagrammale}`} class="flex flex-row gap-2 items-center justify-end">
+                <Icon path="mdi:instagram" primary=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}` />
+              </a>
             </div>
+          </div>
+          <div class="fade-left relative flex">
+            <div class=`w-56 h-64 bg-cover bg-center relative rounded-t-full border-4 ${frontmatter.bdr}`
+            style={`background-image:url('${frontmatter.pm2}')`}>
             </div>
-            <div class="relative text-center sm:text-start mx-auto w-full">
-              <h3 class=`fade-down opacity-0 text-6xl mt-6 font-great sm:text-right ${frontmatter.txfs}`>{ frontmatter.male }</h3>
-              <div class=`fade-up opacity-0 space-y-3 sm:text-end ${frontmatter.txfs}`>
-                <p class=`text-xl mx-auto sm:mx-0 font-bold border-b w-max ${frontmatter.bdr} sm:ml-auto sm:text-right`>{ frontmatter.fullmale }</p>
-                <p class="text-lg">{frontmatter.childmale}</p>
-                <p class="text-lg font-bold">
-                  { frontmatter.parentmale }</p>
-                <p>{frontmatter.citymale}</p>
-                <a href={`https://www.instagram.com/${frontmatter.instagrammale}`} class="flex flex-row gap-2 items-center justify-center sm:justify-end">
-                  <Icon name="mdi:instagram" class=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}` />
-                </a>
-              </div>
-            </div>
+          </div>
         </div>
       </div>
     </section>
     <section class=`animasi4 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
-      <div
-        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-        <div class="fade-right opacity-0 -right-5 -top-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-        <div class="fade-left opacity-0 -bottom-5 -left-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="rotate-180"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
       <div class="container mx-auto py-20 px-6">
-        <div class=`text-center my-5 mb-10 ${frontmatter.txsc}`>
-          <h1 class="fade-left opacity-0 text-center font-great text-5xl lg:text-8xl">
+        <div class=`text-center my-5 mb-10 ${frontmatter.txth}`>
+          <h1 class="fade-left opacity-0 text-center font-alex text-5xl lg:text-8xl">
             Wedding Day
           </h1>
         </div>
@@ -329,44 +241,16 @@ data["datefs"] = "Jumat, 05 Januari 2030"
         <iframe src=`${frontmatter.linkmaps}` style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class=`fade-up opacity-0 mx-auto mt-12 w-full max-w-3xl h-96 rounded-lg p-1 ${frontmatter.bgth}`></iframe>
       </div>
     </section>
-    <section class=`animasi5 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
-      <div
-        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-        <div class="fade-right opacity-0 -right-5 -top-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-        <div class="fade-left opacity-0 -bottom-5 -left-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="rotate-180"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
-      <Gallery txsc={frontmatter.txsc} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} imgstory4={frontmatter.imgstory4} imgstory5={frontmatter.imgstory5} imgstory6={frontmatter.imgstory6} imgstory7={frontmatter.imgstory7} imgstory8={frontmatter.imgstory8} font="great" />
+    <section class=`animasi5 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from} ${frontmatter.display}` style={`background-image:url(${frontmatter.cover})`}>
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
+      <Gallery txsc={frontmatter.txth} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} imgstory4={frontmatter.imgstory4} imgstory5={frontmatter.imgstory5} imgstory6={frontmatter.imgstory6} imgstory7={frontmatter.imgstory7} imgstory8={frontmatter.imgstory8} font="alex" />
     </section>
     <section
       class="animasi7 relative bg-cover bg-center overflow-hidden"
       style={`background-image:url(${frontmatter.cover})`}>
-      <div class="absolute overflow-hidden z-20 w-full h-[100%] [&>*]:absolute [&>*]:object-cover [&>*]:w-1/3 [&>*]:md:w-1/5"
-      >
-        <div class="fade-down opacity-0">
-          <img src=`${frontmatter.dekorsc}` class="" alt="JejakBahagia" />
-        </div>
-        <div class="fade-up opacity-0 right-0 top-0">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
       <div class="container py-20 px-6 text-center mx-auto relative">
-        <div class:list={[`${frontmatter.txth}`]}>
+        <div class=`${frontmatter.txth}`>
           <h2 class="fade-right opacity-0 text-5xl md:text-6xl font-alex">
             Wedding Gift
           </h2>
@@ -380,31 +264,17 @@ data["datefs"] = "Jumat, 05 Januari 2030"
       </div>
     </section>
     <section class=`animasi6 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
-      <div
-        class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm">
-        <div class="fade-right opacity-0 -right-5 -top-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="right-0 top-0"
-            alt="JejakBahagia"
-          />
-        </div>
-        <div class="fade-left opacity-0 -bottom-5 -left-5">
-          <img
-            src=`${frontmatter.dekorfs}`
-            class="rotate-180"
-            alt="JejakBahagia"
-          />
-        </div>
-      </div>
+      
+      <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 hidden" primary2="block" primary3="rotate-180" primary4="hidden rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
+
       <div class="container py-20 z-50 px-6 text-center mx-auto relative">
-        <div class:list={[`text-center my-5 mb-10 ${frontmatter.txth}`]}>
+        <div class=`text-center my-5 mb-10 ${frontmatter.txth}`>
           <h2 class="fade-right opacity-0 text-6xl lg:text-8xl font-alex">
              Doa & Ucapan 
           </h2>
         </div>
 
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
           
       </div>
       <Footerpost />
@@ -414,7 +284,6 @@ data["datefs"] = "Jumat, 05 Januari 2030"
       <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">
     </audio>
     <Animation /> 
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>
 

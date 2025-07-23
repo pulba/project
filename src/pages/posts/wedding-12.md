@@ -3,7 +3,7 @@ layout: '../demo/wedding-12.astro'
 slug: 'posts/wedding-12'
 title: 'Tema Jawa |'
 name: 'Tema Jawa'
-desc: 'Tema 12'
+desc: 'Tema Jawa'
 price: 'Rp99.000'
 unprice: 'Rp250.000'
 number: 12
@@ -98,6 +98,7 @@ daysc: "Sabtu"
 dayth: "Minggu"
 month: "Januari"
 year: "2025"
+yearsc: "2026"
 timefs: "08:00 - 09:00 WIB"
 timesc: "10:00 - 11:00 WIB"
 timeth: "13:00 - end WIB"

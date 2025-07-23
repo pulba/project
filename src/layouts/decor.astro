@@ -1,0 +1,83 @@
+---
+export const defaultDekorProps = {
+  dekor1: '',
+  dekor2: '',
+  dekor3: '',
+  dekor4: '',
+  primary1: '',
+  primary2: '',
+  primary3: '',
+  primary4: '',
+  dekortop: '',
+  dekorbt: '',
+  dekorlf: '',
+  dekorend: '',
+  hidden1: 'block',
+  hidden2: 'hidden',
+  hidden3: 'hidden',
+  hidden4: 'hidden',
+  hiddenProps: ['', '', '', ''],
+  animations: ['fade-left', 'fade-right', 'fade-up', 'fade-down',],
+  positions: [
+    '-left-0 -top-0', // Untuk dekor1
+    '-right-0 -top-0', // Untuk dekor2
+    '-bottom-0 -left-0', // Untuk dekor3
+    '-right-0 -bottom-0', // Untuk dekor4
+  ],
+};
+
+
+const props = {
+  ...defaultDekorProps,
+  ...Astro.props,
+};
+
+---
+
+<div>
+  <!-- Dekor Tema Biasa -->
+  {props.hidden1 && (
+    <div class={`absolute *:absolute overflow-hidden w-full h-full z-20 ${props.hidden1}`}>
+      {['dekor1', 'dekor2', 'dekor3', 'dekor4'].map((key, index) => (
+        <div
+              class={`${props.animations[index] || 'fade-left'} opacity-0 object-cover w-3/5 sm:w-1/3 lg:w-1/4 ${props.hiddenProps?.[index] || ''} ${props.positions[index] || ''}`} 
+            >
+              <img
+                src={props[key]}
+                alt="JejakBahagia"
+                class={props[`primary${index + 1}`]}
+              />
+            </div>
+
+      ))}
+    </div>
+  )}
+
+  <!-- Dekor Tema Adat -->
+  {props.hidden2 && (
+    <div class={`top-0 overflow-hidden w-full h-max-72 h-72 *:h-20 *:md:h-28 z-20 ${props.hidden2}`}>
+      <img src={props.dekortop} class="absolute w-full h-full -rotate-180" alt="JejakBahagia" />
+    </div>
+  )}
+  {props.hidden3 && (
+    <div class={`bottom-0 overflow-hidden w-full h-max-72 h-72 *:h-20 *:md:h-28 z-20 ${props.hidden3}`}>
+      <img src={props.dekorbt} class="absolute w-full h-max bottom-0" alt="JejakBahagia" />
+    </div>
+  )}
+
+  {props.hidden4 && (
+    <div class={`fade-up opacity-0 bottom-0 w-full max-[500px]:h-64 h-96 z-10 *:absolute *:flex items-end *:justify-end *:-bottom-5 *:w-1/2 *:sm:w-1/2 *:lg:w-1/3 *:xl:w-1/4 *:h-full ${props.hidden4}`}>
+      <div class="-left-20 ">
+        <img src={props.dekorlf} class="object-cover object-bottom " alt="JejakBahagia" />
+      </div>
+      <div class="-right-6">
+        <img
+          src={props.dekorend}
+          class="object-cover transform scale-x-[-1]"
+          alt="JejakBahagia"
+        />
+      </div>
+    </div>
+  )}
+  
+</div>

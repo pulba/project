@@ -1,0 +1,42 @@
+---
+const {
+  imgstory1,
+  imgstory2,
+  imgstory3,
+  storyfs,
+  storysc,
+  storyth,
+  txth,
+  font,
+} = Astro.props;
+---
+
+<div class="splide h-full overflow-hidden my-10 max-w-screen-lg mx-auto">
+  <div class="splide__track h-full overflow-visible">
+    <ul
+      class="splide__list flex gap-4 *:bg-white *:p-4 *:rounded-xl *:space-y-2"
+    >
+      <li class="splide__slide w-full h-full bg-white overflow-hidden">
+        <img src={imgstory1} alt="Foto 1" class="object-cover aspect-square" />
+        <p class=`!text-3xl ${font} ${txth}`>Awal Cerita</p>
+        <p class=`max-w-prose font-poppins text-sm  ${txth}`>
+          {storyfs}
+        </p>
+      </li>
+      <li class="splide__slide w-full bg-white overflow-hidden">
+        <img src={imgstory2} alt="Foto 1" class="object-cover aspect-square" />
+        <p class=`!text-3xl ${font} ${txth}`>Lamaran</p>
+        <p class=`max-w-prose font-poppins text-sm ${txth}`>
+          {storysc}
+        </p>
+      </li>
+      <li class="splide__slide w-full bg-white overflow-hidden">
+        <img src={imgstory3} alt="Foto 1" class="object-cover aspect-square" />
+        <p class=`!text-3xl ${font} ${txth}`>Pernikahan</p>
+        <p class=`max-w-prose font-poppins text-sm ${txth}`>
+          {storyth}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

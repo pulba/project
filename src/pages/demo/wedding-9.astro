@@ -1,6 +1,6 @@
 ---
 import Noheader from '../../layouts/noheader.astro';
-import {Icon } from 'astro-icon/components';
+import Icon from "../../components/icon.astro";
 import Namatamu from '../../layouts/namatamu.astro'
 import Payment from '../../layouts/payment.astro'
 import Rsvp from '../../layouts/rsvp.astro'
@@ -173,8 +173,7 @@ data["datefs"] = "Jumat, 05 Januari 2030"
               <span> {frontmatter.male } </span> 
             </div>
           </div>
-          <div  data-count={frontmatter.countdown} id="timer" class=`fade-up opacity-0 grid grid-cols-4 md:grid-cols-4 gap-4 justify-center text-center items-center mt-20 sm:px-20 max-w-xl mx-auto *:text-center *:text-2xl *:font-bold *:bg-red-100 *:rounded-lg *:p-2 ${frontmatter.txsc}`>
-          </div>
+          <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
         </div>
     </section>
     <section class=`animasi3 relative bg-cover bg-center overflow-hidden before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}` style={`background-image:url(${frontmatter.cover})`}>
@@ -227,8 +226,8 @@ data["datefs"] = "Jumat, 05 Januari 2030"
                       class="flex flex-row gap-2 items-center"
                     >
                       <Icon
-                        name="mdi:instagram"
-                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                        path="mdi:instagram"
+                        primary={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
                       />
                     </a>
                   </div>
@@ -262,8 +261,8 @@ data["datefs"] = "Jumat, 05 Januari 2030"
                       class="flex flex-row gap-2 items-center"
                     >
                       <Icon
-                        name="mdi:instagram"
-                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                        path="mdi:instagram"
+                        primary={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
                       />
                     </a>
                   </div>
@@ -306,7 +305,7 @@ data["datefs"] = "Jumat, 05 Januari 2030"
           <h2 class="fade-right opacity-0 mt-5">Mohon Konfirmasi Kehadiran Anda</h2>
         </div>
 
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
           
       </div>
       <Footerpost />
@@ -316,7 +315,6 @@ data["datefs"] = "Jumat, 05 Januari 2030"
       <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">
     </audio>
     <Animation /> 
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>
 

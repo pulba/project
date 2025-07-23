@@ -1,65 +1,203 @@
 ---
-import Page from '../layouts/page.astro';
-import '@fontsource-variable/josefin-sans';
-import { Icon } from 'astro-icon/components';
-const posts = await Astro.glob('../pages/posts/*.md');
+import Page from "../layouts/page.astro";
+import Product from "../layouts/product.astro";
+
+type MarkdownModule = {
+  metadata: {
+    title?: string;
+    number?: number;
+    slug?: string;
+    img?: { url?: string; alt?: string };
+    link?: string;
+    desc?: string;
+    price?: string;
+    unprice?: string;
+  };
+  default: any;
+};
+
+const loadFiles = async (files: Record<string, () => Promise<any>>) => {
+  return await Promise.all(
+    Object.entries(files).map(async ([path, resolver]) => {
+      const post = await resolver();
+      const metadata = post.frontmatter ?? post['frontmatter'] ?? {}; // fallback aman
+
+      const slug = metadata.slug || path.split('/').pop()?.replace('.md', '') || '';
+
+      return {
+        frontmatter: metadata,
+        slug,
+        component: post.default
+      };
+    })
+  );
+};
+
+// ✅ Gunakan string literal, TANPA `${}`
+const natureFiles = import.meta.glob('../pages/nature/*.md');
+const adatFiles = import.meta.glob('../pages/adat/*.md');
+const floralFiles = import.meta.glob('../pages/floral/*.md');
+const popularFiles = import.meta.glob('../pages/popular/*.md');
+
+const [nature, adat, floral, popular] = await Promise.all([
+  loadFiles(natureFiles),
+  loadFiles(adatFiles),
+  loadFiles(floralFiles),
+  loadFiles(popularFiles),
+]);
 ---
 
-<Page title="Katalog |" name="Katalog" subs="Dengan adanya preset kamu tinggal pilih design undangan sesuai dengan yang kamu mau!">
-
+<Page
+  title="Katalog"
+  name="Katalog"
+  subs="Dengan adanya preset kamu tinggal pilih design undangan sesuai dengan yang kamu mau!"
+>
   <div class="mx-auto mt-5 w-full">
-    <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Reguler</h5>
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8"
+    >
       {
-        posts
-          .filter(post => post.frontmatter.number !== undefined) 
-          .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-          .slice(0, 30)
+        adat
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(0, 10)
           .map((post) => (
-            <div class="relative px-2 py-4 sm:px-6 bg-white rounded-lg shadow-[4.0px_8.0px_8.0px_rgba(29,78,216,0.38)]">
-              <div class="relative">
-                <div class="overflow-hidden rounded-lg">
-                  <div class="w-full object-cover">
-                    <a href={"/"+post.frontmatter.slug}>
-                      <img
-                        src={post.frontmatter.img?.url}
-                        alt={post.frontmatter.img?.alt}
-                      />
-                    </a>
-                  </div> 
-                </div>
-                <p class="flex flex-row gap-2 items-center font-bold text-lg sm:text-xl pt-4 text-left text-gray-600 capitalize">
-                  <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
-                </p>
-                <div class="flex flex-col sm:flex-row items-center gap-2">
-                  <p class="w-full font-bold text-red-700 text-start text-sm line-through">
-                    {post.frontmatter.unprice}
-                  </p>
-                <p class="w-full font-bold text-blue-700 text-xl sm:text-2xl">
-                  {post.frontmatter.price}
-                </p>
-                </div>
-                <div class="mt-4 space-y-4 sm:space-y-0 sm:flex flex-row items-center justify-between gap-2 *:w-full *:sm:w-max *:flex *:flex-row *:items-center *:justify-center *:gap-1 *:text-white *:px-4 *:py-2 *:rounded-md">
-                  <a href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${post.frontmatter.name}* ya`
-                    class="bg-blue-700">
-                    <Icon
-                      name="mdi:navigation-variant"
-                      class="w-6 h-6 text-white"
-                    />
-                    Pesan
-                  </a>
-                  <a
-                    href={"/"+post.frontmatter.slug}
-                    class="bg-gray-600">
-                    {post.frontmatter.link}{" "}
-                    <Icon name="mdi:eye" class="w-4 h-4" />
-                    Preview
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
+          ))
+      }
+      {
+        floral
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(0, 10)
+          .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
+          ))
+      }
+      {
+        nature
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(0, 10)
+          .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
           ))
       }
     </div>
   </div>
-</Archive>
+  <div class="mx-auto mt-5 w-full">
+    <h2 class="text-center font-bold text-gray-700 mb-6 text-3xl">Tanpa Foto</h2>
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8">
+      {
+        adat
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(10, 20)
+          .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
+          ))
+      }
+      {
+        floral
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(10, 20)
+          .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
+          ))
+      }
+      {
+        nature
+          .filter((post) => post.frontmatter.number !== undefined)
+          .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+          .slice(10, 20)
+          .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+            />
+          ))
+      }
+    </div>
+  </div>
+  <div class="fixed bottom-5 right-5 z-20">
+    <div class="flex items-end justify-end mx-auto">
+      <a
+        href="https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau konsultasi undangan digital dong!"
+        target="_blank"
+      >
+        
+      </a>
+    </div>
+  </div>
+</Page>

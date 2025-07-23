@@ -24,6 +24,7 @@ txth: 'text-gray-800'
 bdr: 'border-yellow-100'
 from: 'from-sky-800'
 before: 'before:bg-sky-800'
+display: 'block'
 
 # Img header
 cover: '/assets/dekor86.webp'

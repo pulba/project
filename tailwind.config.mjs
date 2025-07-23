@@ -6,53 +6,23 @@ module.exports = {
   theme: {
     fontFamily: {
       josefin: ["Josefin Sans Variable", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
+      cinzel: ["Cinzel Decorative", "system-ui"],
+      cormorant: ["Cormorant Variable", "serif"],
+      alex: ["Alex Brush", "cursive"],
+      dyna: ["Dynalight", "cursive"],
+      great: ["Great Vibes", "cursive"],
+      haviland: ["Mr De Haviland", "cursive"],
+      kaushan: ["Kaushan Script", "cursive"],
       montecarlo: ["MonteCarlo", "cursive"],
       nautigal: ["The Nautigal", "cursive"],
-      poppins: ["Poppins", "sans-serif"],
-      haviland: ["Mr De Haviland", "cursive"],
-      great: ["Great Vibes", "cursive"],
       pacifico: ["Pacifico", "cursive"],
-      dyna: ["Dynalight", "cursive"],
-      alex: ["Alex Brush", "cursive"],
-      kaushan: ["Kaushan Script", "cursive"],
-      cormorant: ["Cormorant Variable", "serif"],
-      cinzel: ["Cinzel Decorative", "system-ui"],
+      dafoe: ["Mr Dafoe", "cursive"],
+      birth: ["Birthstone", "cursive"],
+      smooch: ["Smooch", "cursive"],
+      amiri: ["Amiri", "serif"],
     },
     extend: {
-      animation: {
-        'zoomin': 'zoomin 3s linear',
-        'zoomout': 'zoomout 4s linear',
-        'fadeleft': 'fadeleft 2s linear',
-        'faderight': 'faderight 2s linear',
-        'fadeup': 'fadeup 2s linear',
-        'fadedown': 'fadedown 2s linear',
-      },
-      keyframes: {
-        zoomin: {
-          '0%': { transform: 'scale(.5)', opacity: 0 },
-          '100%': { transform: 'scale(1)', opacity: 1 },
-        },
-        zoomout: {
-          '0%': { transform: 'scale(1.5)', opacity: 1 },
-          '100%': { transform: 'scale(1)', opacity: 1 },
-        },
-        faderight: {
-          '0%': { transform: 'translateX(-150px)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
-        },
-        fadeleft: {
-          '0%': { transform: 'translateX(150px)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
-        },
-        fadeup: {
-          '0%': { transform: 'translateY(150px)', opacity: 0 },
-          '100%': { transform: 'translateY(0)', opacity: 1 },
-        },
-        fadedown: {
-          '0%': { transform: 'translateY(-150px)', opacity: 0 },
-          '100%': { transform: 'translateY(0)', opacity: 1 },
-        }
-      }
     },
   },
   

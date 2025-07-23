@@ -1,0 +1,16 @@
+---
+const { logo, name, number, classNames } = Astro.props;
+---
+
+<div class={classNames}>
+  <div class="relative z-10 text-center p-4 h-full">
+    <img class="h-auto max-w-16 object-cover float-right" src={logo} alt="Bank Logo">
+    <div class="mt-12 text-left">
+      <p>{name}</p>
+      <span class="copy-content font-bold tracking-widest text-xl">{number}</span>
+    </div>
+    <div class="btn-copy float-right mb-5">
+      <button class="flex bg-gray-500 text-white p-2 text-sm rounded-md copy-btn">Salin Rekening</button>
+    </div>
+  </div>
+</div>

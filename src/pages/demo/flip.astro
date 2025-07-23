@@ -1,0 +1,641 @@
+---
+import Noheader from "../../layouts/noheader.astro";
+import Icon from "../../components/icon.astro";
+import Namatamu from "../../layouts/namatamu.astro";
+import Payment from "../../layouts/payment.astro";
+import Copy from "../../components/copy.astro"
+import BankCard from "../../layouts/BankCard.astro";
+import Rsvp from "../../layouts/rsvp.astro";
+import Countdown from "../../layouts/countdown.astro";
+import Footerpost from "../../layouts/footer-post.astro";
+import Audio from "../../layouts/audio.astro";
+import Animation from "../../layouts/animation.astro";
+import Gallery from "../../layouts/gallery.astro";
+import Splide from '../../layouts/autoscroll.astro'
+import StorySlide from '../../layouts/storySlide.astro';
+import Card from '../../layouts/card.astro';
+import Decor from "../../layouts/decor.astro";
+import Bride from "../../layouts/bride.astro";
+import Shapes from "../../layouts/shapes.astro";
+import Button from "../../components/button.astro";
+import BorderSingle from "../../layouts/borderSingle.astro";
+let { frontmatter } = Astro.props;
+
+if (!frontmatter) {
+  let data = {};
+  data["title"] = "wedding-1";
+  data["type"] = "Diamond 01";
+  data["desc"] = "wedding-1";
+
+  data["bgfs"] = "bg-pink-100";
+  data["bgsc"] = "bg-pink-600";
+  data["bgth"] = "bg-pink-900";
+
+  data["txfs"] = "text-pink-100";
+  data["txsc"] = "text-pink-600";
+  data["txth"] = "text-pink-900";
+  
+  data["fillfs"] = "fill-pink-100";
+  data["fillsc"] = "fill-pink-600";
+  data["fillth"] = "fill-pink-900";
+
+  data["bdr"] = "border-pink-900";
+  data["from"] = "from-pink-100";
+  data["before"] = "before:bg-black";
+  data["display"] = "block";
+  data["styleBs"] = "rounded-full";
+  data["important"] = "!flex-none !w-fit lg:!w-full px-3 [&>div>div]:max-[600px]:justify-start [&>div]:w-full [&>div>p]:text-sm [&>img]:!w-max";
+  data["animation"] = "!opacity-100";
+  data["brideflex"] = "!flex-row";
+  data["primary"] = "block";
+  data["font"] = "font-great";
+  data["button"] = "rounded-full px-4 py-2";
+
+  data["cover"] = "/assets/img-12.webp";
+  data["cvrsc"] = '/assets/img-35.webp';
+  data["cvrth"] = '/assets/img-36.webp';
+  data["cvrfr"] = '/assets/img-38.webp';
+  data["cvrfv"] = '/assets/img-38.webp';
+  // Img kedua mempelai
+  data["dekorsc"] = "/assets/dekor22.webp";
+  data["dekorsc"] = "/assets/dekor23.webp";
+  data["dekorth"] = "/assets/dekor24.webp";
+  data["dekorfr"] = '/assets/dekor64.webp'
+  data["dekorfv"] = '/assets/dekor65.webp'
+  data["dekorsx"] = '/assets/dekor67.webp'
+  // Img kedua mempelai
+  data["pm1"] = "/assets/img-11.webp";
+  data["pm2"] = "/assets/img-12.webp";
+  // Img kedua mempelai
+  data["imgstory1"] = "/assets/img-5.webp";
+  data["imgstory2"] = "/assets/img-6.webp";
+  data["imgstory3"] = "/assets/img-7.webp";
+  data["imgstory4"] = "/assets/img-8.webp";
+  data["imgstory5"] = "/assets/img-9.webp";
+  data["imgstory6"] = "/assets/img-10.webp";
+  data["imgstory7"] = "/assets/img-11.webp";
+  data["imgstory8"] = "/assets/img-12.webp";
+
+  //img story love
+  data["imgstory9"] = "/assets/img-16.webp";
+  data["imgstory10"] = "/assets/img-17.webp";
+  data["imgstory11"] = "/assets/img-18.webp";
+
+  // data mempelai
+  data["male"] = "Remeo";
+  data["fullmale"] = "Remeo Alexa";
+  data["female"] = "Juliet";
+  data["fullfemale"] = "Juliet Kapolo";
+  data["music"] = "Lagu Pernikahan Kita";
+  data["countdown"] = "June 5, 2025 15:37:25";
+
+  data["childmale"] = "Putra kelima dari Pasangan";
+  data["childfemale"] = "Putri Pertama dari Pasangan";
+  data["parentmale"] = "Joko & Siti";
+  data["parentfemale"] = "Bambang & Mulyani";
+  data["instagrammale"] = "instagram";
+  data["instagramfemale"] = "instagram";
+  
+  //bank
+  data["logoml"] = "/assets/bri.png";
+  data["bankml"] = "BRI";
+  data["namebankml"] = "Remeo Alexa";
+  data["numberbankml"] = "123456789";
+  data["logofml"] = "/assets/bca.png";
+  data["bankfml"] = "BCA";
+  data["namebankfml"] = "Juliet Kapolo";
+  data["numberbankfml"] = "123456789";
+
+  //waktu & tempat acara
+  data["datefs"] = "Jumat, 05 Januari 2030";
+  data["datesc"] = "Jumat, 05 Januari 2030";
+  data["dateth"] = "Jumat, 05 Januari 2030";
+  data["timefs"] = "08:00 - 09:00 WIB";
+  data["timesc"] = "10:00 - 11:00 WIB";
+  data["timeth"] = "13:00 - end WIB";
+  data["addressfs"] = "Masjid Kampus UGM";
+  data["addresssc"] = "Jogja Expo Center";
+  data["addressth"] = "Rumah Mempelai Wanita";
+  data["locationfs"] = "Rumah Mempelai Wanita";
+  data["locationsc"] = "Rumah Mempelai Wanita";
+  data["locationth"] = "Rumah Mempelai Wanita";
+  data["mapsfs"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["mapssc"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["mapsth"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["linkmaps"] ="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041!2d110.3807054!3d-7.7744606!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b4fe07a7f9%3A0x2f7c4fd3d72616bb!2sJl.%20Prof.%20DR.%20Drs%20Notonagoro%2C%20Karang%20Malang%2C%20Caturtunggal%2C%20Kec.%20Depok%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281!5e0!3m2!1sid!2sid!4v1717643524613!5m2!1sid!2sid";
+  data["akad"] = "Akad"
+  data["resepsi"] = "Resepsi";
+
+  
+//story love
+data["storyfs"] = "Di sebuah kafe yang nyaman di tengah kota, dua orang asing, Yanti dan Yanto, tak sengaja bertemu. Yanto, seorang fotografer yang sedang mencari inspirasi untuk proyek terbarunya, sedangkan Yanti, seorang penulis lepas yang sedang mencatat ide-ide baru untuk novel romantisnya, tak menyadari bahwa matanya sedang bertatapan dengan seorang pria tampan di sisi lain kafe."
+  data["storysc"] = "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehilangan Juliet dari hidupnya. Dengan hati yang penuh harap, dia menyiapkan proposal yang tak terlupakan. Di bawah langit malam yang cerah, di taman yang dihiasi dengan ratusan lentera, Romeo berlutut di hadapan Juliet."
+  data["storyth"] = "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
+  
+  data["quote"] = "وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْمَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ"
+  data["atribusi"] = " (Qs. Ar-Rum : 21)";
+  data["kutipan"] = "Dalam tafsir Buya Hamka, Surah Ar-Ruum ayat 21 menegaskan bahwa penciptaan laki-laki dan perempuan berpasangan merupakan satu di antara tanda kebesaran Allah. Diikat dalam simpul tali cinta (mawaddah)  yang saling merindukan dan kasih sayang (rahmah) yang terus mendalam tumbuh hingga menua sampai maut memisahkan.";
+
+  frontmatter = data;
+}
+
+---
+
+<Noheader title={frontmatter.title} desc={frontmatter.desc}>
+  <section>
+    <div class="container flex flex-col justify-center items-center p-2">
+      <div x-data="Rsvp" class="book relative w-full h-[90vh] max-w-sm *:w-full *:h-full *:overflow-hidden *:rounded-l-lg" style="perspective: 1000px;">
+        <div class=`page absolute p-6 flex flex-col justify- items-center gap-6 bg-cover bg-center before:content-[''] before:bg-gradient-to-b before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from} ${frontmatter.bgfs}`
+        style={`background-image:url(${frontmatter.cvrfv})`}>
+          <div class="relative flex flex-col items-center w-full">
+            <h4 class=`text-sm text-center uppercase ${frontmatter.txfs}`>Kami Yang Berbahagia</h4>
+            <h2 class=`text-center !text-4xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${frontmatter.txfs} ${frontmatter.font}`>{frontmatter.female} <span class="text-2xl">&</span> {frontmatter.male}</h2>
+          </div>
+          <p class=`relative text-center text-sm font-bold italic max-w-xs w-full ${frontmatter.txfs}`>{frontmatter.kutipan}</p>
+        </div>
+        <div class=`page absolute px-6 bg-cover bg-center before:content-[''] before:opacity-70 before:inset-0 before:bg-cover before:absolute *:relative ${frontmatter.before} ${frontmatter.bgfs}` style={`background-image:url(${frontmatter.cvrth})`}
+          x-show="hasData">
+          <h6 class=`${frontmatter.txth} ${frontmatter.font} !text-5xl mt-5`>
+            Seutas <span class="font-poppins">Do'a</span> 
+          </h6>
+            <div id="output" class=`w-full max-w-xl mx-auto px-2 overflow-auto space-y-6 overflow-y-scroll h-[70vh]`>
+              <template x-for="user in data" :key="user.id">
+                <div
+                  class=`${frontmatter.bgfs} flex flex-col leading-1.5 w-full p-4 border-gray-200 rounded-e-xl rounded-es-xl border border-gray-400 font-poppins shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]`
+                  id="display">
+                  <div class="flex items-center justify-between">
+                    <p
+                      x-text="user.name"
+                      class=`${frontmatter.txth} text-md font-semibold capitalize`>
+                    </p>
+                    <p
+                      x-text="user.present ? 'Hadir' : 'Tidak Hadir'"
+                      x-bind:class=`{
+                        '${frontmatter.txfs} ${frontmatter.bgth}': user.present,
+                        '${frontmatter.txth} ${frontmatter.bgsc}': !user.present
+                      }`
+                      class="text-sm font-normal px-3 py-1 rounded-full">
+                    </p>
+                  </div>
+                  <p
+                    x-text="user.content"
+                    class=`${frontmatter.txth} text-base italic text-left py-5 text-gray-800/50 font-medium`>
+                  </p>
+                </div>
+              </template>
+            </div>
+          </div>
+        <div class=`page absolute px-6 ${frontmatter.bgfs} bg-cover bg-center before:content-[''] before:opacity-70 before:inset-0 before:bg-cover before:absolute *:relative ${frontmatter.before}` style={`background-image:url(${frontmatter.cvrsc})`}>
+          <h6 class=`${frontmatter.txth} ${frontmatter.font} mt-5 text-end`>
+            <span class="font-poppins text-3xl">Pesan</span> Bahagia 
+          </h6>
+         <form @submit.prevent="sendRsvp" class=`w-full max-w-xl px-4 py-8 sm:px-12 mx-auto mb-10 rounded-md shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] border ${frontmatter.animation} ${frontmatter.bgsc}`>
+          <div
+            class="mt-4 space-y-8 [&>*]:font-poppins [&>*]:text-left [&>*]:text-gray-800/50 [&>*]:space-y-2">
+            <div>
+              <label for="username" class=`${frontmatter.txth}`>Nama</label>
+              <input
+                value=""
+                required
+                id="username"
+                type="text"
+                name="name"
+                placeholder="Tiara Anggraini"
+                class=`block w-full px-4 py-3 text-gray-700 bg-white border border-gray-200 rounded-md focus:outline-none`
+                x-model="username"
+              />
+            </div>
+            <div>
+              <label for="message" class=`${frontmatter.txth}`>Ucapan</label>
+              <textarea
+                id="message"
+                required
+                rows="4"
+                name="content"
+                class="block p-5 w-full text-sm text-gray-800 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none"
+                placeholder="Selamat untuk acaranya..."
+                x-model="message"></textarea>
+            </div>
+            <div>
+              <div class="flex items-center mb-4 font-poppins">
+                <input
+                  checked
+                  id="default-radio-1"
+                  name="present"
+                  type="radio"
+                  value="1"
+                  name="default-radio"
+                  class=`radio w-4 h-4 ${frontmatter.txfs}`
+                  x-model="present"
+                />
+                <label
+                  for="default-radio-1"
+                  class=`ms-2 text-base font-medium ${frontmatter.txth}`>Hadir</label
+                >
+              </div>
+              <div class="flex items-center font-poppins">
+                <input
+                  id="default-radio-2"
+                  name="present"
+                  type="radio"
+                  value="0"
+                  name="default-radio"
+                  class=`radio w-4 h-4 ${frontmatter.txth}`
+                  x-model="present"
+                />
+                <label
+                  for="default-radio-2"
+                  class=`ms-2 text-base font-medium ${frontmatter.txth}`
+                  >Tidak Hadir</label
+                >
+              </div>
+            </div>
+
+            <div class="flex justify-center min-[400px]:justify-end mt-6">
+              <button
+                id="send"
+                type="submit"
+                class=`${frontmatter.bgth} ${frontmatter.txfs} px-4 py-2 relative rounded-full border font-poppins flex gap-1 transition-all duration-700 ease-linear`
+                >Kirim Pesan</button
+              >
+            </div>
+          </div>
+        </form>
+        </div>
+        <div class=`page absolute bg-cover bg-center before:content-[''] before:opacity-70 before:inset-0 before:bg-cover before:absolute *:relative ${frontmatter.before} ${frontmatter.bgfs}` style={`background-image:url(${frontmatter.cvrfr})`}>
+          <h5 class=`${frontmatter.txth} ${frontmatter.font} text-center mt-6`>Kado Cinta</h5>
+          <div class="px-4 mt-6">
+            <BankCard logo={frontmatter.logoml} name={frontmatter.namebankml} number={frontmatter.numberbankml} classNames={`flip-left *:!z-0 bg-gradient-to-t h-max max-w-screen-xs mx-auto *:overflow-hidden *:mx-auto *:w-full *:h-full *:max-w-xs rounded-2xl border-[1px] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${frontmatter.animation} ${frontmatter.from} ${frontmatter.to} ${frontmatter.txfs}`}/>
+          <BankCard logo={frontmatter.logoml} name={frontmatter.namebankml} number={frontmatter.numberbankml} classNames={`flip-left *:!z-0 bg-gradient-to-t h-max max-w-screen-xs mx-auto *:overflow-hidden mt-5 *:mx-auto *:w-full *:h-full *:max-w-xs rounded-2xl border-[1px] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${frontmatter.animation} ${frontmatter.from} ${frontmatter.to} ${frontmatter.txfs}`}/>
+          </div>
+        </div>
+        <div class=`page absolute px-6 bg-cover bg-center before:content-[''] before:opacity-75 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.bgfs}` style={`background-image:url(${frontmatter.cvrfr})`}>
+            <h5 class=`${frontmatter.txth} ${frontmatter.font} relative`>Skenario <br> <span class="font-poppins text-2xl">Terindah</span> </h5>
+            <div class="relative p-4 flex flex-col gap-y-8 *:border-l-4 *:relative *:pl-2 *:rounded-md">
+              <div class=`${frontmatter.bdr}`>
+                <h2 class=`${frontmatter.font} ${frontmatter.txth} absolute top-0 rotate-90 translate-y-12 -translate-x-[5.5rem] !text-2xl`>Pertemuan</h2>
+                <p class=`text-xs ${frontmatter.txth}`>
+                  {frontmatter.storyfs} 
+                </p>
+              </div>
+              <div class=`${frontmatter.bdr}`>
+                <h2 class=`${frontmatter.font} ${frontmatter.txth} absolute top-0 rotate-90 translate-y-6 -translate-x-20 !text-2xl`>Lamaran</h2>
+                <p class=`text-xs ${frontmatter.txth}`>
+                  {frontmatter.storysc} 
+                </p>
+              </div>
+              <div class=`${frontmatter.bdr}`>
+                <h2 class=`${frontmatter.font} ${frontmatter.txth} absolute top-0 rotate-90 translate-y-12 -translate-x-20 !text-2xl`>Menikah</h2>
+                <p class=`text-xs ${frontmatter.txth}`>
+                  {frontmatter.storyth} 
+                </p>
+              </div>
+          </div>
+        </div>
+        <div class=`page absolute p-6 ${frontmatter.display} ${frontmatter.bgfs}`>
+            <h5 class=` ${frontmatter.txth}  text-center !text-3xl w-max `>Potret <br><span class=`${frontmatter.font}`>Perjalanan</span></h5>
+            <div class="columns-2 gap-2 space-y-2">
+                <img class="aspect-video object-cover object-center rounded-lg" src=`${frontmatter.imgstory1}` alt="">
+                <img class="aspect-square object-cover object-center rounded-lg" src=`${frontmatter.imgstory2}` alt="">
+                <img class="aspect-video object-cover object-center rounded-lg" src=`${frontmatter.imgstory3}` alt="">
+                <img class="aspect-square object-cover object-center rounded-lg" src=`${frontmatter.imgstory4}` alt="">
+                <img class="aspect-square object-cover object-center rounded-lg" src=`${frontmatter.imgstory5}` alt="">
+                <img class="aspect-video object-cover object-center rounded-lg" src=`${frontmatter.imgstory6}` alt="">
+                <img class="aspect-square object-cover object-center rounded-lg" src=`${frontmatter.imgstory7}` alt="">
+                <img class="aspect-video object-cover object-center rounded-lg" src=`${frontmatter.imgstory8}` alt="">
+              </div>
+        </div>
+        <div class=`page absolute *:relative p-2 bg-cover bg-center ${frontmatter.bgfs}`>
+          <h5 class=`${frontmatter.txth} p-2 font-poppins !text-2xl text-center`> <span class=`${frontmatter.font}`>Jalan</span> <br> Menuju Halal</h5>
+          <iframe src=`${frontmatter.linkmaps}` frameborder="0" height="350" width="90%" class=`opacity-75 mx-auto drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] rounded-xl mb-5 border-4 ${frontmatter.bdr}`></iframe>
+          <Button href={frontmatter.mapsfs} button={frontmatter.button} txfs={frontmatter.txth} bgth={frontmatter.bgfs} title="Klik Disini" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-4 h-4"></Button>
+        </div>
+        <div class=`page absolute bg-cover bg-center before:content-[''] before:opacity-75 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.bgfs}` style={`background-image:url(${frontmatter.cvrth})`}>
+          <h5 class=`${frontmatter.txth} relative text-center mt-12 font-poppins !text-xl`>Tandai Hari <br> <span class=`${frontmatter.font}`>Bahagia Kami</span> </h5>
+            <div class="relative p-4 flex flex-col space-y-6">
+                <div class="flex flex-row gap-2">
+                    <p class=`text-4xl font-bold ${frontmatter.txth}`>01</p>
+                    <div class=`pl-2 border-l-2 flex flex-col gap-y-3 ${frontmatter.bdr}`>
+                        <h2 class=`${frontmatter.font} ${frontmatter.txth} !text-2xl`>{frontmatter.akad}</h2>
+                      <small class=`${frontmatter.txth}`>
+                        Momen sakral akad nikah akan diselenggarakan pada hari <strong>{frontmatter.datefs}</strong>, dimulai pukul <strong>{frontmatter.timefs}</strong> . Acara ini akan berlangsung di <strong>{frontmatter.locationfs}</strong> yang penuh kehangatan, yaitu di <strong>{frontmatter.addressfs}</strong>. 
+                      </small>
+                      </div>
+                  </div>
+                <div class="flex flex-row gap-2">
+                    <p class=`text-4xl font-bold order-last ${frontmatter.txth}`>02</p>
+                      <div class=`pr-2 border-r-2 flex flex-col gap-y-3 order-first text-right ${frontmatter.bdr}`>
+                        <h2 class=`${frontmatter.font} ${frontmatter.txth} !text-2xl`>{frontmatter.resepsi}</h2>
+                      <small class=`${frontmatter.txth}`>
+                        Momen sakral akad nikah akan diselenggarakan pada hari <strong>{frontmatter.datesc}</strong>, dimulai pukul <strong>{frontmatter.timesc}</strong> . Acara ini akan berlangsung di <strong>{frontmatter.locationsc}</strong> yang penuh kehangatan, yaitu di <strong>{frontmatter.addresssc}</strong>. 
+                      </small>
+                      </div>
+                  </div>
+            </div>
+        </div>
+        <div class=`page absolute p-2 bg-gray-300 bg-cover bg-center before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from} ${frontmatter.bgfs}`
+                style={`background-image:url(${frontmatter.cvrsc})`}>
+              <h4 class=`relative mt-12 px-6 !leading-none text-5xl ${frontmatter.txfs}`>Temani Kami <br> Menuju <br> <span class=`${frontmatter.txth} ${frontmatter.font}`>Halal</span></h4>
+            <h4 class=`relative px-6 mb-6 font-poppins font-bold !text-lg ${frontmatter.txfs} `>{frontmatter.datefs}</h4>
+            <Countdown animation={frontmatter.animation} countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
+        </div>
+        <div class=`page absolute flex flex-col justify-center h-full ${frontmatter.bgfs}`>
+            <div class="flex flex-row justify-center items-center h-full *:w-1/2 *:h-full">
+                <img src=`${frontmatter.pm1}` alt="undangan tema flipbook" class="object-cover object-center h-full">
+                <div class="relative p-2 h-full w-full flex flex-col">
+                    <h3 class=`${frontmatter.txth} ${frontmatter.font} text-center rotate-90 -translate-x-24 translate-y-12 drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)]`>
+                      {frontmatter.female}
+                    </h3>
+                    <h2 class=`${frontmatter.txth} font-poppins font-bold text-md italic`>
+                      {frontmatter.fullfemale}
+                    </h2>
+                    <div class=`text-sm`>
+                      <small class="opacity-60 font-poppins py-2"><strong>{frontmatter.childfemale} {frontmatter.parentfemale}</strong>. Sosok yang sederhana dan hangat, kini bersiap menapaki babak baru dalam kehidupannya sebagai seorang istri.</small>
+                      <div class="flex gap-3 text-center">
+                        <a
+                          href=`https://www.instagram.com/${frontmatter.instagramfemale}`
+                          class=`flex flex-row gap-2 p-1 items-center rounded-sm ${frontmatter.txth}`
+                        >
+                          <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary="w-6 h-6" />
+                          <p>@{frontmatter.instagramfemale}</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="flex flex-row justify-center items-center h-full *:w-1/2 *:h-full">
+                <img src=`${frontmatter.pm2}` alt="undangan tema flipbook" class="object-cover object-center order-last">
+                <div class="relative p-2">
+                  <h3 class=`${frontmatter.txth} ${frontmatter.font} text-center  rotate-90 translate-x-24 translate-y-12 drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)]`>
+                    {frontmatter.male}
+                  </h3>
+                  <h2 class=`${frontmatter.txth} font-poppins font-bold text-md italic`>
+                    {frontmatter.fullmale}
+                  </h2>
+                    <div class=`text-sm`>
+                      <small class="opacity-60 font-poppins py-2"><strong>{frontmatter.childmale} {frontmatter.parentmale}</strong>. Dengan ketulusan hati dan komitmen yang kuat, ia bersiap menjalani peran baru sebagai seorang suami, pendamping dalam suka dan duka.</small>
+                      <p></p>
+                      <div class="flex gap-3 text-center">
+                        <a
+                          href=`https://www.instagram.com/${frontmatter.instagrammale}`
+                          class=`flex flex-row gap-2 p-1 items-center rounded-sm ${frontmatter.txth}`
+                        >
+                          <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary="w-6 h-6" />
+                          <p>@{frontmatter.instagrammale}</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class=`page absolute flex justify-start items-center bg-cover bg-center ${frontmatter.bgfs}`>
+          <div class="flex flex-col gap-6 justify-center items-center min-h-screen p-6">
+            <h2 class=` ${frontmatter.txth} ${frontmatter.font}`>Pengantar <br> <span class="text-2xl font-poppins uppercase">Bahagia</span> </h2>
+            <div class="bg-white rounded-xl shadow-md p-6 max-w-md relative overflow-hidden">
+              <div class=`absolute left-0 top-6 h-1/2 w-1 border-l-4 rounded-bl-full rounded-tl-full ${frontmatter.bdr}`></div>
+              <div class=`absolute right-0 h-1/2 bottom-6 w-1 border-r-4 rounded-br-full rounded-tr-full ${frontmatter.bdr}`></div>
+              <div class="text-3xl font-bold text-black mb-2">“</div>
+              <blockquote class="text-gray-700 font-amiri text-sm leading-relaxed italic px-4">
+                {frontmatter.quote} <br>
+                {frontmatter.atribusi}
+              </blockquote>
+              <div class="text-3xl font-bold text-black text-right mt-2">”</div>
+            </div>
+          </div>
+        </div>
+        <div class=`page absolute bg-cover bg-center before:content-[''] before:bg-gradient-to-t before:inset-0 before:bg-cover before:absolute ${frontmatter.from} ${frontmatter.via} ${frontmatter.to} ${frontmatter.bgfs}`
+                style={`background-image:url(${frontmatter.cover})`}>
+            <div class="relative py-4 flex flex-col items-center justify-between w-full h-full">
+                <div class=`${frontmatter.txfs}`>
+                    <h4 class="absolute top-6 bottom-6 text-sm text-center uppercase">Undangan Pernikahan</h4>
+                    <h2 class=`text-center mt-12 ${frontmatter.font}`>{frontmatter.female} <br> <span class="text-2xl">&</span> <br> {frontmatter.male}</h2>
+                    <h4 class=`text-sm text-center uppercase`>{frontmatter.datefs}</h4>
+                </div>
+                <h4 id="invite-name" class=`absolute bottom-24 text-center text-lg font-poppins capitalize ${frontmatter.txfs}`>
+                    <Namatamu /> Nama Tamu
+                  </h4>
+              </div>
+              
+        </div>
+      </div>
+      <div class="navigation flex gap-2 mt-5 fixed bottom-5 *:px-5 *:py-2 *:text-base *:rounded-md *:shadow-[0px_-8.0px_8.0px_rgba(0,0,0,0.25)]">
+        <button id="openInvitation" class=`block ${frontmatter.txfs} ${frontmatter.bgth}`>Buka Undangan</button>
+        <button id="prevButton" class=`block ${frontmatter.txfs} ${frontmatter.bgsc}`>Back</button>
+        <button id="nextButton" class=`block ${frontmatter.txfs} ${frontmatter.bgth}`>Next</button>
+      </div>
+    </div>
+  </section>
+  
+  <Copy/>
+  <div id="audioContainer" class="hidden">
+    <Audio txfs={frontmatter.txfs} bgth={frontmatter.bgth} bdr={frontmatter.bdr} />
+  </div>
+    <audio id="myAudio" loop class="hidden">
+      <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg" />
+    </audio>
+    <script>
+      const book = document.querySelector('.book');
+      const openButton = document.getElementById('openInvitation');
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      const audio = document.getElementById('myAudio');
+      const audioContainer = document.getElementById('audioContainer');
+      const pages = Array.from(book.querySelectorAll('.page'));
+      let currentPage = pages.length - 1;
+
+      function updateButtons() {
+          // Reset semua tombol dan container audio ke hidden
+          openButton.classList.add('hidden');
+          prevButton.classList.add('hidden');
+          nextButton.classList.add('hidden');
+          audioContainer.classList.add('hidden');
+
+          // Logika berdasarkan currentPage
+          if (currentPage === pages.length - 1) {
+              // Halaman pertama: hanya tampilkan "Buka Undangan"
+              openButton.classList.remove('hidden');
+          } else {
+              // Halaman kedua dan seterusnya: tampilkan "Previous", "Next", dan ikon audio
+              prevButton.classList.remove('hidden');
+              if (currentPage > 0) {
+                  nextButton.classList.remove('hidden');
+              }
+              audioContainer.classList.remove('hidden');
+          }
+      }
+
+      function flipPage(index, flip) {
+          const page = pages[index];
+          if (flip) {
+              page.classList.add('flipped');
+              page.addEventListener('transitionend', () => {
+                  if (!page.classList.contains('flipped')) return;
+                  updateButtons();
+              }, { once: true });
+          } else {
+              page.classList.remove('flipped');
+              page.addEventListener('transitionend', () => {
+                  if (page.classList.contains('flipped')) return;
+                  updateButtons();
+              }, { once: true });
+          }
+      }
+
+      openButton.addEventListener('click', () => {
+          if (currentPage > 0) {
+              flipPage(currentPage, true);
+              currentPage--;
+              // Mulai putar audio saat ada interaksi pengguna
+              if (audio) {
+                  audio.play().catch(error => console.log('Pemutaran audio gagal:', error));
+              }
+          }
+      });
+
+      nextButton.addEventListener('click', () => {
+          if (currentPage > 0) {
+              flipPage(currentPage, true);
+              currentPage--;
+          }
+      });
+
+      prevButton.addEventListener('click', () => {
+          if (currentPage < pages.length - 1) {
+              currentPage++;
+              flipPage(currentPage, false);
+          }
+      });
+
+      // Deteksi gerakan swipe
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      function handleGesture() {
+          const swipeThreshold = 50;
+          const diffX = touchStartX - touchEndX;
+          if (diffX > swipeThreshold) {
+              if (currentPage > 0) {
+                  flipPage(currentPage, true);
+                  currentPage--;
+              }
+          } else if (diffX < -swipeThreshold) {
+              if (currentPage < pages.length - 1) {
+                  currentPage++;
+                  flipPage(currentPage, false);
+              }
+          }
+      }
+
+      book.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+      });
+
+      book.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].clientX;
+          handleGesture();
+      });
+
+      // Inisialisasi tombol saat halaman dimuat
+      document.addEventListener('DOMContentLoaded', updateButtons);
+
+
+      //rsvp
+      import Alpine from "alpinejs";
+
+    document.addEventListener("alpine:init", function () {
+      Alpine.data("Rsvp", function () {
+        return {
+          username: "",
+          message: "",
+          present: 0,
+
+          data: [],
+          hasData: false,
+
+          getRsvp() {
+            var data = {
+              url: window.location.pathname,
+            };
+            var query = new URLSearchParams(data).toString();
+
+            var _this = this;
+
+            fetch("/api/rsvp-get?" + query, {
+              method: "GET",
+            })
+              .then(function (resp) {
+                return resp.json();
+              })
+              .then(function (data) {
+                _this.data = data;
+
+                if (data.length > 0) {
+                  _this.hasData = true;
+                }
+
+                (_this.username = ""),
+                  (_this.message = ""),
+                  (_this.present = 1),
+                  console.log(data);
+              })
+              .catch(function (err) {
+                console.log(err);
+              });
+          },
+
+          sendRsvp() {
+            var data = {
+              name: this.username,
+              content: this.message,
+              present: this.present,
+              url: window.location.pathname,
+            };
+
+            var query = new URLSearchParams(data).toString();
+
+            var _this = this;
+
+            fetch("/api/rsvp-send?" + query, {
+              method: "GET",
+            })
+              .then(function (resp) {
+                if (resp.ok) {
+                  _this.getRsvp();
+
+                  console.log(resp.ok);
+
+                  setTimeout(() => {
+                    document.getElementById("output").scrollIntoView({
+                      behavior: "smooth",
+                      block: "start", 
+                      inline: "nearest",
+                    });
+                  }, 100);
+                }
+              })
+              .catch(function (err) {
+                console.log(err);
+              });
+          },
+
+          init() {
+            this.getRsvp();
+          },
+        };
+      });
+    });
+      
+  </script>
+  <style>
+      
+        .page {
+            backface-visibility: hidden;
+            transform-origin: left;
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+        }
+        .page.flipped {
+            transform: rotateY(-180deg);
+            opacity: 0;
+        }
+  </style>
+</Noheader>

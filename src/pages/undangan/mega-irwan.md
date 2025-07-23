@@ -1,8 +1,7 @@
 ---
 layout: '../demo/wedding-21.astro'
 slug: undangan/mega-irwan
-title: Mega-Irwan
-name: Mega & Irwan
+title: Mega - Irwan |
 desc: 'Tema 21'
 countdown: "Nov 11, 2024 09:00:00"
 img:
@@ -25,7 +24,7 @@ before: 'before:bg-black'
 # Img header
 cover: '/assets/dekor75.webp'
 imgsc: '/assets/gift-1.gif'
-bg: '/assets/dekor-24.webp'
+bg: '/assets/dekor24.webp'
 
 #dekor
 dekorfs: '/assets/dekor38.webp'

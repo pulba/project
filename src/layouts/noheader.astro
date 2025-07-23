@@ -1,6 +1,7 @@
 ---
 import Primary from "../components/primary.astro";
 import SEO from "../components/seo.astro";
+import '@fontsource/amiri';
 import "@fontsource-variable/cormorant";
 import "@fontsource/great-vibes";
 import "@fontsource/poppins";
@@ -10,7 +11,17 @@ import "@fontsource/montecarlo";
 import "@fontsource/dynalight";
 import '@fontsource/cinzel-decorative';
 import '@fontsource/alex-brush';
-const { title, desc } = Astro.props;
+import '@fontsource/mr-dafoe';
+import '@fontsource/birthstone';
+import '@fontsource/smooch';
+import '@fontsource/pacifico';
+import '@fontsource/kaushan-script';
+import '@fontsource/mr-de-haviland';
+interface Props {
+  title: string;
+  desc?: string;
+}
+const { title, desc } = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -49,6 +60,8 @@ const { title, desc } = Astro.props;
       *::-webkit-scrollbar-thumb:active {
         background-color: #2563eb;
       }
+
+      
     </style>
   </head>
   <body>

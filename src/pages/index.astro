@@ -1,30 +1,73 @@
 ---
 import Home from '../layouts/home.astro';
 import '@fontsource-variable/josefin-sans';
-import { Icon } from 'astro-icon/components';
-const posts = await Astro.glob('../pages/posts/*.md');
-const klien = await Astro.glob('../pages/undangan/*.md');
+import Product from '../layouts/product.astro';
+import Button from '../components/button.astro';
+import Splide from '../layouts/autoscroll.astro';
+import Icon from '../components/icon.astro';
+
+type MarkdownModule = {
+  metadata: {
+    title?: string;
+    number?: number;
+    slug?: string;
+    img?: { url?: string; alt?: string };
+    link?: string;
+    desc?: string;
+    price?: string;
+    unprice?: string;
+  };
+  default: any;
+};
+
+const loadFiles = async (files: Record<string, () => Promise<any>>) => {
+  return await Promise.all(
+    Object.entries(files).map(async ([path, resolver]) => {
+      const post = await resolver();
+      const metadata = post.frontmatter ?? post['frontmatter'] ?? {}; // fallback aman
+
+      const slug = metadata.slug || path.split('/').pop()?.replace('.md', '') || '';
+
+      return {
+        frontmatter: metadata,
+        slug,
+        component: post.default
+      };
+    })
+  );
+};
+
+// ✅ Gunakan string literal, TANPA `${}`
+const natureFiles = import.meta.glob('../pages/nature/*.md');
+const adatFiles = import.meta.glob('../pages/adat/*.md');
+const floralFiles = import.meta.glob('../pages/floral/*.md');
+const popularFiles = import.meta.glob('../pages/popular/*.md');
+const flipFiles = import.meta.glob('../pages/flip/*.md');
+
+const [nature, adat, floral, popular, flip] = await Promise.all([
+  loadFiles(natureFiles),
+  loadFiles(adatFiles),
+  loadFiles(floralFiles),
+  loadFiles(popularFiles),
+  loadFiles(flipFiles),
+]);
+
 ---
 
 <Home title="" desc="Jasa pernikahan digital emang masih zaman undangan kertas? pake undangan digital dong langsung kirim ke semua kontak Anda!">
-  <section>
-    <div class="container pt-16 lg:pt-0 mx-auto">
+  <section class="bg-blue-900">
+    <div class="container overflow-hidden pt-16 lg:pt-0 mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
         <div class="w-full py-8">
-            <div class="px-6">
-                <h2 class="text-3xl min-[500px]:text-5xl sm:text-6xl font-black font-poppins text-gray-600">Website Undangan Pernikahan Digital<h2/>
-
-                <p class="mt-4 text-gray-600 font-poppins max-w-lg">Membuat Setiap Jejak Menuju Kebahagiaan dengan Harga yang Ramah di Kantong!</p>
-
-                <div class="flex flex-row max-[400px]:flex-col gap-x-2 gap-y-4 w-fit mt-6 text-white *:rounded-full *:py-2 *:px-6 *:font-poppins *:font-bold">
-                    <a href="/katalog" class="flex flex-row items-center justify-center text-center capitalize transition-colors duration-300 transform bg-blue-700 hover:bg-blue-600 hover:text-white hover:ring-0">Lihat Katalog</a>
-                    <a href="/pesan" class="flex flex-row items-center justify-center text-center text-blue-700 capitalize ring-2 ring-blue-700 transition-colors duration-300 transform hover:bg-blue-700 hover:text-white">Buat Undangan</a>
-                </div>
+            <div class="px-6 font-poppins text-white">
+                <h2 class="text-3xl min-[500px]:text-5xl sm:text-6xl">Platform Undangan Pernikahan Digital<h2/>
+                <p class="mt-4 max-w-lg"> <span class="italic font-bold text-amber-400 text-xl">Modern, Instant, dan Ekonomis.</span> <br> Membuat Setiap Jejak Menuju Kebahagiaan.</p>
+                <Button href="/katalog" button="bg-amber-500 w-max px-6 py-2 rounded-md mt-8 capitalize shadow-none hover:bg-blue-600 hover:text-white hover:ring-0" path="" title="Lihat Katalog" />
             </div>
         </div>
         <div class="mx-auto relative grid place-items-center overflow-hidden">
           <div class="h-screen grid place-items-center overflow-hidden">
-            <div class="grid grid-cols-[repeat(5,_100px)] auto-rows-[100px] gap-2 place-items-center mb-[100px] *:object-cover *:w-[200px] *:h-[200px] *:rounded-[5px] max-[639px]:[&>*:nth-child(4n-1)]:col-[2_/_span_2] min-[640px]:grid-cols-[repeat(6,_100px)] min-[640px]:[&>*:nth-child(5n-1)]:col-[2_/_span_2] *:col-[auto_/_span_2]">
+            <div class="grid grid-cols-[repeat(5,_100px)] auto-rows-[100px] gap-2 place-items-center mb-[100px] *:object-cover object-center *:w-[200px] *:h-[200px] *:rounded-[5px] max-[639px]:[&>*:nth-child(4n-1)]:col-[2_/_span_2] min-[640px]:grid-cols-[repeat(6,_100px)] min-[640px]:[&>*:nth-child(5n-1)]:col-[2_/_span_2] *:col-[auto_/_span_2]">
             <img src="/assets/img-23.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
             <img src="/assets/img-46.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
             <img src="/assets/img-49.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
@@ -33,239 +76,259 @@ const klien = await Astro.glob('../pages/undangan/*.md');
             <img src="/assets/img-21.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
             <img src="/assets/img-34.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
             <img src="/assets/img-52.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
+            </div>
           </div>
         </div>
-        
-    </div>
     </div>
   </section>
   <section>
-    <div id="fitur" class="container py-12 px-6 mx-auto">
-      <div class="text-center mx-auto space-y-3 max-w-2xl">
-        <h2 class="font-bold font-poppins text-4xl md:text-5xl text-blue-700">Fitur Undangan Lengkap</h2>
-        <p class="text-center font-poppins mx-auto text-md leading-7 mt-2 text-gray-500">Nikmati beragam fitur unggulan yang dirancang khusus untuk meningkatkan pengalaman undangan digital Anda.
+    <div class="container overflow-hidden py-12 px-6 mx-auto">
+      <div class="text-blue-900">
+        <h2 class="font-poppins font-bold text-4xl">Undangan Impian</h2>
+        <p class="font-poppins mx-auto text-md leading-7">dengan beragam fitur andalan
         </p>
       </div>
-      <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 mt-16 w-full max-w-screen-lg mx-auto *:w-full *:mx-auto *:p-4 *:bg-white *:shadow-lg *:rounded-md *:flex *:flex-col *:items-center *:gap-x-4 text-md *:text-center *:relative hover:*:bg-blue-700 *:border-blue-700 *:border">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6 w-full *:w-full *:mx-auto *:p-3 *:bg-gray-200 *:text-gray-700 *:shadow-lg *:rounded-md *:flex *:flex-col *:items-center text-md *:text-center *:relative">
         <div class="group">
-          <Icon name="mdi:web-check" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Domain Ekslusif</h4>
+          <Icon path="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" primary="w-8" />
+          <h4>Domain Ekslusif</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:people-group" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Custom Nama Tamu</h4>
+          <Icon path="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" primary="w-8" />
+          <h4>Custom Nama Tamu</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:gift-outline" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Hadiah</h4>
+          <Icon path="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" primary="w-8" />
+          <h4>Hadiah</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:cash-check" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Amplop Digital</h4>
+          <Icon path="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" primary="w-8" />
+          <h4>Amplop Digital</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:book-edit-outline" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Reservasi & Buku Tamu</h4>
+          <Icon path="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" primary="w-8" />
+          <h4>Reservasi & Buku Tamu</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:timer-sand-complete" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Countdown Timer</h4>
+          <Icon path="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" primary="w-8" />
+          <h4>Profil Detail Mempelai</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:music-note" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Background Music</h4>
+          <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" primary="w-8" />
+          <h4>Info Detail Acara</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:folder-image" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Gallery Foto</h4>
+          <Icon path="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" primary="w-8" />
+          <h4>GoogleMaps</h4>
         </div>
         <div class="group">
-          <Icon name="mdi:book-love-outline" class="w-10 h-10 mb-2 sm:mb-0 text-white bg-blue-700 group-hover:bg-white group-hover:text-blue-700 p-2 rounded-full" />
-          <h4 class="text-md md:text-lg text-blue-700 md:mt-2 group-hover:text-white">Love Stories</h4>
+          <Icon path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" primary="w-8" />
+          <h4>Countdown Timer</h4>
+        </div>
+        <div class="group">
+          <Icon path="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" primary="w-8" />
+          <h4>Background Music</h4>
+        </div>
+        <div class="group">
+          <Icon path="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" primary="w-8" />
+          <h4>Gallery Foto</h4>
+        </div>
+        <div class="group">
+          <Icon path="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" primary="w-8" />
+          <h4>Love Stories</h4>
         </div>
     </div>
   </section>
-  <section>
-    <div id="katalog" class="container px-6 py-20 mx-auto text-center">
-      <div class="space-y-2 max-w-xl mx-auto">
-        <h1 class="font-bold font-poppins text-4xl md:text-5xl text-blue-700">
-          Pilihan Tema
-        </h1>
-        <p
-          class="text-center font-poppins mx-auto text-md leading-7 mt-2 text-gray-500">
-          Dengan adanya preset kamu tinggal pilih design undangan sesuai dengan
-          yang kamu mau!
-        </p>
-      </div>
-      <div class="mx-auto mt-5 w-full">
-        <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Reguler</h5>
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
-          {
-            posts
-              .filter(post => post.frontmatter.number !== undefined) 
-              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-              .slice(0, 6)
-              .map((post) => (
-                <div class="relative px-2 py-4 sm:px-6 bg-white rounded-lg shadow-[4.0px_8.0px_8.0px_rgba(29,78,216,0.38)]">
-                  <div class="relative">
-                    <div class="overflow-hidden rounded-lg">
-                      <div class="w-full object-cover">
-                        <a href={post.frontmatter.slug}>
-                          <img
-                            src={post.frontmatter.img?.url}
-                            alt={post.frontmatter.img?.alt}
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <p class="flex flex-row gap-2 items-center font-bold text-lg sm:text-xl pt-4 text-left text-gray-600 capitalize">
-                      <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-2">
-                      <p class="w-full font-bold text-red-700 text-start text-sm line-through">
-                        {post.frontmatter.unprice}
-                      </p>
-                    <p class="w-full font-bold text-blue-700 text-xl sm:text-2xl">
-                      {post.frontmatter.price}
-                    </p>
-                    </div>
-                    <div class="mt-4 space-y-4 sm:space-y-0 sm:flex flex-row items-center justify-between gap-2 *:w-full *:sm:w-max *:flex *:flex-row *:items-center *:justify-center *:gap-1 *:text-white *:px-4 *:py-2 *:rounded-md">
-                      <a href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${post.frontmatter.name}* ya`
-                        class="bg-blue-700">
-                        <Icon
-                          name="mdi:navigation-variant"
-                          class="w-6 h-6 text-white"
-                        />
-                        Pesan
-                      </a>
-                      <a
-                        href={post.frontmatter.slug}
-                        class="bg-gray-600">
-                        {post.frontmatter.link}{" "}
-                        <Icon name="mdi:eye" class="w-4 h-4" />
-                        Preview
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))
-          }
-        </div>
-      </div>
-      <div class="mx-auto mt-8 w-full">
-        <h5 class="font-bold text-left text-2xl text-blue-700/70 py-3 max-w-screen-lg mx-auto">Tema Adat</h5>
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
-          {
-            posts
-              .filter(post => post.frontmatter.number !== undefined) 
-              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-              .slice(10, 16)
-              .map((post) => (
-                <div class="relative px-2 py-4 sm:px-6 bg-white rounded-lg shadow-[4.0px_8.0px_8.0px_rgba(29,78,216,0.38)]">
-                  <div class="relative">
-                    <div class="overflow-hidden rounded-lg">
-                      <div class="w-full object-cover">
-                        <a href={post.frontmatter.slug}>
-                          <img
-                            src={post.frontmatter.img?.url}
-                            alt={post.frontmatter.img?.alt}
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <p class="flex flex-row gap-2 items-center font-bold text-lg sm:text-xl pt-4 text-left text-gray-600 capitalize">
-                      <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-2">
-                      <p class="w-full font-bold text-red-700 text-start text-sm line-through">
-                        {post.frontmatter.unprice}
-                      </p>
-                    <p class="w-full font-bold text-blue-700 text-xl sm:text-2xl">
-                      {post.frontmatter.price}
-                    </p>
-                    </div>
-                    <div class="mt-4 space-y-4 sm:space-y-0 sm:flex flex-row items-center justify-between gap-2 *:w-full *:sm:w-max *:flex *:flex-row *:items-center *:justify-center *:gap-1 *:text-white *:px-4 *:py-2 *:rounded-md">
-                      <a href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${post.frontmatter.name}* ya`
-                        class="bg-blue-700">
-                        <Icon
-                          name="mdi:navigation-variant"
-                          class="w-6 h-6 text-white"
-                        />
-                        Pesan
-                      </a>
-                      <a
-                        href={post.frontmatter.slug}
-                        class="bg-gray-600">
-                        {post.frontmatter.link}{" "}
-                        <Icon name="mdi:eye" class="w-4 h-4" />
-                        Preview
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))
-          }
-        </div>
-        <a href="/katalog" class="flex flex-row items-center justify-center mx-auto w-fit px-6 py-3 mt-8 text-center text-white rounded-sm transition-colors duration-300 transform bg-blue-700 hover:bg-blue-600">TEMA LAINNYA<Icon name="mdi:play-arrow" class="w-6 h-6" /></a>
-      </div>
-    </div>
-  </section>
-  <section class="bg-blue-700">
-    <div id="katalog" class="container px-6 py-20 mx-auto text-center">
-      <div class="space-y-2 max-w-xl mx-auto text-white">
-        <h1 class="font-bold font-poppins text-4xl md:text-5xl">
-          Pilihan Customer
-        </h1>
-        <p
-          class="text-center font-poppins mx-auto text-md leading-7 mt-2">
-          Jadilah bagian dari mereka yang berbahagia menggunakan tema kami
-        </p>
-      </div>
-      <div class="mx-auto mt-5 w-full">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 max-w-screen-lg mx-auto">
-          {
-            klien
-              .slice(0, 9)
-              .map((post) => (
-                <div class="relative px-6 py-4 bg-white rounded-lg shadow-[4.0px_8.0px_8.0px_rgba(29,78,216,0.38)]">
-                  <div class="relative">
-                    <div class="overflow-hidden rounded-lg">
-                      <div class="w-full overflow-hidden">
-                        <a href={post.frontmatter.slug}>
-                        <img src={post.frontmatter.img.url} alt={post.frontmatter.desc} class="object-cover aspect-video transition-all duration-700	ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear rounded-lg rounded-lg" />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="pt-4 flex flex-row justify-between">
-                    <p class="flex flex-row gap-2 items-center font-bold text-xl text-left text-gray-600 capitalize">
-                      <Icon name="mdi:check-circle" class="text-4 text-blue-700" /> {post.frontmatter.name}
-                    </p>
-                    <p class="font-bold text-xl text-left text-blue-700 capitalize">
-                      {post.frontmatter.desc}
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              ))
-          }
+  <section class="hidden">
+    <div class="container relative overflow-hidden mx-auto py-12 px-6 text-center">
+      <h2 class="text-center font-bold text-gray-700 text-4xl">Kategori Tema</h2>
+      <div class="splide h-full overflow-hidden my-10">
+        <div class="splide__track h-full rounded-xl overflow-visible">
+          <ul class="splide__list flex gap-4 *:bg-white *:rounded-xl *:space-y-2">
+            <a href="/adat" class="splide__slide">
+              <li class="relaitve w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900 before:rounded-xl before:inset-0">
+                <img
+                  src="/assets/demo-12.webp"
+                  alt="jejakbahagia"
+                  class="object-cover object-center rounded-xl aspect-video"/>
+                  <p class="absolute z-10 bottom-8 left-8 text-xl text-amber-400 font-bold">Wedding Adat</p>
+                </li>
+            </a>
+            <a href="/floral" class="splide__slide">
+              <li class="relaitve w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900 before:rounded-xl before:inset-0">
+                <img
+                  src="/assets/demo-22.webp"
+                  alt="jejakbahagia"
+                  class="object-cover object-center rounded-xl aspect-video"/>
+                  <p class="absolute z-10 bottom-8 left-8 text-xl text-amber-400 font-bold">Wedding Floral</p>
+                </li>
+            </a>
+            <a href="/nature" class="splide__slide">
+              <li class="relaitve w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900 before:rounded-xl before:inset-0">
+                <img
+                  src="/assets/demo-43.webp"
+                  alt="jejakbahagia"
+                  class="object-cover object-center rounded-xl aspect-video"/>
+                  <p class="absolute z-10 bottom-8 left-8 text-xl text-amber-400 font-bold">Wedding Nature</p>
+                </li>
+            </a>
+            <a href="/islamic" class="splide__slide">
+              <li class="relaitve w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900 before:rounded-xl before:inset-0">
+                <img
+                  src="/assets/demo-40.webp"
+                  alt="jejakbahagia"
+                  class="object-cover object-center rounded-xl aspect-video"/>
+                  <p class="absolute z-10 bottom-8 left-8 text-xl text-amber-400 font-bold">Wedding Islamic</p>
+                </li>
+            </a>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-<section class="relative overflow-hidden bg-cover bg-center bg-[url('/assets/img-32.webp')] before:content-[''] before:absolute before:h-full before:w-full before:bg-gray-900 before:opacity-80 ">
-  <div class="container relative mx-auto px-6 text-white text-center">
-    <div class="max-w-screen-lg mx-auto h-screen flex flex-col items-center justify-center space-y-5">
-      <h1 class="font-bold font-poppins text-2xl sm:text-4xl">Tunggu apalagi? Yuk segera buat undangan pernikahanmu disini.</h1>
-      <p class="max-w-prose text-center mx-auto">Kamu bisa pilih berbagai tema modern & menarik yang kami sediakan atau kamu juga bisa request custom desain sendiri loh.</p>
-      <a href="https://wa.me/6281532094978?text=Hallo kak, saya buat undangan dong!" class="bg-white py-2 px-6 max-w-max rounded-full text-blue-700">
-        <p class="group">Mulai Buat Sekarang</p>
-      </a>
-    </div>
 
-  </div>
-</section>
+  <section>
+    <div class="container overflow-hidden pb-20 px-6 mx-auto text-center">
+      <div>
+        <h2 class="text-center font-bold text-gray-700 mb-6 text-3xl">Tema Terlaris</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            popular
+              .filter(post => post.frontmatter.number !== undefined) 
+              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+              .slice(0, 4)
+              .map((post) => (
+                <Product
+                  primary="hidden"
+                  aspect="video"
+                  slug={post.frontmatter.slug || ""}
+                  link={post.frontmatter.link || ""}
+                  src={post.frontmatter.img?.url || ""}
+                  title={post.frontmatter.title || ""}
+                  alt={post.frontmatter.img?.alt || ""}
+                  desc={post.frontmatter.desc || ""}
+                  price={post.frontmatter.price || ""}
+                  unprice={post.frontmatter.unprice || ""}
+                  number={post.frontmatter.number || ""}
+                  
+                />
+              ))
+          }
+        </div>
+        
+      </div>
+      <div>
+        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Tema Flipbook</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            flip
+              .filter(post => post.frontmatter.number !== undefined) 
+              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+              .slice(0, 4)
+              .map((post) => (
+              <Product
+                primary="hidden"
+                aspect="square"
+                slug={post.frontmatter.slug || ""}
+                link={post.frontmatter.link || ""}
+                src={post.frontmatter.img?.url || ""}
+                title={post.frontmatter.title || ""}
+                alt={post.frontmatter.img?.alt || ""}
+                desc={post.frontmatter.desc || ""}
+                price={post.frontmatter.price || ""}
+                unprice={post.frontmatter.unprice || ""}
+                number={post.frontmatter.number || ""}
+            />
+              ))
+          }
+        </div>
+        <Button href=`/flip` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+      </div>
+      <div>
+        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Tema Adat</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            adat
+              .filter(post => post.frontmatter.number !== undefined) 
+              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+              .slice(0, 4)
+              .map((post) => (
+              <Product
+                primary="hidden"
+                aspect="square"
+                slug={post.frontmatter.slug || ""}
+                link={post.frontmatter.link || ""}
+                src={post.frontmatter.img?.url || ""}
+                title={post.frontmatter.title || ""}
+                alt={post.frontmatter.img?.alt || ""}
+                desc={post.frontmatter.desc || ""}
+                price={post.frontmatter.price || ""}
+                unprice={post.frontmatter.unprice || ""}
+                number={post.frontmatter.number || ""}
+            />
+              ))
+          }
+        </div>
+        <Button href=`/adat` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+      </div>
+      <div>
+        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Wedding Floral</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            floral
+              .filter(post => post.frontmatter.number !== undefined) 
+              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+              .slice(0, 4)
+              .map((post) => (
+              <Product
+                primary="hidden"
+                aspect="square"
+                slug={post.frontmatter.slug || ""}
+                link={post.frontmatter.link || ""}
+                src={post.frontmatter.img?.url || ""}
+                title={post.frontmatter.title || ""}
+                alt={post.frontmatter.img?.alt || ""}
+                desc={post.frontmatter.desc || ""}
+                price={post.frontmatter.price || ""}
+                unprice={post.frontmatter.unprice || ""}
+                number={post.frontmatter.number || ""}
+            />
+              ))
+          }
+        </div>
+        <Button href=`/floral` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+      </div>
+      <div>
+        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Wedding Nature</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            nature
+              .filter(post => post.frontmatter.number !== undefined) 
+              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+              .slice(0, 4)
+              .map((post) => (
+              <Product
+                primary="hidden"
+                aspect="square"
+                slug={post.frontmatter.slug || ""}
+                link={post.frontmatter.link || ""}
+                src={post.frontmatter.img?.url || ""}
+                title={post.frontmatter.title || ""}
+                alt={post.frontmatter.img?.alt || ""}
+                desc={post.frontmatter.desc || ""}
+                price={post.frontmatter.price || ""}
+                unprice={post.frontmatter.unprice || ""}
+                number={post.frontmatter.number || ""}
+            />
+              ))
+          }
+        </div>
+        <Button href=`/nature` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+      </div>
+    </div>
+  </section>
 <section>
-  <div class="container px-6 py-20 max-w-screen-lg mx-auto">
+  <div class="container overflow-hidden px-6 py-20 max-w-screen-lg mx-auto">
     <div class="mb-12 font-poppins">
       <h1 class="font-bold text-4xl md:text-5xl text-blue-700">FAQ</h1>
       <p class="leading-7 mt-2 text-gray-500">Dibawah ini adalah daftar pertanyaan yang sering ditanyakan
@@ -307,11 +370,12 @@ const klien = await Astro.glob('../pages/undangan/*.md');
     </div>
 </section>
 <section class="fixed bottom-5 right-5 z-20">
-  <div class="container flex items-end justify-end mx-auto">
+  <div class="container overflow-hidden flex items-center justify-center mx-auto bg-green-500 rounded-full w-14 h-14 md:w-16 md:h-16 mb-5 p-3 drop-shadow-2xl border border-2">
     <a href="https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau konsultasi undangan digital dong!" target="_blank">
-      <Icon name="mdi:whatsapp" class="w-14 h-14 mb-5 text-white bg-green-500 rounded-full p-2" />
+      <Icon path="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" primary="w-8 h-8 md:w-10 md:h-10 text-white " />
     </a>
   </div>
 </section>
+<Splide />
 
 </Home>

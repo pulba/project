@@ -1,11 +1,9 @@
 ---
-layout: '../demo/wedding-12.astro'
+layout: '../demo/adat.astro'
 slug: 'undangan/yahya-siska'
-title: 'Yahya Siska'
-name: 'Yahya & Siska'
+title: 'Yahya - Siska |'
+name: 'Yahya - Siska'
 desc: 'Tema Jawa'
-price: 'Rp 99.000'
-unprice: 'Rp 200.000'
 number: 12
 countdown: "Nov 11, 2024 08:00:00"
 img:
@@ -18,18 +16,28 @@ bgsc: 'bg-amber-950'
 bgth: 'bg-[#120B09]'
 
 txfs: 'text-white'
-txsc: 'text-amber-600'
+txsc: 'text-amber-900'
 txth: 'text-amber-900'
-txfr: 'text-amber-500'
+txfr: 'text-[#120B09]'
 
-bdr: 'border-amber-100'
-from: 'from-amber-950'
+bdr: 'border-amber-950'
+from: 'from-amber-100'
+via: 'via-amber-200'
 to: 'to-amber-950'
 before: 'before:bg-[#120B09]'
 bfr: 'before:from-[#120B09]'
 bto: 'before:to-[#120B09]'
-padding: 'p-none'
-display: 'hidden'
+
+display: 'block'
+styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
+primary: 'hidden'
+font: 'font-great text-5xl md:text-6xl'
+button: 'rounded-tl-xl px-6 py-2 border-b mt-5'
+
+# svg
+fillfs: 'fill-[#120B09]'
+fillsc: 'fill-[#120B09]'
+fillth: 'fill-[#120B09]'
 
 # Img header
 cover: '/assets/yahya5.webp'
@@ -42,7 +50,7 @@ dekorfs: '/assets/dekor61.webp'
 dekorsc: '/assets/dekor62.webp'
 dekorth: '/assets/dekor70.webp'
 dekorfr: '/assets/dekor70.webp'
-dekorfv: '/assets/'
+dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor71.webp'
 
 # Img kedua mempelai
@@ -58,8 +66,17 @@ imgstory5: '/assets/yahya5.webp'
 imgstory6: '/assets/yahya6.webp'
 imgstory7: '/assets/yahya7.webp'
 imgstory8: '/assets/yahya8.webp'
-add1: '/assets/yahya7.webp'
-add2: '/assets/yahya2.webp'
+
+
+images:
+  - src: '/assets/yahya1.webp'
+  - src: '/assets/yahya2.webp'
+  - src: '/assets/yahya3.webp'
+  - src: '/assets/yahya4.webp'
+  - src: '/assets/yahya5.webp'
+  - src: '/assets/yahya6.webp'
+  - src: '/assets/yahya7.webp'
+  - src: '/assets/yahya8.webp'
 
 # data mempelai
 male: "Siska"
@@ -97,8 +114,10 @@ dateth: "11"
 dayfs: "Senin"
 daysc: "Senin"
 dayth: "Senin"
-month: "November"
+monthfs: "November"
+monthsc: "November"
 year: "2024"
+yearsc: "2024"
 timefs: "08:00 WIB - Selesai"
 timesc: "10:00 WIB - Selesai"
 timeth: "13:00 - end WIB"
@@ -121,4 +140,5 @@ storysc: "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehila
 storyth: "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
 
 quote: " Tidak ada yang lebih indah selain berbagi hidup dengan seseorang yang mengerti dan mendukungmu tanpa syarat.  Dan tidak ada perasaan yang lebih indah selain menemukan seseorang yang menjadi tempat pulang terbaik. "
+atribusi: "(Yahya - Siska)"
 ---

@@ -1,8 +1,12 @@
 # To learn more about how to use Nix to configure your environment
 # see: https://developers.google.com/idx/guides/customize-idx-env
+let 
+  secret = import ./secret.nix;
+in
+
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "unstable"; # or "unstable"
+  channel = "stable-23.11"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.bun
@@ -15,11 +19,14 @@
     # pkgs.nodePackages.nodemon
   ];
   # Sets environment variables in the workspace
-  env = {};
+  env = pkgs.lib.recursiveUpdate {} secret;
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
       # "vscodevim.vim"
+      "astro-build.astro-vscode"
+      "CoenraadS.bracket-pair-colorizer-2"
+      "formulahendry.auto-rename-tag"
     ];
     # Enable previews
     previews = {

@@ -1,6 +1,6 @@
 ---
 import Noheader from "../../layouts/noheader.astro";
-import { Icon } from "astro-icon/components";
+import Icon from "../../components/icon.astro";
 import Namatamu from "../../layouts/namatamu.astro";
 import Payment from "../../layouts/payment.astro";
 import Rsvp from "../../layouts/rsvp.astro";
@@ -163,7 +163,7 @@ if (!frontmatter) {
           id="toaudio"
           class=`fade-left opacity-0 px-6 py-2 relative border rounded-full shadow-xl font-bold flex gap-1 w-max ${frontmatter.txfs} ${frontmatter.bgsc}`
         >
-          Open Invitation <Icon name="mdi:love-letter" class="w-5 h-5" />
+          Open Invitation <Icon path="mdi:love-letter" primary="w-5 h-5" />
         </label>
       </div>
     </div>
@@ -198,7 +198,7 @@ if (!frontmatter) {
     <section class="animasi2 h-max overflow-hidden relative">
       <div class="container py-20 px-6 mx-auto relative">
         <div class=`flex flex-col text-center items-center ${frontmatter.txfs}`>
-          <Icon name="mdi:format-quote-close" class="w-12 h-12" />
+          <Icon path="mdi:format-quote-close" primary="w-12 h-12" />
           <p
             class="fade-up opacity-0 sm:max-w-prose px-5 sm:px-0 max-w-none font-poppins"
           >
@@ -215,12 +215,7 @@ if (!frontmatter) {
         <div
           class=`text-center py-12 px-6 space-y-5 max-w-3xl mx-auto border-4 rounded-md ${frontmatter.txfs} ${frontmatter.bdr}`
         >
-          <div
-            data-count={frontmatter.countdown}
-            id="timer"
-            class=`fade-up opacity-0  grid grid-cols-2 md:grid-cols-4 gap-y-8 justify-center text-center items-center sm:px-20 max-w-3xl mx-auto [&>*]:text-center [&>*]:text-4xl [&>*]:sm:text-6xl [&>*]:font-medium [&>*]:p-1`
-          >
-          </div>
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
           <h2 class="fade-down opacity-0 text-lg max-w-lg mx-auto">
             Kami akan menikah dan kami ingin anda menjadi bagian dari hari
             istimewa kami.
@@ -270,8 +265,8 @@ if (!frontmatter) {
                       class="flex flex-row gap-2 items-center"
                     >
                       <Icon
-                        name="mdi:instagram"
-                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                        path="mdi:instagram"
+                        primary={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
                       />
                     </a>
                   </div>
@@ -305,8 +300,8 @@ if (!frontmatter) {
                       class="flex flex-row gap-2 items-center"
                     >
                       <Icon
-                        name="mdi:instagram"
-                        class={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
+                        path="mdi:instagram"
+                        primary={`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgsc}`}
                       />
                     </a>
                   </div>
@@ -373,7 +368,7 @@ if (!frontmatter) {
         <h2 class=`fade-right opacity-0 text-center my-5 mb-10 ${frontmatter.txfs} text-6xl md:text-8xl font-nautigal`>
            Doa & Ucapan
         </h2>
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
       </div>
       <Footerpost />
     </section>
@@ -382,6 +377,5 @@ if (!frontmatter) {
       <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg" />
     </audio>
     <Animation />
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>

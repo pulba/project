@@ -1,8 +1,7 @@
 ---
 layout: '../demo/wedding-8.astro'
 slug: 'undangan/aisyah-yaing'
-title: 'Aisyah-Yaing'
-name: 'Aisyah & Yaing'
+title: 'Aisyah - Yaing |'
 desc: 'Tema 08'
 img:
   url: '/assets/aisyah5.webp'

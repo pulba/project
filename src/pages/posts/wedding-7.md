@@ -2,6 +2,7 @@
 layout: '../demo/wedding-7.astro'
 slug: 'posts/wedding-7'
 title: 'Tema 07 |'
+name: 'Tema 07'
 desc: 'Tema 07'
 price: 'Rp75.000'
 unprice: 'Rp199.000'

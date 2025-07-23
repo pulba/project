@@ -1,0 +1,18 @@
+---
+import Button from "./button.astro";
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+
+<nav class="flex justify-center items-center gap-4 mt-12">
+    {
+        prevUrl && (
+            <Button text="Previous" href={prevUrl} button="w-6 h-6 mx-1 rtl:-scale-x-100" path="" />
+        )
+    }
+    {
+        nextUrl && (
+            <Button text="Next" href={nextUrl} button="w-6 h-6 mx-1 rtl:-scale-x-100" path="" />
+        )
+    }
+</nav>

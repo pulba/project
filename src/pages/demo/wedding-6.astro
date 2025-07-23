@@ -1,6 +1,6 @@
 ---
 import Noheader from "../../layouts/noheader.astro";
-import { Icon } from "astro-icon/components";
+import Icon from "../../components/icon.astro";
 import Namatamu from "../../layouts/namatamu.astro";
 import Payment from "../../layouts/payment.astro";
 import Rsvp from "../../layouts/rsvp.astro";
@@ -176,7 +176,7 @@ if (!frontmatter) {
           for="toggle"
           id="toaudio"
           class=`flip-up opacity-0 mt-5 px-6 py-2 relative rounded-full font-kaushan flex gap-1 ${frontmatter.bgsc} ${frontmatter.txfs}`
-          ><Icon name="mdi:love-letter" class="w-5 h-5" />Open Invitation
+          ><Icon path="mdi:love-letter" primary="w-5 h-5" />Open Invitation
         </label>
       </div>
     </div>
@@ -274,8 +274,8 @@ if (!frontmatter) {
                 class="flex flex-row gap-2 items-center justify-center sm:justify-start"
               >
                 <Icon
-                  name="mdi:instagram"
-                  class=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
+                  path="mdi:instagram"
+                  primary=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
                 />
               </a>
             </div>
@@ -321,8 +321,8 @@ if (!frontmatter) {
                 class="flex flex-row gap-2 items-center justify-center sm:justify-end"
               >
                 <Icon
-                  name="mdi:instagram"
-                  class=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
+                  path="mdi:instagram"
+                  primary=`w-10 h-10 p-2 rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
                 />
               </a>
             </div>
@@ -357,12 +357,7 @@ if (!frontmatter) {
             Our Happy Day
           </h1>
         </div>
-        <div
-          data-count={frontmatter.countdown}
-          id="timer"
-          class=`fade-up opacity-0 grid grid-cols-2 md:grid-cols-4 gap-y-8 justify-center text-center items-center mt-20 sm:px-20 max-w-3xl mx-auto [&>*]:text-center [&>*]:text-4xl [&>*]:sm:text-6xl [&>*]:font-medium [&>*]:p-1 ${frontmatter.txfs}`
-        >
-        </div>
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
       </div>
     </section>
     <section
@@ -479,7 +474,7 @@ if (!frontmatter) {
           </h2>
         </div>
 
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
       </div>
       <Footerpost />
     </section>
@@ -489,6 +484,5 @@ if (!frontmatter) {
     </audio>
     <Animation />
     <Splide />
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>

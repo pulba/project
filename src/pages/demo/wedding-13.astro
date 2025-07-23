@@ -1,6 +1,6 @@
 ---
 import Noheader from '../../layouts/noheader.astro';
-import { Icon } from 'astro-icon/components';
+import Icon from "../../components/icon.astro";
 import Namatamu from '../../layouts/namatamu.astro'
 import Payment from '../../layouts/payment.astro'
 import Rsvp from '../../layouts/rsvp.astro'
@@ -181,7 +181,7 @@ if(!frontmatter) {
                 for="toggle" id="toaudio"
                 class=`mt-5 px-6 py-2 relative rounded-t-lg shadow-xl font-bold flex gap-1 border-b ${frontmatter.txfs} ${frontmatter.bgsc}`
                 >
-                <Icon name="mdi:love-letter" class="w-5 h-5" />BUKA UNDANGAN</label
+                <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-5 h-5" />BUKA UNDANGAN</label
             >
         </div>
 
@@ -226,7 +226,7 @@ if(!frontmatter) {
         </div>
       </div>
       <div class="container relative z-20 md:py-36 px-6 py-20 mx-auto h-max relative font-poppins">
-      <div class="mx-auto text-center h-screen">
+      <div class="mx-auto text-center max-h-screen">
         <p class="fade-down opacity-0 my-5 max-w-xs mx-auto">Kami mengundang Bapak/ibu/sdr/i menghadiri Pernikahan kami</p>
         <div class="fade-right opacity-0 relative flex items-center justify-center">
           <div
@@ -241,11 +241,10 @@ if(!frontmatter) {
           <span> & </span> 
           <span> { frontmatter.male } </span> 
         </div>
-        <div  data-count={frontmatter.countdown} id="timer" class=`fade-right opacity-0 grid grid-cols-2 md:grid-cols-4 justify-center text-center items-center mt-5 sm:px-20 max-w-3xl mx-auto *:text-center *:text-3xl *:sm:text-3xl *:font-bold *:font-poppins *:p-1 ${frontmatter.txth}`>
-        </div>
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
         <a href="http://">
           <button
-                class=`fade-up opacity-0 mt-5 px-4 py-2 relative rounded-t-lg shadow-lg flex gap-1 border-b mx-auto ${frontmatter.txfs} ${frontmatter.bgsc}`><Icon name="mdi:calendar" class="w-5 h-5" />SAVE THE DATE</button>
+                class=`fade-up opacity-0 mt-5 px-4 py-2 relative rounded-t-lg shadow-lg flex gap-1 border-b mx-auto ${frontmatter.txfs} ${frontmatter.bgsc}`><Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-5 h-5" />SAVE THE DATE</button>
         </a>
       </div>
       </div>
@@ -279,7 +278,7 @@ if(!frontmatter) {
               <p>{frontmatter.cityfemale}</p>
               <div class="flex items-center mt-2">
                 <a href={`https://www.instagram.com/${frontmatter.instagramfemale}`} class="flex flex-row gap-1 items-center">
-                  <Icon name="mdi:instagram" class=`w-7 h-7 p-1 rounded-lg ${frontmatter.txth} ${frontmatter.bgfs}`/> @{frontmatter.instagramfemale}
+                  <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary=`w-7 h-7 p-1 rounded-lg ${frontmatter.txth} ${frontmatter.bgfs}`/> @{frontmatter.instagramfemale}
                 </a>
               </div>
             </div>
@@ -299,7 +298,7 @@ if(!frontmatter) {
               <p>{frontmatter.citymale}</p>
               <div class="flex items-center justify-end md:justify-start mt-2">
                 <a href={`https://www.instagram.com/${frontmatter.instagrammale}`} class="flex flex-row gap-1 items-center">
-                  <Icon name="mdi:instagram" class=`order-last md:order-none w-7 h-7 p-1 rounded-lg ${frontmatter.txth} ${frontmatter.bgfs}`/> @{frontmatter.instagrammale}
+                  <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary=`order-last md:order-none w-7 h-7 p-1 rounded-lg ${frontmatter.txth} ${frontmatter.bgfs}`/> @{frontmatter.instagrammale}
                 </a>
               </div>
             </div>
@@ -404,7 +403,7 @@ if(!frontmatter) {
               </div>
               <div class="text-sm pt-5 flex flex-col items-center">
                 <p class="flex items-center">
-                  <Icon name="mdi:clock-time-eight-outline" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+                  <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
                   {frontmatter.timefs}
                 </p>
                 <p class="">
@@ -418,7 +417,7 @@ if(!frontmatter) {
                     class={`mt-5 px-6 py-2 relative rounded-t-lg shadow-xl font-bold flex items-center border-b ${frontmatter.txfs} ${frontmatter.bgsc}`}
                   >
                     Google Maps
-                    <Icon name="mdi:google-maps" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+                    <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
                   </button>
                 </a>
               </div>
@@ -447,7 +446,7 @@ if(!frontmatter) {
               </div>
               <div class="text-sm pt-5 flex flex-col items-center">
                 <p class="flex items-center">
-                  <Icon name="mdi:clock-time-eight-outline" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+                  <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
                   {frontmatter.timesc}
                 </p>
                 <p class="">
@@ -461,7 +460,7 @@ if(!frontmatter) {
                     class={`mt-5 px-6 py-2 relative rounded-t-lg shadow-xl font-bold flex items-center border-b ${frontmatter.txfs} ${frontmatter.bgsc}`}
                   >
                     Google Maps
-                    <Icon name="mdi:google-maps" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+                    <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
                   </button>
                 </a>
               </div>
@@ -505,7 +504,7 @@ if(!frontmatter) {
             <h2 class="text-center text-xl">Kirim <br> <span class="font-dyna text-5xl">Kado</span></h2>
             <img src=`${frontmatter.dekorsx}` class="w-28 h-28" alt="JejakBahagia">
             <div class=`flip-left opacity-0 relative py-8 px-4 mx-auto rounded-lg w-full ${frontmatter.bgsc} ${frontmatter.txfs}`>
-              <Icon name="mdi:location" class="w-8 h-8 mb-5 mx-auto" />
+              <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-8 h-8 mb-5 mx-auto" />
               <p class="max-w-max">{frontmatter.addressfs}</p>
             </div>
             <div class="mt-4 font-poppins">
@@ -516,7 +515,7 @@ if(!frontmatter) {
               <button
                 class={`my-5 px-6 py-2 relative rounded-t-lg shadow-xl flex items-center border-b ${frontmatter.txfs} ${frontmatter.bgsc}`}
               >
-              <Icon name="mdi:gift" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+              <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
               KONFIRMASI
               </button>
             </a>
@@ -530,7 +529,7 @@ if(!frontmatter) {
               <button
                 class={`my-5 px-6 py-2 relative rounded-t-lg shadow-xl flex items-center border-b ${frontmatter.txfs} ${frontmatter.bgsc}`}
               >
-              <Icon name="mdi:gift" class="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
+              <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" primary="w-4 h-4 flex-shrink-0 min-w-[1.5rem]" />
               KONFIRMASI
               </button>
             </a>
@@ -723,7 +722,7 @@ if(!frontmatter) {
           <h2 class="fade-right opacity-0 font-poppins text-xs">Berikan doa dan harapan terbaik bapak/ibu/sdr/i</h2>
         </div>
 
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
           
       </div>
       <Footerpost />
@@ -734,6 +733,5 @@ if(!frontmatter) {
     </audio>
     <Animation /> 
     <Splide />
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>

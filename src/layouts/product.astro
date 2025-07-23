@@ -1,0 +1,57 @@
+---
+import Button from '../components/button.astro';
+interface Props {
+  title: string;
+  desc: string;
+  primary: string;
+  aspect?: string;
+  link?: string;
+  slug?: string;
+  src?: string;
+  alt?: string;
+  price?: string;
+  unprice?: string;
+  number?: number;
+}
+const { primary, aspect, link, slug, src, alt, title, desc, price, unprice, number } = Astro.props as Props;
+
+---
+
+
+<div class="relative pb-8 bg-white rounded-lg shadow-xl">
+    <div class="relative">
+      <div class="overflow-hidden rounded-t-lg">
+        <div class="w-full overflow-hidden">
+          <a href={"/"+slug} target="_blank">
+            <img
+              src={src}
+              alt={alt}
+              class=`object-cover aspect-${aspect} transition-all duration-700	ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear rounded-t-lg`
+            />
+          </a>
+        </div>
+      </div>
+      <div class="px-4 pt-4">
+        <div class="font-poppins font-bold text-sm md:text-lg text-left text-gray-800 *:capitalize">
+          <p class=`${primary}`>
+            {title} 
+          </p>
+          <p class="text-[3vw] sm:text-[1.5vw]"><span class="bg-amber-600 rounded-md px-1 text-[10px] text-white">UW {number}</span> 
+           {desc}
+          </p>
+        </div>
+        <div>
+          <!-- <p class="font-bold text-red-700 text-start text-sm line-through">
+            {unprice}
+          </p> -->
+        <p class="font-bold text-blue-700 text-left text-lg italic">
+          {price}
+        </p>
+        </div>
+        <div class="flex flex-col gap-2 items-center justify-between mt-2 *:w-full mx-auto">
+          <Button href={"/"+slug} button="px-4 py-2 text-[3vw] sm:text-[2vw] lg:text-[1.2vw] rounded-md border shadow-none" path="" title="Preview" />
+          <Button href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${desc}* ya` button="px-4 py-2 text-[2.5vw] sm:text-[1.5vw] lg:text-[1.2vw] rounded-md text-white bg-amber-600 shadow-none" path="" title="ORDER NOW" />
+        </div>
+      </div>
+    </div>
+  </div>

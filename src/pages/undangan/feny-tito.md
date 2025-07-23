@@ -1,8 +1,7 @@
 ---
 layout: '../demo/wedding-7.astro'
 slug: undangan/feny-tito
-title: Feny-Tito
-name: Feny & Tito
+title: Feny - Tito |
 desc: 'Tema 07'
 img:
   url: '/assets/oca-tito2.webp'
@@ -24,7 +23,7 @@ before: 'before:bg-sky-800'
 # Img header
 cover: '/assets/dekor84.webp'
 imgsc: '/assets/img-6.webp'
-bg: '/assets/dekor-24.webp' 
+bg: '/assets/dekor24.webp' 
 
 #dekor
 dekorfs: '/assets/dekor83.webp'

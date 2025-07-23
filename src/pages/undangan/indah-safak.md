@@ -1,38 +1,53 @@
 ---
-layout: '../demo/wedding-8.astro'
+layout: '../demo/floral.astro'
 slug: undangan/indah-safak
-title: Indah-Safak
-name: Indah & Safak
-desc: 'Tema 08'
-countdown: "Jun 24, 2024 08:00:00"
+title: Indah - Safak |
+name: Indah - Safak 
+desc: 'Floral 02'
+number: 22
 img:
   url: '/assets/indah2.webp'
   alt: jejak bahagia
 
 # Colors
-bgfs: 'bg-orange-900/80'
-bgsc: 'bg-orange-100'
-bgth: 'bg-orange-100'
+bgfs: 'bg-orange-100'
+bgsc: 'bg-orange-300'
+bgth: 'bg-orange-900'
 
-txfs: 'text-orange-900/80'
-txsc: 'text-orange-900/80'
-txth: 'text-orange-900/80'
-
-bdr: 'border-orange-300'
 from: 'from-orange-100'
-before: 'before:bg-orange-100'
+via: 'via-orange-200'
+to: 'to-orange-300'
+before: 'before:bg-orange-200'
 
-# Img header
-cover: '/assets/dekor86.webp'
-imgsc: '/assets/indah10.webp'
-bg: '/assets/indah2.webp'
+txfs: 'text-orange-100'
+txsc: 'text-orange-900'
+txth: 'text-orange-900'
+
+fillfs: 'fill-orange-400'
+fillsc: 'fill-orange-600'
+fillth: 'fill-orange-900'
+
+bdr: 'border-orange-900'
+display: 'block'
+primary: 'block'
+styleBs: '!rounded-full !w-48 !h-48 md:!w-56 md:!h-56'
+font: 'font-great text-5xl max-[350px]:text-4xl md:text-6xl'
+button: 'rounded-full w-max mx-auto px-4 py-2'
 
 # Dekor
 dekorfs: '/assets/dekor30.webp'
-dekorsc: '/assets/dekor9.webp'
+dekorsc: '/assets/dekor30.webp'
 dekorth: '/assets/dekor31.webp'
-dekorfr: '/assets/dekor29.webp'
-dekorfv: '/assets/dekor26.webp'
+dekorfr: '/assets/dekor64.webp'
+dekorfv: '/assets/dekor65.webp'
+dekorsx: '/assets/dekor67.webp'
+
+# Img header
+cover: '/assets/indah10.webp'
+cvrsc: '/assets/indah2.webp'
+cvrth: '/assets/indah5.webp'
+cvrfr: '/assets/indah4.webp'
+cvrfv: '/assets/indah3.webp'
 
 # Img kedua mempelai
 pm1: '/assets/indah9.webp'
@@ -47,8 +62,16 @@ imgstory5: '/assets/indah6.webp'
 imgstory6: '/assets/indah5.webp'
 imgstory7: '/assets/indah4.webp'
 imgstory8: '/assets/indah3.webp'
-add1: '/assets/img-30.webp'
-add2: '/assets/img-4.webp'
+
+images:
+  - src: '/assets/indah1.webp'
+  - src: '/assets/indah7.webp'
+  - src: '/assets/indah4.webp'
+  - src: '/assets/indah2.webp'
+  - src: '/assets/indah6.webp'
+  - src: '/assets/indah5.webp'
+  - src: '/assets/indah4.webp'
+  - src: '/assets/indah3.webp'
 
 # Data mempelai
 male: "Safak"
@@ -75,6 +98,7 @@ namebankfml: "Indah Agustira"
 numberbankfml: "565601027298535"
 
 # Waktu & tempat acara
+countdown: "Jun 24, 2024 08:00:00"
 datefs: Senin, 24 Juni 2024
 datesc: Senin, 24 Juni 2024
 dateth: Senin, 24 Juni 2024
@@ -90,5 +114,6 @@ linkmaps: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3973.5841324686
 akad: "Akad"
 resepsi: "Resepsi"
 quote: "Takdir Allah yang mengikatkan cinta dua hati, pernikahan adalah perjalanan spiritual yang disatukan oleh rahmat-Nya."
+atribusi: "(Indah - Safak)"
 
 ---

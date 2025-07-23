@@ -1,0 +1,7 @@
+---
+import Icon from "./icon.astro";
+const {href, button, path, title, txfs, bgth, primary  } = Astro.props;
+---
+<a href={href} class=`${button} ${txfs} ${bgth} flex flex-row gap-2 items-center justify-center text-center uppercase shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]`>{title}
+    {path && <Icon path={path} primary={primary} />}
+</a>

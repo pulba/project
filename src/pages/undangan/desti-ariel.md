@@ -1,8 +1,7 @@
 ---
 layout: '../demo/wedding-3.astro'
 slug: 'undangan/desti-ariel'
-title: 'Desti-Ariel'
-name: 'Desti & Ariel'
+title: 'Desti - Ariel |'
 desc: 'Tema 03'
 img:
   url: '/assets/desti1.webp'

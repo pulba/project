@@ -1,6 +1,6 @@
 ---
 import Noheader from "../../layouts/noheader.astro";
-import { Icon } from "astro-icon/components";
+import Icon from "../../components/icon.astro";
 import Namatamu from "../../layouts/namatamu.astro";
 import Payment from "../../layouts/payment.astro";
 import Rsvp from "../../layouts/rsvp.astro";
@@ -10,6 +10,7 @@ import Audio from "../../layouts/audio.astro";
 import Animation from "../../layouts/animation.astro";
 import Gallery from "../../layouts/gallery.astro";
 import Card from '../../layouts/card.astro';
+import Decor from "../../layouts/decor.astro";
 
 
 let { frontmatter } = Astro.props;
@@ -135,40 +136,24 @@ if (!frontmatter) {
     class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear"
   />
   <section
-    class=`animasi1 relative h-screen bg-cover bg-center overflow-hidden mx-auto peer-checked:h-0 peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear peer-checked:delay-500 before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}`
+    class=`animasi1 relative bg-cover bg-center overflow-hidden mx-auto peer-checked:h-0 before:content-[''] before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}`
     style={`background-image:url(${frontmatter.cover})`}
   >
+    <Decor dekor1={frontmatter.dekorfs} dekor2={frontmatter.dekorfs} dekor3={frontmatter.dekorfs} dekor4={frontmatter.dekorfs} primary1="-rotate-90 block" primary2="block" primary3="rotate-180" primary4="block rotate-90 " dekorbt={frontmatter.dekorfs} dekorlf={frontmatter.dekorfs} dekorend={frontmatter.dekorfs} hidden1="block" hidden2="hidden" hidden3="hidden" hidden4="hidden *:w-8/12 *:sm:w-1/2 *:lg:w-1/3"/>
     <div
-      class="absolute overflow-hidden w-full h-[100%] *:absolute *:object-cover *:max-w-xs *:lg:max-w-sm"
-    >
-      <div class="-right-5 -top-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="right-0 top-0"
-          alt="JejakBahagia"
-        />
-      </div>
-      <div class="-bottom-5 -left-5">
-        <img
-          src=`${frontmatter.dekorfs}`
-          class="rotate-180"
-          alt="JejakBahagia"
-        />
-      </div>
-    </div>
-    <div
-      class="container h-screen py-20 mx-auto flex flex-col justify-between items-center relative z-50"
-    >
-      <h6
-        class=`fade-left opacity-0 text-sm md:text-xl mt-8 tracking-widest font-poppins font-semibold ${frontmatter.txfs}`
+      class="container mx-auto relative z-50">
+      <div class="h-screen flex flex-col justify-end items-center pb-20">
+        <div class="">
+          <h6
+        class=`fade-left opacity-0 text-center text-sm md:text-xl mt-8 tracking-widest font-poppins`
       >
-        WEDDING INVITATION
+      THE WEDDING OF
       </h6>
       <div
         class=`flip-right opacity-0 flex gap-x-4 justify-center items-center *:font-nautigal *:font-thin *:max-[350px]:text-6xl *:text-7xl *:lg:text-9xl *:relative ${frontmatter.txth}`
       >
         <h2>{frontmatter.female}</h2>
-        <Icon name="mdi:ring" class="text-center w-8 md:w-12" />
+        <span>&</span>
         <h2>{frontmatter.male}</h2>
       </div>
       <div class=`text-center ${frontmatter.txsc}`>
@@ -182,10 +167,13 @@ if (!frontmatter) {
         <label
           for="toggle"
           id="toaudio"
-          class=`fade-right opacity-0 w-fit mx-auto mt-5 px-6 py-2 font-bold rounded-md relative flex gap-1 border ${frontmatter.txfs} ${frontmatter.bgth}`
+          class=`fade-right opacity-0 w-fit mx-auto mt-5 px-6 py-2 font-bold rounded-full relative flex gap-1 border ${frontmatter.txfs} ${frontmatter.bgth}`
           >Open Invitation
         </label>
       </div>
+        </div>
+      </div>
+      
     </div>
   </section>
   <main id="myDIV" class="hidden peer-checked:block scroll-smooth">
@@ -246,13 +234,7 @@ if (!frontmatter) {
             Our Happy Day
           </h1>
         </div>
-        <div
-          data-count={frontmatter.countdown}
-          id="timer"
-          class=`fade-up opacity-0  grid grid-cols-2 md:grid-cols-4 gap-y-8 justify-center gap-4 text-center items-center mt-20 sm:px-20 max-w-3xl mx-auto *:text-center *:text-4xl *:sm:text-6xl *:font-bold *:p-1 *:border *:py-4 *:px-6 *:w-max *:mx-auto ${frontmatter.txsc}`
-        >
-        </div>
-        <Countdown />
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
       </div>
     </section>
     <section class=`animasi4 overflow-hidden relative ${frontmatter.bgsc}`>
@@ -316,7 +298,7 @@ if (!frontmatter) {
                     href={`https://www.instagram.com/${frontmatter.instagramfemale}`}
                     class=`flex flex-row gap-2 p-1 items-center rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
                   >
-                    <Icon name="mdi:instagram" class="w-6 h-6" />
+                    <Icon path="mdi:instagram" primary="w-6 h-6" />
                   </a>
                 </div>
               </div>
@@ -360,7 +342,7 @@ if (!frontmatter) {
                     href={`https://www.instagram.com/${frontmatter.instagrammale}`}
                     class=`flex flex-row gap-2 p-1 items-center rounded-full ${frontmatter.txfs} ${frontmatter.bgth}`
                   >
-                    <Icon name="mdi:instagram" class="w-6 h-6" />
+                    <Icon path="mdi:instagram" primary="w-6 h-6" />
                   </a>
                 </div>
               </div>
@@ -481,7 +463,7 @@ if (!frontmatter) {
           </h2>
         </div>
 
-        <Rsvp color="gray-600" />
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} txfs={frontmatter.txfs} txsc={frontmatter.txth} />
       </div>
       <Footerpost />
     </section>
@@ -490,6 +472,5 @@ if (!frontmatter) {
       <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg" />
     </audio>
     <Animation />
-    <Countdown count={frontmatter.countdown} />
   </main>
 </Noheader>

@@ -1,0 +1,310 @@
+---
+import Noheader from '../../layouts/noheader.astro';
+import Icon from '../../components/icon.astro';
+import Namatamu from '../../layouts/namatamu.astro'
+import Payment from '../../layouts/payment.astro'
+import Rsvp from '../../layouts/rsvp.astro'
+import Countdown from "../../layouts/countdown.astro";
+import Footerpost from '../../layouts/footer-post.astro'
+import Audio from '../../layouts/audio.astro'
+import Animation from '../../layouts/animation.astro'
+import Splide from '../../layouts/autoscroll.astro'
+import Gallery from "../../layouts/gallery.astro";
+import Card from '../../layouts/card.astro';
+import Decor from '../../layouts/decor.astro';
+import BorderSingle from '../../layouts/borderSingle.astro';
+import Shapes from '../../layouts/shapes.astro';
+import Bride from '../../layouts/bride.astro';
+import StorySlide from '../../layouts/storySlide.astro';
+import Button from '../../components/button.astro';
+
+let {frontmatter, count} = Astro.props;
+
+if(!frontmatter) {
+  let data = {};
+  data["title"] = 'wedding-11'
+  data["type"] = 'Tema Minang'
+  data["desc"] = 'wedding-11'
+
+  data["bgfs"] = 'bg-yellow-100'
+  data["bgsc"] = 'bg-amber-950'
+  data["bgth"] = 'bg-[#120B09]'
+
+  data["txfs"] = 'text-white'
+  data["txsc"] = 'text-amber-600'
+  data["txth"] = 'text-amber-900'
+  data["txfr"] = 'text-amber-500'
+
+  data["fillfs"] = "fill-pink-100";
+  data["fillsc"] = "fill-pink-600";
+  data["fillth"] = "fill-pink-900";
+
+  data["bdr"] = 'border-amber-950'
+  data["from"] = 'from-amber-950'
+  data["via"] = 'via-amber-950'
+  data["to"] = 'to-amber-950'
+  data["before"] = 'before:bg-[#120B09]'
+  data["bfr"] = 'before:from-[#120B09]'
+  data["bto"] = 'before:to-[#120B09]'
+
+  data["display"] = "block";
+  data["styleBs"] = "rounded-full";
+  data["primary"] = "block";
+  data["font"] = "font-great";
+  data["button"] = "rounded-full px-4 py-2";
+
+  data["cover"] = '/assets/img-37.webp'
+  data["cvrsc"] = '/assets/img-35.webp'
+  data["cvrth"] = '/assets/img-36.webp'
+  data["cvrfr"] = '/assets/img-38.webp'
+  data["cvrfv"] = '/assets/img-38.webp'
+
+  // dekor
+  data["dekorfs"] = '/assets/dekor61.webp'
+  data["dekorsc"] = '/assets/dekor62.webp'
+  data["dekorth"] = '/assets/dekor63.webp'
+  data["dekorfr"] = '/assets/dekor64.webp'
+  data["dekorfv"] = '/assets/dekor65.webp'
+  data["dekorsx"] = '/assets/dekor67.webp'
+
+  // Img kedua mempelai
+  data["pm1"] = '/assets/img-27.webp'
+  data["pm2"] = '/assets/img-26.webp'
+
+  // Img story mempelai
+  data["imgstory1"] = '/assets/img-35.webp'
+  data["imgstory2"] = '/assets/img-36.webp'
+  data["imgstory3"] = '/assets/img-37.webp'
+  data["imgstory4"] = '/assets/img-38.webp'
+  data["imgstory5"] = '/assets/img-38.webp'
+  data["imgstory6"] = '/assets/img-37.webp'
+  data["imgstory7"] = '/assets/img-36.webp'
+  data["imgstory8"] = '/assets/img-35.webp'
+
+
+  // data mempelai
+  data["male"] = "Rama"
+  data["fullmale"] = "Rama Cita"
+  data["female"] = "Shinta"
+  data["fullfemale"] = "Shinta Sari"
+  data["music"] = "yovie-nuno-janji-suci"
+
+  data["childmale"] = "Putra kelima"
+  data["childfemale"] = "Putri Pertama"
+  data["parentmale"] = "Bapak Joko & Ibu Siti"
+  data["parentfemale"] = "Bapak Bambang & Ibu Mulyani"
+  data["instagrammale"] = "instagram"
+  data["instagramfemale"] = "instagram"
+  data["facebookmale"] = "facebook"
+  data["facebookfemale"] = "facebook"
+  data["citymale"] = "Palembang"
+  data["cityfemale"] = "Makkasar"
+
+  //bank
+  data["logoml"] = "/assets/bri.png"
+  data["bankml"] = "BRI"
+  data["namebankml"] = "Remeo Alexa"
+  data["numberbankml"] = "123456789"
+  data["logofml"] = "/assets/bca.png"
+  data["bankfml"] = "BCA"
+  data["namebankfml"] = "Juliet Kapolo"
+  data["numberbankfml"] = "123456789"
+  data["phone"] = "6281532094978"
+
+//waktu & tempat acara
+  data["countdown"] = "June 5, 2024 15:37:25";
+  data["datefs"] = "05"
+  data["datesc"] = "07"
+  data["dateth"] = "05"
+  data["dayfs"] = "Jum'at";
+  data["daysc"] = "Sabtu";
+  data["dayth"] = "Minggu";
+  data["month"] = "Januari";
+  data["year"] = "2030";
+  data["timefs"] = "08:00 - 09:00 WIB"
+  data["timesc"] = "10:00 - 11:00 WIB"
+  data["timeth"] = "13:00 - end WIB"
+  data["addressfs"] = "Jl Argopuro 23, Jaten, Karanganyar"
+  data["addresssc"] = "Jl Argopuro 23, Jaten, Karanganyar"
+  data["addressth"] = "Jl Argopuro 23, Jaten, Karanganyar"
+  data["locationfs"] = "Rumah Mempelai Wanita"
+  data["locationsc"] = "Rumah Mempelai Wanita"
+  data["locationth"] = "Rumah Mempelai Wanita"
+  data["mapsfs"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468" 
+  data["mapssc"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["mapsth"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468"
+  data["linkmaps"] = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041!2d110.3807054!3d-7.7744606!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b4fe07a7f9%3A0x2f7c4fd3d72616bb!2sJl.%20Prof.%20DR.%20Drs%20Notonagoro%2C%20Karang%20Malang%2C%20Caturtunggal%2C%20Kec.%20Depok%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281!5e0!3m2!1sid!2sid!4v1717643524613!5m2!1sid!2sid"
+  data["akad"] = "Akad"
+  data["resepsi"] = "Resepsi"
+
+//story love
+  data["storyfs"] = "Di sebuah kafe yang nyaman di tengah kota, dua orang asing, Yanti dan Yanto, tak sengaja bertemu. Yanto, seorang fotografer yang sedang mencari inspirasi untuk proyek terbarunya, sedangkan Yanti, seorang penulis lepas yang sedang mencatat ide-ide baru untuk novel romantisnya, tak menyadari bahwa matanya sedang bertatapan dengan seorang pria tampan di sisi lain kafe."
+  data["storysc"] = "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehilangan Juliet dari hidupnya. Dengan hati yang penuh harap, dia menyiapkan proposal yang tak terlupakan. Di bawah langit malam yang cerah, di taman yang dihiasi dengan ratusan lentera, Romeo berlutut di hadapan Juliet."
+  data["storyth"] = "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
+
+  data["quote"] = "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+  data["atribusi"] = 
+    " (Qs. Ar-Rum : 21)";
+  frontmatter=data;
+}
+
+const dekorProps = {
+  dekortop: frontmatter.dekorfs,
+  dekorebt: frontmatter.dekorsc,
+  dekorlf: frontmatter.dekorth,
+  dekorend: frontmatter.dekorfr,
+  primary1: '-rotate-90 ',
+  primary2: '',
+  primary3: 'rotate-180',
+  primary4: ' rotate-90',
+  hidden1: 'hidden',
+  hidden2: 'absolute',
+  hidden3: 'hidden',
+  hidden4: 'absolute',
+  animations: ['fade-left', 'fade-right', 'fade-up', 'fade-down', 'flip-left', 'flip-right', 'flip-up', 'flip-down'],
+  positions: [
+    '-left-5 -top-5', // Untuk dekor1
+    '-right-5 -top-5', // Untuk dekor2
+    '-bottom-5 -left-5', // Untuk dekor3
+    '-right-5 -bottom-5', // Untuk dekor4
+  ],
+};
+---
+
+<Noheader title={frontmatter.title} desc={frontmatter.desc}>
+  
+  <input type="checkbox" id="toggle" class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear"/>
+  <section class=`relative overflow-hidden transition-[max-height,transform] duration-700 ease-linear max-h-[1000px] transform translate-y-0 peer-checked:max-h-0 peer-checked:translate-y-[-200px] peer-checked:overflow-hidden ${frontmatter.bgfs}`>
+    <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
+    <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="hidden" hidden3="hidden" hidden4="absolute" animations='fade-left', 'fade-right', 'fade-left', 'fade-right' />
+    <div class="mx-auto relative h-screen flex flex-col md:flex-row *:w-full *:h-full">
+      <div class=`fade-down opacity-0 relative pt-20 bg-cover bg-center before:content-[''] before:md:bg-gradient-to-t before:bg-gradient-to-t before:to-transparent before:inset-0 before:bg-cover before:absolute ${frontmatter.from}`
+        style={`background-image:url(${frontmatter.cover})`}>
+      </div>
+      <div class="relative pb-12 flex flex-col items-center justify-center z-50">
+        <h2 class=`flip-left opacity-0 text-center *:leading-7 -mt-24 md:-mt-0 ${frontmatter.txsc} ${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h2>
+        <div class=`text-center my-5 ${frontmatter.txth}`>
+          <p class="fade-right opacity-0 text-sm mt-2">Kpd Bpk/Ibu/Saudara/i</p>
+          <h4 id="invite-name" class="fade-right opacity-0 text-xl font-bold capitalize">
+            <Namatamu /> Nama Tamu
+          </h4>
+          <p class="fade-right opacity-0 mt-2">di Tempat</p>
+        </div>
+        <label for="toggle" id="toaudio" class=`fade-left opacity-0 mt-5 px-5 py-2 w-max flex items-center relative rounded-full shadow-xl font-bold flex gap-1 ${frontmatter.txfs} ${frontmatter.bgth}`>Buka Undangan
+          <Icon path="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" primary="w-5 h-5"/>
+        </label>
+      </div>
+    </div>
+  </section>
+  <main id="myDIV" class=`hidden relative peer-checked:block ${frontmatter.bgfs}`>
+    <section class=`relative overflow-hidden`>
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
+      <div class="container relative z-20 md:py-36 px-6 py-20 mx-auto h-max relative font-poppins">
+      <div class="mx-auto text-center min-h-screen">
+        <p class="fade-down opacity-0 my-5 max-w-xs mx-auto">The Wedding Of</p>
+        <BorderSingle image={frontmatter.cvrsc} dekorth={frontmatter.dekorfv} styleBs={frontmatter.styleBs} primary={frontmatter.primary}  />
+        <div class=`fade-left opacity-0 flex flex-col sm:flex-row items-center justify-center font-dyna gap-x-8 mt-5 text-center text-6xl md:text-8xl leading-10`>
+        <h2 class=`flip-left opacity-0 text-center *:leading-7 ${frontmatter.txsc} ${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h2>
+        </div>
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
+      </div>
+      </div>
+      <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
+    </section>
+    <section class=`${frontmatter.bgth} ${frontmatter.txfs} relative overflow-hidden`>
+      <div class="container px-6 py-20 mx-auto relative">
+        <div class="text-center font-poppins max-w-3xl mx-auto">
+          <p class="fade-right opacity-0 text-xs font-poppins">{frontmatter.quote}</p>
+          <h5 class=`fade-left opacity-0 mt-2 !text-xl ${frontmatter.font}`>{frontmatter.atribusi}</h5>
+        </div>
+      </div>
+    </section>
+    <section class=`animasi4 relative bg-cover bg-center bg-fixed sm:bg-top flex items-center overflow-hidden peer-checked:h-0 before:content-[''] before:absolute before:opacity-90 before:bg-gradient-to-b before:h-full before:w-full ${frontmatter.before}`
+    style={`background-image:url(${frontmatter.cvrth})`}>
+    <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" animations='fade-left', 'fade-right', 'fade-left', 'fade-right' />
+      <div class="container mx-auto py-28 px-6 relative min-h-screen">
+        <div class=`text-center font-poppins max-w-md mx-auto ${frontmatter.txfs}`>
+          <h5 class=`fade-left opacity-0 !text-2xl ${frontmatter.font}`>
+            Assalamualaikum Wr. Wb.
+          </h5>
+          <p class="fade-right opacity-0 font-poppins text-xs mt-2">Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
+        </div>
+        <Bride primary={frontmatter.primary} pm1={frontmatter.pm1} pm2={frontmatter.pm2} dekorth={frontmatter.dekorfv} txsc={frontmatter.txfs} styleBs={frontmatter.styleBs} txfs={frontmatter.txfs} bgth={frontmatter.bgth} font={frontmatter.font} fullfemale={frontmatter.fullfemale} childfemale={frontmatter.childfemale} parentfemale={frontmatter.parentfemale} instagramfemale={frontmatter.instagramfemale} male={frontmatter.male} fullmale={frontmatter.fullmale} childmale={frontmatter.childmale} parentmale={frontmatter.parentmale} instagrammale={frontmatter.instagrammale} />
+      </div>
+    </section>
+    <section class="animasi5 relative overflow-hidden">
+      <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-mb-1 absolute top-0 left-0 z-20" />
+      <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="hidden" hidden3="hidden" hidden4="absolute" />
+      <div class="container mx-auto py-20 sm:py-36 px-6 min-h-screen">
+        <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} month={frontmatter.month} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
+      </div>
+    </section>
+    <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:opacity-80 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.display}` style=`background-image: url('${frontmatter.cvrsc}')`>
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" />
+      <div class="container mx-auto py-20 px-6 my-10 text-center relative">
+        <div class=`max-w-md mx-auto ${frontmatter.txfs}`>
+          <h2 class="fade-left opacity-0 text-center font-dyna text-5xl md:text-6xl">Our Story</h2>
+          <p class="fade-right opacity-0 font-poppins text-xs">Kisah hubungan yang tidak banyak orang ketahui. Penuh suka dan duka, namun akhirnya sepakat berkomitmen untuk melalui semuanya bersama.</p>
+        </div>
+        <StorySlide imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} storyfs={frontmatter.storyfs} storysc={frontmatter.storysc} storyth={frontmatter.storyth} txth={frontmatter.txth} font={frontmatter.font} />
+      </div>
+    </section>
+    <section class=`relative overflow-hidden ${frontmatter.display}`>
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
+      <Gallery images={frontmatter.images} txsc={frontmatter.txsc} font={frontmatter.font} />
+      <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
+    </section>
+    <section class=`relative bg-cover bg-center bg-fixed overflow-hidden before:content-[''] before:absolute before:h-full before:w-full before:bg-gradient-to-b ${frontmatter.bfr}`
+    style={`background-image:url(${frontmatter.cvrfr})`}>
+    <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" />
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="hidden" hidden3="hidden" hidden4="absolute" />
+      <div class="container px-6 py-20 sm:my-20 text-center mx-auto relative z-10">
+        <div class="flex flex-col sm:flex-row justify-center gap-6 max-w-sm sm:max-w-3xl mx-auto font-poppins *:relative *:flex *:flex-col *:gap-y-6 *:items-center *:justify-center *:w-full *:mx-auto *:h-auto *:py-12 *:px-6 *:rounded-full *:text-center *:border-4 *:bg-opacity-70 ">
+          <div class=`fade-left opacity-0 ${frontmatter.txfs} ${frontmatter.bgth} ${frontmatter.bdr}`>
+            <h2 class="text-center text-xl">Kirim <br> <span class=`!text-4xl ${frontmatter.font}`>Kado</span></h2>
+            <img src=`${frontmatter.dekorsx}` class="w-28 h-28" alt="JejakBahagia">
+            <div class=`flip-left opacity-0 relative py-8 px-4 mx-auto rounded-lg w-full ${frontmatter.bgsc} ${frontmatter.txfs}`>
+              <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-8 h-8 mb-5 mx-auto" />
+              <p class="max-w-max">{frontmatter.addressfs}</p>
+            </div>
+            <div class="mt-4 font-poppins">
+              <p class="max-w-prose">{frontmatter.fullfemale}</p>
+              <span class="copy-content font-bold">{frontmatter.phone}</span>
+            </div>
+            <Button href=`https://api.whatsapp.com/send/?phone=${frontmatter.phone}&text=Saya+baru+saja+melakukan+transfer+gift+melalui+undangan+website.+Berikut+bukti+transfernya%3A&type=phone_number&app_absent=0` target="_blank" button={frontmatter.button} txfs={frontmatter.txfs} bgth={frontmatter.bgsc} path="mdi:gift" title="KONFIRMASI" />
+          </div>
+          <div class=`fade-right opacity-0 ${frontmatter.txfs} ${frontmatter.bgth} ${frontmatter.bdr}`>
+            <h2 class="text-center text-xl">Online <br> <span class=`!text-4xl ${frontmatter.font}`>Gift</span></h2>
+            <img src=`${frontmatter.dekorsx}` class="w-28 h-28" alt="JejakBahagia">
+            <Payment txfs={frontmatter.txfs} txth={frontmatter.txth} bgth={frontmatter.bgth} from={frontmatter.from} via={frontmatter.via} to={frontmatter.to} numberbankml={frontmatter.numberbankml} numberbankfml={frontmatter.numberbankfml} namebankml={frontmatter.namebankml} namebankfml={frontmatter.namebankfml} logoml={frontmatter.logoml} logofml={frontmatter.logofml} row="col"  />
+            <Button href=`https://api.whatsapp.com/send/?phone=${frontmatter.phone}&text=Saya+baru+saja+melakukan+transfer+gift+melalui+undangan+website.+Berikut+bukti+transfernya%3A&type=phone_number&app_absent=0` target="_blank" button={frontmatter.button} txfs={frontmatter.txfs} bgth={frontmatter.bgsc} path="mdi:gift" title="KONFIRMASI" />
+          </div>          
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class=`relative bg-cover bg-top bg-fixed overflow-hidden before:content-[''] before:absolute before:h-full before:w-full before:bg-gradient-to-b`>
+      <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
+      <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
+      <div class="container py-20 z-50 px-6 text-center mx-auto relative">
+        <div class:list=`text-center my-5 mb-10 ${frontmatter.txth}`>
+          <h2 class=`fade-right opacity-0 ${frontmatter.font}`>
+            Ucapan & Doa
+          </h2>
+          <h2 class="fade-right opacity-0 font-poppins text-xs">Berikan doa dan harapan terbaik bapak/ibu/sdr/i</h2>
+        </div>
+
+        <Rsvp bgfs={frontmatter.bgsc} bgsc={frontmatter.bgfs} bgth={frontmatter.bgth} txfs={frontmatter.txfs} txsc={frontmatter.txth} txth={frontmatter.txfs} />
+          
+      </div>
+    </section>
+    <Footerpost styleBs={frontmatter.styleBs} dekorProps={dekorProps} txfs={frontmatter.txfs} txcs={frontmatter.txcs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgsc={frontmatter.bgsc} bgth={frontmatter.bgth} font={frontmatter.font} image={frontmatter.cvrsc} dekorth={frontmatter.dekorfv} female={frontmatter.female} male={frontmatter.male} fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary={frontmatter.primary} /> 
+    <Audio txfs={frontmatter.txfs} bgth={frontmatter.bgth} bdr={frontmatter.bdr} />
+    <audio id="myAudio" loop class="hidden">
+      <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">
+    </audio>
+    <Animation /> 
+    <Splide />
+  </main>
+</Noheader>

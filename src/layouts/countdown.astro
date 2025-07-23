@@ -1,37 +1,81 @@
 ---
+const { txfs, bgfs, countdown, animation } = Astro.props;
 
 ---
 
+<div
+data-count={countdown} 
+  id="timer"
+  class=`hidden flip-left opacity-0 px-6 grid grid-cols-2 md:grid-cols-2 gap-8 justify-center text-center items-center mt-12 sm:px-20 max-w-3xl mx-auto *:${bgfs} ${txfs} *:text-center *:text-5xl *:sm:text-6xl *:font-medium *:border *:rounded-xl *:p-2 ${animation}`>
+</div>
+<div id="countdown-display" class=`flip-left opacity-0 grid grid-cols-4 gap-2 justify-center text-center items-center sm:px-20 max-w-3xl mx-auto *:text-center [&>div>span]:sm:text-5xl [&>div>span]:text-3xl *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] *:border *:rounded-xl *:p-2 *:opacity-70 ${txfs} ${animation}`>
+  <div class=`${bgfs}`>
+    <span id="days" class="value data-avatar">0</span>
+    <br />
+    <p>Hari</p>
+  </div>
+  <div class=`${bgfs}`>
+    <span id="hours" class="value data-avatar">0</span>
+    <br />
+    <p>Jam</p>
+  </div>
+  <div class=`${bgfs}`>
+    <span id="minutes" class="value data-avatar">0</span>
+    <br />
+    <p>Menit</p>
+  </div>
+  <div class=`${bgfs}`>
+    <span id="seconds" class="value data-avatar">0</span>
+    <br />
+    <p>Detik</p>
+  </div>
+</div>
+
 <script>
+  const timer = document.querySelector("#timer"); // Ambil elemen dengan ID timer
+  const display = document.querySelector("#countdown-display"); // Ambil elemen countdown
 
-const timer = document.querySelector("#timer");
+  if (timer && display) {
+    const tanggalTujuan = new Date(timer.dataset.count).getTime();
 
-if(timer){
-    const tanggalTujuan = new Date(timer.dataset.count).getTime()
+    const updateCountdown = () => {
+      const sekarang = new Date().getTime();
+      const selisih = tanggalTujuan - sekarang;
 
-    const hitungMundur = setInterval(function(){
+      if (selisih < 0) {
+        // Jika countdown sudah habis, reset semua nilai menjadi 0
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        clearInterval(interval); // Hentikan interval
+        return;
+      }
 
+      // Hitung waktu tersisa
+      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+      const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+      const detik = Math.floor((selisih % (1000 * 60)) / 1000);
 
-    const sekarang = new Date().getTime();
-    const selisih = tanggalTujuan - sekarang;
+      // Update nilai countdown ke elemen jika elemen ada
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
 
-    const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-    const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60));
-    const detik = Math.floor(selisih % (1000 * 60) / (1000));
+      if (daysElement && hoursElement && minutesElement && secondsElement) {
+        daysElement.textContent = hari.toString(); // Mengubah angka ke string
+        hoursElement.textContent = jam.toString(); 
+        minutesElement.textContent = menit.toString(); 
+        secondsElement.textContent = detik.toString();
+      }
+    };
 
-    timer.innerHTML = 
-        '<div><div class="leading-8">' + hari + '<br><span class="text-xl">Hari</span></div></div>' +
-        '<div><div class="leading-8">' + jam + '<br><span class="text-xl">Jam</span></div></div>' +
-        '<div><div class="leading-8">' + menit + '<br><span class="text-xl">Menit</span></div></div>' +
-        '<div><div class="leading-8">' + detik + '<br><span class="text-xl">Detik</span></div></div>';
-            if (selisih < 0) {
-            const end = document.createElement("div");
-            end.innerHTML = '<div class="absolute leading-8 bg-gray-100 text-gray-800 text-xl inset-x-0 capitalize border rounded-md w-max px-4 py-2 mx-auto">Acara telah berakhir</div>';
-            timer.innerHTML = "";
-            timer.appendChild(end);
-            }
+    // Jalankan pertama kali untuk menampilkan nilai awal
+    updateCountdown();
 
-    });
-}
+    // Set interval untuk update setiap detik
+    const interval = setInterval(updateCountdown, 1000);
+  }
 </script>

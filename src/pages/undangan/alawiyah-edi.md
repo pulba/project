@@ -1,8 +1,7 @@
 ---
 layout: '../demo/wedding-3.astro'
 slug: 'undangan/alawiyah-edi'
-title: 'Alawiyah-Edi'
-name: 'Alawiyah & Edi'
+title: 'Alawiyah - Edi |'
 desc: 'Tema 03'
 img:
   url: '/assets/alawiyah3.webp'

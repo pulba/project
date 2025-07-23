@@ -26,7 +26,7 @@ from: 'from-amber-100'
 before: 'before:bg-amber-800'
 
 # Img header
-cover: '/assets/img-10.webp'
+cover: '/assets/img-78.jpg'
 imgsc: '/assets/img-20.webp'
 bg: '/assets/dekor-24.webp'
 

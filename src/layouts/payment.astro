@@ -1,57 +1,22 @@
 ---
-const { txfs, txth, bgfs, bgth, numberbankml, numberbankfml, namebankml, namebankfml, logoml, logofml, before, row } = Astro.props;
-
+import BankCard from "./BankCard.astro";
+import Copy from "../components/copy.astro"
+const { txth, numberbankml, numberbankfml, namebankml, namebankfml, logoml, logofml, from, via, to, row, animation } = Astro.props;
 ---
 
-<div class=`relative flex flex-col md:flex-${row} gap-8 justify-center w-full max-w-screen-md mx-auto mt-12 z-50 *:mx-auto *:w-full *:h-full *:max-w-xs *:mx-auto *:gap-5 *:rounded-lg *:border-[1px] *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${txfs}`>
-  <div class=`flip-left opacity-0 relative overflow-hidden before:content-[''] before:absolute before:opacity-25 before:w-full before:h-full before:left-0 before:rounded-lg ${before} ${txth}`>
-    <div class="relative z-10 text-center flex flex-col items-center py-8 px-4 md:px-16 h-full">
-      <img class="h-auto max-w-24" src={logoml} alt="JejakBahagia">
-      <div class=`mt-5`>
-        <p class="max-w-prose">{namebankml}</p>
-        <span class="copy-content font-bold">{numberbankml}</span>
-        <div class="btn-copy pt-5">
-          <button class=`${bgth} ${txfs} px-5 py-2 rounded-lg`>Copy Rekening</button>
-        </div>
-        <span class="copy-message absolute hidden inset-x-0">Rekening dicopy</span>
-      </div>
-    </div>
-  </div>
-  <div class=`flip-right opacity-0 relative overflow-hidden before:content-[''] before:absolute before:opacity-25 before:w-full before:h-full before:left-0 before:rounded-lg ${before} ${txth}`>
-    <div class="relative z-10 text-center flex flex-col items-center py-8 px-4 md:px-16 h-full">
-      <img class="h-auto max-w-24" src={logofml} alt="JejakBahagia">
-      <div class=`mt-5`>
-        <p class="max-w-prose">{namebankfml}</p>
-        <span class="copy-content font-bold">{numberbankfml}</span>
-        <div class="btn-copy pt-5">
-          <button class=`${bgth} ${txfs} px-5 py-2 rounded-lg`>Copy Rekening</button>
-        </div>
-        <span class="copyMessage absolute hidden inset-x-0">Rekening dicopy</span>
-      </div>
-    </div>
-  </div>
+<div class={`relative flex flex-col md:flex-${row} gap-8 justify-center w-full max-w-screen-md mx-auto mt-12 z-50 *:relative *:overflow-hidden *:mx-auto *:w-full *:h-full *:max-w-xs *:gap-5 *:rounded-2xl *:border-[1px] *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${txth}`}>
+  <BankCard 
+    logo={logoml}
+    name={namebankml}
+    number={numberbankml}
+    classNames={`flip-left opacity-0 bg-gradient-to-r ${animation} ${from} ${via} ${to} ${txth}`}
+  />
+  <BankCard 
+    logo={logofml}
+    name={namebankfml}
+    number={numberbankfml}
+    classNames={`flip-left opacity-0 bg-gradient-to-r ${animation} ${from} ${via} ${to} ${txth}`}
+  />
 </div>
+<Copy/>
 
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const copyButtons = document.querySelectorAll('.btn-copy');
-
-  copyButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const content = this.previousElementSibling.textContent;
-      const copyMessage = this.nextElementSibling;
-      navigator.clipboard.writeText(content).then(() => {
-        copyMessage.textContent = 'Rekening dicopy!'; 
-        copyMessage.classList.remove('hidden'); 
-        setTimeout(() => {
-          copyMessage.classList.add('hidden'); 
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy: ', err); 
-      });
-    });
-  });
-});
-
-</script>

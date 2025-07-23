@@ -1,6 +1,26 @@
 ---
-const { title, desc } = Astro.props;
+interface Props {
+  title: string;
+  desc?: string;
+}
+const { title, desc } = Astro.props as Props;
 ---
 
 <title>{title} Jejak Bahagia</title>
 <meta name="description" content={desc} />
+<meta name="keywords" content="undangan digital, undangan pernikahan, wedding invitation, undangan online, undangan pernikahan digital">
+<meta name="author" content="Jejak Bahagia">
+
+<meta property="og:title" content="Jejak Bahagia - Undangan Digital Pernikahan">
+<meta property="og:description" content="Buat undangan pernikahan digital yang elegan dan praktis hanya di Jejak Bahagia. Desain eksklusif, mudah dibagikan, dan ramah lingkungan.">
+<meta property="og:url" content="https://jejakbahagia.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://jejakbahagia.com/assets/jejakbahagia.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jejak Bahagia - Undangan Digital Pernikahan">
+<meta name="twitter:description" content="Buat undangan pernikahan digital yang elegan dan praktis hanya di Jejak Bahagia. Desain eksklusif, mudah dibagikan, dan ramah lingkungan.">
+<meta name="twitter:image" content="https://jejakbahagia.com/assets/jejakbahagia.webp">
+
+<link rel="canonical" href="https://jejakbahagia.com/">
+<meta name="google-adsense-account" content="ca-pub-9856264152566334">

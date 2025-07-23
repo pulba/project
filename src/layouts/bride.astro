@@ -1,0 +1,97 @@
+---
+import Icon from "../components/icon.astro";
+import BorderSingle from "./borderSingle.astro";
+export interface CoupleProps {
+  important: string;
+  animation: string;
+  brideflex: string;
+  pm1: string;
+  pm2: string;
+  dekorth: string;
+  txsc: string;
+  styleBs: string;
+  primary: string;
+  txfs: string;
+  bgth: string;
+  font: string;
+  fullfemale: string;
+  childfemale: string;
+  parentfemale: string;
+  instagramfemale: string;
+  male: string;
+  fullmale: string;
+  childmale: string;
+  parentmale: string;
+  instagrammale: string;
+}
+
+const {
+  important,
+  animation,
+  brideflex,
+  pm1,
+  pm2,
+  dekorth,
+  txsc,
+  styleBs,
+  primary,
+  txfs,
+  bgth,
+  font,
+  fullfemale,
+  childfemale,
+  parentfemale,
+  instagramfemale,
+  fullmale,
+  childmale,
+  parentmale,
+  instagrammale,
+} = Astro.props as CoupleProps;
+---
+
+<div class="relative z-30 flex flex-col lg:flex-row justify-center items-center gap-y-8 w-full max-w-4xl mx-auto mt-5 *:text-center *:w-full *:flex *:flex-col *:justify-evenly *:gap-4 *:items-center">
+  <div class=`${brideflex}`>
+      <BorderSingle image={pm1} dekorth={dekorth} styleBs={styleBs} primary={primary} important={important} animation={animation}/>
+    <div class="">
+      <h3 class=`fade-up opacity-0 mt-6 ${important} ${animation} ${txsc} ${font}`>
+        {fullfemale}
+      </h3>
+      <div class=`fade-up opacity-0 space-y-3 ${important} ${animation} ${txsc}`>
+        <div>
+          <p>{childfemale}</p>
+          <p class=`${txsc}`>{parentfemale}</p>
+          <div class="flex gap-3 text-center justify-center mt-4">
+            <a
+              href=`https://www.instagram.com/${instagramfemale}`
+              class=`flex flex-row gap-2 p-1 items-center rounded-full shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] ${txfs} ${bgth}`
+            >
+              <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=`${brideflex}`>
+    <BorderSingle image={pm2} dekorth={dekorth} styleBs={styleBs} primary={primary} important={important} animation={animation} />
+    <div class="">
+      <h3 class=`fade-up opacity-0 text-4xl mt-6 ${animation} ${important} ${txsc} ${font}`>
+        {fullmale}
+      </h3>
+      <div class=`fade-up opacity-0 space-y-3 ${animation}  ${important} ${txsc}`>
+        <div>
+          <p>{childmale}</p>
+          <p class=`${txsc}`>{parentmale}</p>
+          <div class="flex gap-3 text-center justify-center mt-4">
+            <a
+              href=`https://www.instagram.com/${instagrammale}`
+              class=`flex flex-row gap-2 p-1 items-center rounded-full shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] ${txfs} ${bgth}`
+            >
+              <Icon path="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" primary="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
