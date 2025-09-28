@@ -6,7 +6,7 @@ const { bgth, txfs, bdr } = Astro.props
 <div class="audio fixed bottom-5 right-5 z-50">
   <div x-data="{ playing: false }" id="playPauseBtn" class=`relative flex items-end justify-end rounded-full p-2 ml-auto w-max border-[1px] ${bgth} ${txfs} ${bdr}`>
     <button x-show="!playing" x-on:click="playing = true; document.getElementById('myAudio').pause()">
-        <Icon path="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" primary="w-8 h-8"/>
+        <Icon path="M2 14.959V9.04C2 8.466 2.448 8 3 8h3.586a.98.98 0 0 0 .707-.305l3-3.388c.63-.656 1.707-.191 1.707.736v13.914c0 .934-1.09 1.395-1.716.726l-2.99-3.369A.98.98 0 0 0 6.578 16H3c-.552 0-1-.466-1-1.041ZM16 8.5c1.333 1.778 1.333 5.222 0 7M19 5c3.988 3.808 4.012 10.217 0 14" primary="w-8 h-8"/>
     </button>
     <button x-show="playing" x-on:click="playing = false; document.getElementById('myAudio').play()">
         <Icon path="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" primary="w-8 h-8" />

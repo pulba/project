@@ -33,7 +33,7 @@ bdr: 'border-yellow-800'
 display: 'block'
 primary: 'block'
 brideflex: '!flex-row !gap-0 lg:!flex-col max-[600px]:!text-left'
-animation: '!opacity-100 !grid-cols-2 [&>div]:font-poppins [&>div]:bg-transparent' #hidden animation
+animation: '!opacity-100' #hidden animation
 styleBs: '!rounded-full border border-4 drop-shadow-2xl !w-28 !h-56 md:!w-36 md:!h-56' #setting borderSingle
 font: 'font-dafoe drop-shadow-2xl tracking-widest leading-10 text-5xl'
 button: 'rounded-full w-max mx-auto px-4 py-2'

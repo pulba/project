@@ -1,0 +1,357 @@
+---
+import Noheader from "../../layouts/noheader.astro";
+import Icon from "../../components/icon.astro";
+import Namatamu from "../../layouts/namatamu.astro";
+import Payment from "../../layouts/payment.astro";
+import Rsvp from "../../layouts/rsvp.astro";
+import Countdown from "../../layouts/countdown.astro";
+import Footerpost from "../../layouts/footer-post.astro";
+import Audio from "../../layouts/audio.astro";
+import Animation from "../../layouts/animation.astro";
+import Gallery from "../../layouts/gallery.astro";
+import Card from '../../layouts/card.astro';
+import Bride from "../../layouts/bride.astro";
+import Shapes from "../../layouts/shapes.astro";
+import Button from "../../components/button.astro";
+import BorderSingle from "../../layouts/borderSingle.astro";
+let { frontmatter } = Astro.props;
+
+if (!frontmatter) {
+  let data = {};
+  data["title"] = "wedding-1";
+  data["type"] = "Diamond 01";
+  data["desc"] = "wedding-1";
+
+  data["bgfs"] = "bg-pink-100";
+  data["bgsc"] = "bg-pink-600";
+  data["bgth"] = "bg-pink-900";
+
+  data["txfs"] = "text-pink-100";
+  data["txsc"] = "text-pink-600";
+  data["txth"] = "text-pink-900";
+  
+  data["fillfs"] = "fill-pink-100";
+  data["fillsc"] = "fill-pink-600";
+  data["fillth"] = "fill-pink-900";
+
+  data["bdr"] = "border-pink-900";
+  data["from"] = "from-pink-100";
+  data["before"] = "before:bg-black";
+  data["display"] = "block";
+  data["styleBs"] = "rounded-full";
+  data["primary"] = "block";
+  data["font"] = "font-great";
+  data["button"] = "rounded-full px-4 py-2";
+
+  data["cover"] = "/assets/img-12.webp";
+  data["cvrsc"] = '/assets/img-35.webp';
+  data["cvrth"] = '/assets/img-36.webp';
+  data["cvrfr"] = '/assets/img-38.webp';
+  data["cvrfv"] = '/assets/img-38.webp';
+  // Img kedua mempelai
+  data["dekorsc"] = "/assets/dekor22.webp";
+  data["dekorsc"] = "/assets/dekor23.webp";
+  data["dekorth"] = "/assets/dekor24.webp";
+  data["dekorfr"] = '/assets/dekor64.webp'
+  data["dekorfv"] = '/assets/dekor65.webp'
+  data["dekorsx"] = '/assets/dekor67.webp'
+  // Img kedua mempelai
+  data["pm1"] = "/assets/img-27.webp";
+  data["pm2"] = "/assets/img-26.webp";
+  // Img kedua mempelai
+  data["imgstory1"] = "/assets/img-5.webp";
+  data["imgstory2"] = "/assets/img-6.webp";
+  data["imgstory3"] = "/assets/img-7.webp";
+  data["imgstory4"] = "/assets/img-8.webp";
+  data["imgstory5"] = "/assets/img-9.webp";
+  data["imgstory6"] = "/assets/img-10.webp";
+  data["imgstory7"] = "/assets/img-11.webp";
+  data["imgstory8"] = "/assets/img-12.webp";
+
+  //img story love
+  data["imgstory9"] = "/assets/img-16.webp";
+  data["imgstory10"] = "/assets/img-17.webp";
+  data["imgstory11"] = "/assets/img-18.webp";
+
+  // data mempelai
+  data["male"] = "Remeo";
+  data["fullmale"] = "Remeo Alexa";
+  data["female"] = "Juliet";
+  data["fullfemale"] = "Juliet Kapolo";
+  data["music"] = "Lagu Pernikahan Kita";
+
+  data["childmale"] = "Putra kelima dari Pasangan";
+  data["childfemale"] = "Putri Pertama dari Pasangan";
+  data["parentmale"] = "Joko & Siti";
+  data["parentfemale"] = "Bambang & Mulyani";
+  data["instagrammale"] = "instagram";
+  data["instagramfemale"] = "instagram";
+  
+  //bank
+  data["logoml"] = "/assets/bri.png";
+  data["bankml"] = "BRI";
+  data["namebankml"] = "Remeo Alexa";
+  data["numberbankml"] = "123456789";
+  data["logofml"] = "/assets/bca.png";
+  data["bankfml"] = "BCA";
+  data["namebankfml"] = "Juliet Kapolo";
+  data["numberbankfml"] = "123456789";
+
+  //waktu & tempat acara
+  data["countdown"] = "June 5, 2024 15:37:25";  
+  data["dateakd"] = "05 Oktober 2028"
+  data["datersp"] = "10 Oktober 2028"
+  data["dayfs"] = "Jum'at";
+  data["daysc"] = "Sabtu";
+  data["dayth"] = "Minggu";
+  data["datefs"] = "05"
+  data["datesc"] = "07"
+  data["dateth"] = "05"
+  data["monthfs"] = "Januari";
+  data["monthsc"] = "Februari";
+  data["monthth"] = "Maret";
+  data["yearfs"] = "2030";
+  data["yearsc"] = "2030";
+
+  data["timefs"] = "08:00 - 09:00 WIB";
+  data["timesc"] = "10:00 - 11:00 WIB";
+  data["timeth"] = "13:00 - end WIB";
+  data["addressfs"] = "Masjid Kampus UGM";
+  data["addresssc"] = "Jogja Expo Center";
+  data["addressth"] = "Rumah Mempelai Wanita";
+  data["locationfs"] = "Rumah Mempelai Wanita";
+  data["locationsc"] = "Rumah Mempelai Wanita";
+  data["locationth"] = "Rumah Mempelai Wanita";
+  data["mapsfs"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["mapssc"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["mapsth"] = "https://maps.app.goo.gl/fpXEChVvcrKveA468";
+  data["linkmaps"] ="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041!2d110.3807054!3d-7.7744606!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b4fe07a7f9%3A0x2f7c4fd3d72616bb!2sJl.%20Prof.%20DR.%20Drs%20Notonagoro%2C%20Karang%20Malang%2C%20Caturtunggal%2C%20Kec.%20Depok%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055281!5e0!3m2!1sid!2sid!4v1717643524613!5m2!1sid!2sid";
+  data["akad"] = "Akad"
+  data["resepsi"] = "Resepsi";
+  data["quote"] = "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+  data["atribusi"] = 
+    " (Qs. Ar-Rum : 21)";
+
+  frontmatter = data;
+}
+const dekorProps = {
+  dekor1: frontmatter.dekorfs,
+  dekor2: frontmatter.dekorfs,
+  dekor3: frontmatter.dekorsc,
+  dekor4: frontmatter.dekorsc,
+  primary1: '',
+  primary2: 'rotate-90',
+  primary3: '-rotate-90',
+  primary4: '-rotate-180',
+  animations: ['fade-left', 'fade-right', 'fade-up', 'fade-down', 'flip-left', 'flip-right', 'flip-up', 'flip-down'],
+  // positions: [
+  //   '-left-5 -top-5', // Untuk dekor1
+  //   '-right-5 -top-5', // Untuk dekor2
+  //   '-bottom-5 -left-5', // Untuk dekor3
+  //   '-right-5 -bottom-5', // Untuk dekor4
+  // ],
+};
+---
+
+<Noheader title={frontmatter.title} desc={frontmatter.desc}>
+  <input type="checkbox" id="toggle" class="peer hidden peer-checked:transition-all peer-checked:duration-700 peer-checked:ease-linear"/>
+  <section class=`relative overflow-hidden transition-[max-height,transform] duration-700 ease-linear max-h-[1000px] transform translate-y-0 peer-checked:max-h-0 peer-checked:translate-y-[-200px] peer-checked:overflow-hidden bg-cover bg-center before:content-[''] before:absolute before:opacity-70 before:inset-0 ${frontmatter.before}` style={`background-image:url(${frontmatter.cover})`}>
+      <div class=`container py-12 relative h-screen flex flex-col items-center justify-between z-50`>
+        <div class=`relative z-50 text-center ${frontmatter.txfs}`>
+          <h5 class="flip-down opacity-0 italic ">The Wedding of</h5>
+        <h2 class=`fade-left opacity-0 leading-7 ${frontmatter.font} `>{frontmatter.female} & {frontmatter.male}</h2>
+        <h5 class="fade-right opacity-0 italic mt-5">{frontmatter.dateakd}</h5>
+        </div>
+        <div class=`relative text-center my-5 ${frontmatter.txfs}`>
+          <p class="fade-right opacity-0 text-sm mt-2">Kepada YTH:</p>
+          <h4 id="invite-name" class="fade-right opacity-0 text-xl font-bold capitalize">
+            <Namatamu /> Nama Tamu
+          </h4>
+          <label for="toggle" id="toaudio" class=`fade-left opacity-0 mt-5 px-5 py-2 w-max flex items-center relative shadow-xl flex gap-1 border ${frontmatter.bdr} ${frontmatter.txfs} ${frontmatter.bgth}`>
+            <Icon path="M11.36 1.842a.75.75 0 0 0-.72 0l-7.81 4.26a1.59 1.59 0 0 0-.436.35L11 11.145l8.606-4.695a1.591 1.591 0 0 0-.436-.349l-7.81-4.26ZM2 15.75V7.945l8.64 4.713a.75.75 0 0 0 .72 0L20 7.945v7.805A3.25 3.25 0 0 1 16.75 19H5.25A3.25 3.25 0 0 1 2 15.75Zm19.001-8.239a3.247 3.247 0 0 1 1.5 2.739v6a5.25 5.25 0 0 1-5.25 5.25h-9A3.247 3.247 0 0 1 5.51 20h11.74A3.75 3.75 0 0 0 21 16.25V7.511Z" primary="w-5 h-5"/>Buka Undangan
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main id="myDIV" class=`hidden relative peer-checked:block ${frontmatter.bgfs}`>
+    <section class=`${frontmatter.bgth} ${frontmatter.txfs}`>
+      <div class="container relative overflow-hidden px-6 py-20 mx-auto space-y-3">
+        <div
+        class=`fade-right opacity-0 text-center ${frontmatter.txfs} ${frontmatter.font}`>
+          <span>{ frontmatter.female } & { frontmatter.male }</span>
+          
+        </div>
+        <div class="relative overflow-hidden flex flex-row items-center justify-center gap-4 max-h-dvh">
+          <div class="fade-up opacity-0 relative flex-col items-center justify-center w-1/4">
+            <div class=`before:block before:bg-white before:w-[1px] before:h-10 before:mx-auto before:my-2`>
+            </div>
+            <div class="after:block after:bg-white after:w-[1px] after:h-20 after:mx-auto after:my-2">
+              <span class=`flex flex-col items-center justify-center text-center ${frontmatter.font} ${frontmatter.txfs}`>{ frontmatter.datefs } <br> { frontmatter.monthfs } <br> { frontmatter.yearfs } </span>
+            </div>
+          </div>
+          <img src={frontmatter.cvrsc} alt="undangan digital tema elegant" class="fade-up opacity-0 relative object-cover object-center w-3/4">
+        </div>
+        <div class="fade-up opacity-0 overflow-hidden">
+          <img src={frontmatter.cvrth} alt="undangan digital tema elegant" class="relative object-cover object-center aspect-video w-full">
+        </div>
+        <div class="fade-up opacity-0 text-center text-xs sm:text-lg space-y-4 max-w-screen-md mx-auto *:italic">
+          <p>{frontmatter.quote}</p>
+          <p>~ {frontmatter.atribusi} ~</p>
+        </div>
+      </div>
+    </section>
+    <section class="relative overflow-hidden">
+      <div class="container relative py-12 mx-auto overflow-hidden">
+        <div class=`fade-up opacity-0 mx-6 border-l-2 my-12 *:pl-4 ${frontmatter.txth} ${frontmatter.bdr}`>
+          <h5 class=`font-bold text-left !text-2xl md:!text-4xl ${frontmatter.font}`
+          >Bride & Groom
+          </h5>
+          <p class="max-w-md">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami: 
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center w-full *:md:w-1/3">
+          <div class=`fade-up opacity-0 w-full pl-8 md:pl-0 relative overflow-hidden before:content-[''] before:absolute before:w-full before:h-2/3 before:bottom-0 before:bg-gradient-to-t before:z-10 ${frontmatter.from}`>
+            <img src={frontmatter.pm1} alt="undangan digital tema elegant" class="relative object-cover object-top w-full h-96 md:h-screen float-end">
+          <div class="absolute px-6 bottom-6 z-20">
+            <div class=`before:block before:w-[2px] before:h-screen before:top-0 before:my-2 ${frontmatter.before}`>
+            </div>
+            <h3 class=`${frontmatter.txfs} ${frontmatter.font}`>
+              {frontmatter.female}
+            </h3>
+            <div class=`${frontmatter.txfs}`>
+              <h3 class=`font-bold text-xl`>{frontmatter.fullfemale}</h3>
+              <p>{frontmatter.childfemale}</p>
+              <p class=``>{frontmatter.parentfemale}</p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href=`https://www.instagram.com/${frontmatter.instagramfemale}`
+                  class=`flex flex-row gap-2 p-1 items-center rounded-full shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] ${frontmatter.txth} ${frontmatter.bgfs}`
+                >
+                  <Icon path="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z" primary="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class=`flip-up opacity-0 ${frontmatter.bgth} relative my-2 w-full`>
+            <div class="fade-up opacity-0 py-12 text-center flex flex-row justify-center items-center gap-4">
+              <hr class=`h-px w-full border-0 ${frontmatter.bgfs}`>
+              <span class=`me-12 ${frontmatter.font} ${frontmatter.txfs}`>&</span>
+            </div>
+          </div>
+          <div class=`fade-up opacity-0 w-full me-8 md:me-0 relative overflow-hidden before:content-[''] before:absolute before:w-full before:h-2/3 before:bottom-0 before:bg-gradient-to-t before:z-10 ${frontmatter.from}`>
+            <img src={frontmatter.pm2} alt="undangan digital tema elegant" class="relative object-cover object-top w-full h-96 md:h-screen float-end">
+            <div class=`relative ml-auto before:absolute before:w-[2px] before:h-48  before:md:h-96 before:right-6 before:top-0 ${frontmatter.before}`>
+            </div>
+          <div class="absolute px-6 bottom-6 right-0 z-20 text-end">
+            <h3 class=`${frontmatter.txfs} ${frontmatter.font}`>
+              {frontmatter.male}
+            </h3>
+            <div class=`${frontmatter.txfs}`>
+              <h3 class=`font-bold text-xl`>{frontmatter.fullmale}</h3>
+              <p>{frontmatter.childmale}</p>
+              <p class=``>{frontmatter.parentmale}</p>
+              <div class="flex items-end justify-end gap-3 mt-4">
+                <a
+                  href=`https://www.instagram.com/${frontmatter.instagrammale}`
+                  class=`flex flex-row gap-2 p-1 items-center rounded-full shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] ${frontmatter.txth} ${frontmatter.bgfs}`
+                >
+                  <Icon path="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z" primary="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="date" class=`relative overflow-hidden bg-cover bg-center bg-fixed before:content-[''] before:absolute before:opacity-70 before:inset-0 ${frontmatter.before}` style={`background-image:url(${frontmatter.cvrth})`}>
+      <div class="container px-6 py-20 mx-auto relative z-30 [&>.card>div]:rounded-none">
+        <div class="text-center my-5">
+          <h5 class=`fade-right opacity-0 text-center ${frontmatter.txfs} ${frontmatter.font}`> Save The Date
+          </h1>
+        </div>
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
+        <p class=`mx-auto max-w-md text-center my-6 ${frontmatter.txfs}`>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami:</p>
+          <img src={frontmatter.cvrfr} alt="jejakbahagia" class="w-full max-w-md mx-auto aspect-square object-cover object-center">
+          <Card txfs={frontmatter.txth} txth={frontmatter.txfs} bgth={frontmatter.bgfs} font={frontmatter.font} datefs={frontmatter.dateakd} datesc={frontmatter.datersp} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} month={frontmatter.month} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
+      </div>
+    </section>
+    <section class=`overflow-hidden relative ${frontmatter.bgth} ${frontmatter.display}`>
+      <div class="container mx-auto px-6 py-20 min-h-screen">
+        <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txfs} ${frontmatter.font}`}>
+          Our Gallery
+        </h2>
+        <hr class=`h-px my-8 border-0 w-full max-w-xl mx-auto ${frontmatter.bgfs}`>
+      <Gallery images={frontmatter.images}/>
+      <div class="fade-right opacity-0 flex flex-row gap-2 items-center justify-center max-w-sm ml-auto *:w-full">
+        <hr class=`h-px my-8 border-0 ${frontmatter.bgfs}`> 
+        <h4 class=`text-xl font-dafoe ${frontmatter.txfs}`>{frontmatter.female} & {frontmatter.male}</h4>
+      </div>
+    </section>
+    <section
+      class=`relative overflow-hidden bg-cover bg-center bg-fixed before:content-[''] before:absolute before:opacity-70 before:inset-0 ${frontmatter.before}` style={`background-image:url(${frontmatter.cvrfr})`}>
+      <div class="container py-20 px-6 text-center mx-auto relative z-50">
+        <div class=`text-center my-10 ${frontmatter.txfs}`>
+          <h6 class=`fade-right opacity-0 ${frontmatter.font}`>
+            Amplop Digital
+          </h2>
+          <p class="fade-left opacity-0 max-w-prose mx-auto mt-5 text-xs">
+          Tanpa mengurangi rasa hormat kami bagi tamu yang ingin mengirimkan hadiah kepada kedua mempelai dapat mengirimkannya melalui :
+          </p>
+        </div>
+        <Payment txfs={frontmatter.txfs} txth={frontmatter.txth} bgth={frontmatter.bgth} from={frontmatter.from} via={frontmatter.via} to={frontmatter.to} numberbankml={frontmatter.numberbankml} numberbankfml={frontmatter.numberbankfml} namebankml={frontmatter.namebankml} namebankfml={frontmatter.namebankfml} logoml={frontmatter.logoml} logofml={frontmatter.logofml} row="row"  />
+      </div>
+    </section>
+    <section class=`overflow-hidden relative ${frontmatter.bgfs}`>
+      <div class="container py-20 z-50 px-6 text-center mx-auto relative">
+        <div class=`text-center my-5 mb-10 ${frontmatter.txth}`>
+          <h6 class=`flip-right opacity-0 ${frontmatter.font}`>
+             Doa & Ucapan 
+          </h2>
+          <p class="fade-right opacity-0 ">Berikan Ucapan & Doa Restu</p>
+        </div>
+        <Rsvp bgfs={frontmatter.bgfs} bgsc={frontmatter.bgsc} bgth={frontmatter.bgth} txfs={frontmatter.txfs} txsc={frontmatter.txsc} txth={frontmatter.txth} />
+      </div>
+    </section>
+    <section class=`relative overflow-hidden bg-cover bg-center bg-fixed before:content-[''] before:absolute before:opacity-70 before:inset-0 ${frontmatter.before}` style={`background-image:url(${frontmatter.cvrfv})`}>
+      <div class="container relative px-6">
+        <div class=`flex flex-col items-center justify-center gap-y-4 h-screen max-w-xl mx-auto ${frontmatter.txfs}`>
+          <h6 class="text-3xl font-dafoe">Terima Kasih</h6>
+          <p class="text-center">Suatu kebahagiaan & kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami</p>
+          <p class="font-bold">Kami Yang Berbahagia</p>
+          <h6 class=`${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h6>
+        </div>
+      </div>
+    </section>
+    <section class=` ${frontmatter.bgth}`>
+      <div class="container px-6 py-20 mx-auto">
+        <div class=`flex flex-row justify-evenly ${frontmatter.txfs}`>
+          <div class="space-y-2 text-center">
+            <p class="italic">Keluarga Besar</p>
+            <p class="text-md font-bold">Mempelai Wanita</p>
+            <p class="italic">{frontmatter.parentfemale}</p>
+          </div>
+          <div class="space-y-2 text-center">
+            <p class="italic">Keluarga Besar</p>
+            <p class="text-md font-bold">Mempelai Pria</p>
+            <p class="italic">{frontmatter.parentmale}</p>
+          </div>
+        </div>
+        <hr class=`h-px w-full max-w-lg mx-auto my-8 border-0 ${frontmatter.bgfs}`>
+        <div class=`space-y-2 text-center ${frontmatter.txfs}`>
+          <p class="italic text-md">Turut Mengundang:</p>
+          <p class="italic">Keluarga Besar {frontmatter.parentfemale}</p>
+          <p class="italic">Keluarga Besar {frontmatter.parentmale}</p>
+        </div>
+      </div>
+    </section>
+    <Audio txfs={frontmatter.txfs} bgth={frontmatter.bgth} bdr={frontmatter.bdr} />
+    <audio id="myAudio" loop class="hidden">
+      <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg" />
+    </audio>
+    <Animation />
+  </main>
+</Noheader>

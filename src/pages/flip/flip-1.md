@@ -17,23 +17,23 @@ bgsc: 'bg-blue-300'
 bgth: 'bg-blue-400'
 
 txfs: 'text-blue-100'
-txsc: 'text-blue-300'
-txth: 'text-blue-400'
+txsc: 'text-blue-200'
+txth: 'text-blue-500'
 
-from: 'from-blue-300'
+from: 'from-blue-500'
 via: 'via-transparent'
-to: 'to-blue-300'
+to: 'to-blue-500'
 before: 'before:bg-white'
 
 fillfs: 'fill-white'
 fillsc: 'fill-blue-600'
 fillth: 'fill-blue-600'
 
-bdr: 'border-gray-300'
+bdr: 'border-blue-600'
 display: 'block'
 primary: 'block'
 brideflex: '!flex-row !gap-0 lg:!flex-col max-[600px]:!text-left'
-animation: '!opacity-100 !grid-cols-2 [&>div]:font-poppins [&>div]:bg-transparent' #hidden animation
+animation: '!opacity-100' #hidden animation
 styleBs: '!rounded-full border border-4 drop-shadow-2xl !w-28 !h-56 md:!w-36 md:!h-56' #setting borderSingle
 font: 'font-dafoe drop-shadow-2xl tracking-widest leading-10 text-5xl'
 button: 'rounded-full w-max mx-auto px-4 py-2'
@@ -104,7 +104,7 @@ namebankfml: "Juliet Kapolo"
 numberbankfml: "0987654321"
 
 # Waktu & Tempat Acara
-countdown: "June 5, 2026 15:37:25"
+countdown: "June 5, 2030 15:37:25"
 datefs: Jumat, 05 Januari 2030
 datesc: Jumat, 05 Januari 2030
 dateth: Jumat, 05 Januari 2030

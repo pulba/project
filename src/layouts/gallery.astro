@@ -4,26 +4,22 @@
 
 const { images = [], txsc = '', font = '', animation = '' } = Astro.props;
 ---
-<div class="container mx-auto px-6 py-20 min-h-screen">
-  <h2 class={`fade-right opacity-0 text-center my-5 ${animation} ${txsc} ${font}`}>
-    Our Gallery
-  </h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 justify-center gap-2 pb-20 mt-5 max-w-3xl mx-auto">
-    {Array.isArray(images) && images.length > 0 ? (
-      images.map((image, index) => (
-        <div class={`${animation} fade-${['right', 'down', 'up', 'left'][index % 4]} opacity-0`}>
-          <div class="truncate">
-            <img
-              src={image.src}
-              alt={`Foto ${index + 1}`}
-              class="object-cover object-center aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125"
-            />
-          </div>
-        </div>
-      ))
-    ) : (
-      <p class="text-center text-gray-500">No images available.</p>
-    )}
-  </div>
-</div>
 
+
+<div class="grid grid-cols-2 md:grid-cols-4 justify-center gap-2 mt-5 max-w-3xl mx-auto">
+  {Array.isArray(images) && images.length > 0 ? (
+    images.map((image, index) => (
+      <div class={`${animation} fade-${['right', 'down', 'up', 'left'][index % 4]} opacity-0`}>
+        <div class="truncate">
+          <img
+            src={image.src}
+            alt={`Foto ${index + 1}`}
+            class="object-cover object-center aspect-square rounded-md transition-all duration-700 ease-linear hover:scale-125"
+          />
+        </div>
+      </div>
+    ))
+  ) : (
+    <p class="text-center text-gray-500">No images available.</p>
+  )}
+</div>

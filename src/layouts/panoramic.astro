@@ -1,0 +1,258 @@
+---
+const { cover, cvrsc, cvrth, cvrfr, cvrfv, cvrsx, cvrsv, cvreg, cvrnn } = Astro.props;
+---
+
+  <style>
+    /* Custom CSS for 3D effects, as Tailwind doesn't cover complex 3D transforms natively */
+    .ls-curved-carousel {
+      --viewport-height: 70rem;
+      --viewport-height-m: 35rem;
+      --perspective: 600px;
+      --perspective-m: 400px;
+      --block-offset: -18rem;
+      --block-offset-m: -6rem;
+      --fadeout: linear-gradient(90deg, transparent, white 20%, white 80%, transparent 100%);
+    }
+
+    .ls-curved-carousel.fadeout {
+      --fadeout: linear-gradient(90deg, transparent, white 20%, white 80%, transparent 100%);
+    }
+
+    .ls-curved-carousel {
+      -webkit-mask-image: var(--fadeout);
+      mask-image: var(--fadeout);
+      position: relative;
+      width: 100%;
+      height: var(--viewport-height);
+      transform-style: preserve-3d;
+      user-select: none;
+      overflow: visible;
+      z-index: 1;
+      margin-block: var(--block-offset);
+    }
+
+    .ls-curved-carousel__stage {
+      perspective: var(--perspective);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ls-curved-carousel__ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      gap: 0;
+    }
+
+    .ls-curved-carousel__slide {
+      position: absolute;
+      /* Width and height set by JS */
+      transform-style: preserve-3d;
+      overflow: hidden;
+    }
+
+    .ls-curved-carousel__media {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 767px) {
+      .ls-curved-carousel {
+        height: var(--viewport-height-m);
+        margin-block: var(--block-offset-m);
+      }
+
+      .ls-curved-carousel__stage {
+        perspective: var(--perspective-m);
+      }
+    }
+  </style>
+
+  <div class="relative overflow-hidden">
+    <div class="ls-curved-carousel fadeout mx-auto max-w-7xl">
+      <div class="ls-curved-carousel__stage">
+        <div class="ls-curved-carousel__ring *:rounded-3xl *:shadow-lg">
+          <div class="ls-curved-carousel__slide">
+            <img src={cover} alt="Slide 1" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrsc} alt="Slide 2" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrth} alt="Slide 3" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrfr} alt="Slide 4" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrfv} alt="Slide 5" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrsx} alt="Slide 6" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrsv} alt="Slide 7" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvreg} alt="Slide 8" class="ls-curved-carousel__media">
+          </div>
+          <div class="ls-curved-carousel__slide">
+            <img src={cvrnn} alt="Slide 9" class="ls-curved-carousel__media">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import { gsap } from 'gsap';
+
+    const carouselConfig = {
+      slideHeight: 600,         // Height of each slide in pixels
+      slidesInRing: 21,         // Number of slides visible in the ring
+      slideSpacing: 1,          // Spacing between slides in degrees
+      radius: 1200,             // Radius of the carousel circle (px)
+      initialRotation: 180,     // Initial rotation of the carousel (degrees)
+      autoRotate: true,         // Set to false to disable auto-rotation
+      rotationSpeed: 0.1,       // Target speed of rotation (degrees per frame)
+      rotationDirection: 1,     // 1 for clockwise, -1 for counter-clockwise
+      pauseOnHover: true,       // Pause rotation when hovering
+      resumeDelay: 0,           // Delay before resuming rotation after hover (ms)
+      pauseEaseDuration: 0.5,   // Duration for easing in/out of pause (seconds)
+      entranceAnimation: 'fadeIn',  // 'fadeIn', 'fadeUp', or 'none'
+      entranceDuration: 1.5,    // Duration of entrance animation (seconds)
+      entranceStagger: 0.1,     // Stagger time between slide animations (seconds)
+      entranceDistance: 100     // Distance for fadeUp animation (pixels)
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initCarousel();
+    });
+
+    function initCarousel() {
+      const ring = document.querySelector('.ls-curved-carousel__ring');
+      const originalSlides = document.querySelectorAll('.ls-curved-carousel__slide');
+      const originalSlideCount = originalSlides.length;
+
+      if (originalSlideCount < carouselConfig.slidesInRing) {
+        duplicateSlides(originalSlides, carouselConfig.slidesInRing - originalSlideCount);
+      }
+
+      const slides = document.querySelectorAll('.ls-curved-carousel__slide');
+      const slideCount = slides.length;
+      const anglePerSlide = 360 / carouselConfig.slidesInRing;
+      const arcLength = (anglePerSlide - carouselConfig.slideSpacing) * (Math.PI / 180) * carouselConfig.radius;
+      const slideWidth = arcLength;
+
+      const container = document.querySelector('.ls-curved-carousel__stage');
+      container.style.width = `${slideWidth}px`;
+      container.style.height = `${carouselConfig.slideHeight}px`;
+
+      let autoRotate = carouselConfig.autoRotate;
+      let targetRotationSpeed = carouselConfig.rotationSpeed;
+      let currentRotationSpeed = 0;
+      let rotationDirection = carouselConfig.rotationDirection;
+      let autoRotateTimeout;
+      let lastUpdateTime = Date.now();
+      let updateRotationFunction;
+      let speedTween;
+      let speedController = { value: 0 };
+
+      const timeline = gsap.timeline();
+      timeline.set(ring, { rotationY: carouselConfig.initialRotation });
+
+      slides.forEach((slide, index) => {
+        slide.style.width = `${slideWidth}px`;
+        slide.style.height = `${carouselConfig.slideHeight}px`;
+        gsap.set(slide, {
+          rotateY: index * -anglePerSlide,
+          transformOrigin: `50% 50% ${carouselConfig.radius}px`,
+          z: -carouselConfig.radius,
+          backfaceVisibility: 'hidden'
+        });
+      });
+
+      if (carouselConfig.entranceAnimation !== 'none') {
+        let entranceAnimation = {};
+        switch (carouselConfig.entranceAnimation) {
+          case 'fadeIn':
+            entranceAnimation = { opacity: 0, duration: carouselConfig.entranceDuration, stagger: carouselConfig.entranceStagger, ease: 'power2.out' };
+            break;
+          case 'fadeUp':
+            entranceAnimation = { y: carouselConfig.entranceDistance, opacity: 0, duration: carouselConfig.entranceDuration, stagger: carouselConfig.entranceStagger, ease: 'power3.out' };
+            break;
+        }
+        timeline.from('.ls-curved-carousel__slide', entranceAnimation).add(() => { startAutoRotation(); });
+      } else {
+        startAutoRotation();
+      }
+
+      function updateRotation() {
+        currentRotationSpeed = speedController.value;
+        if (currentRotationSpeed === 0) return;
+        const currentTime = Date.now();
+        const deltaTime = currentTime - lastUpdateTime;
+        lastUpdateTime = currentTime;
+        const rotationAmount = (deltaTime / 16.67) * currentRotationSpeed * rotationDirection;
+        gsap.to(ring, { rotationY: `+=${rotationAmount}`, duration: 0, overwrite: true });
+      }
+
+      function startAutoRotation() {
+        if (!autoRotate) return;
+        lastUpdateTime = Date.now();
+        updateRotationFunction = updateRotation;
+        gsap.ticker.add(updateRotationFunction);
+        if (speedTween) speedTween.kill();
+        speedTween = gsap.to(speedController, { value: targetRotationSpeed, duration: carouselConfig.pauseEaseDuration, ease: 'power1.out' });
+      }
+
+      function stopAutoRotation() {
+        if (speedTween) speedTween.kill();
+        speedTween = gsap.to(speedController, {
+          value: 0,
+          duration: carouselConfig.pauseEaseDuration,
+          ease: 'power1.in',
+          onComplete: () => {
+            if (updateRotationFunction) {
+              gsap.ticker.remove(updateRotationFunction);
+              updateRotationFunction = null;
+            }
+          }
+        });
+      }
+
+      function resumeAutoRotation() {
+        if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+        autoRotateTimeout = setTimeout(() => {
+          if (carouselConfig.autoRotate) startAutoRotation();
+        }, carouselConfig.resumeDelay);
+      }
+
+      if (carouselConfig.pauseOnHover) {
+        const carouselElement = document.querySelector('.ls-curved-carousel');
+        carouselElement.addEventListener('mouseenter', () => {
+          if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+          stopAutoRotation();
+        });
+        carouselElement.addEventListener('mouseleave', resumeAutoRotation);
+        carouselElement.addEventListener('touchstart', () => {
+          if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+          stopAutoRotation();
+        }, { passive: true });
+        carouselElement.addEventListener('touchend', resumeAutoRotation);
+      }
+    }
+
+    function duplicateSlides(originalSlides, count) {
+      const ring = document.querySelector('.ls-curved-carousel__ring');
+      const originalCount = originalSlides.length;
+      for (let i = 0; i < count; i++) {
+        const clone = originalSlides[i % originalCount].cloneNode(true);
+        ring.appendChild(clone);
+      }
+    }
+  </script>

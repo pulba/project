@@ -109,7 +109,7 @@ numberbankfml: "123456789"
 phone: "6281532094978"
 
 # waktu & tempat acara
-countdown: "June 5, 2025 15:37:25"
+countdown: "June 5, 2028 15:37:26"
 datefs: "05"
 datesc: "07"
 dateth: "05"

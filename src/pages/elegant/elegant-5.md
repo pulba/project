@@ -1,89 +1,88 @@
 ---
-layout: '../demo/minimalist.astro'
-slug: 'minimalist/minimalist-1'
-title: 'Minimalist 01 |'
-name: 'Minimalist 01'
-desc: 'Minimalist 01'
+layout: '../demo/elegant.astro'
+slug: 'elegant/elegant-5'
+title: 'elegant 05 |'
+name: 'elegant 05'
+desc: 'elegant 05'
 price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 21
 img:
-  url: '/assets/demo-21.webp'
+  url: '/assets/img-43.webp'
   alt: jejak bahagia
 
 # Colors
-bgfs: 'bg-gray-100'
-bgsc: 'bg-gray-300'
-bgth: 'bg-gray-900'
+bgfs: 'bg-amber-100'
+bgsc: 'bg-amber-300'
+bgth: 'bg-amber-900'
 
-from: 'from-gray-100'
-via: 'via-gray-200'
-to: 'to-gray-300'
-before: 'before:bg-gray-900'
+from: 'from-amber-900'
+via: 'via-amber-900'
+to: 'to-amber-900'
+before: 'before:bg-amber-900'
 
-txfs: 'text-orange-100'
-txsc: 'text-orange-100'
-txth: 'text-orange-900'
+txfs: 'text-amber-100'
+txsc: 'text-amber-900'
+txth: 'text-amber-900'
 
-fillfs: 'fill-gray-200'
-fillsc: 'fill-gray-500'
-fillth: 'fill-gray-900'
+fillfs: 'fill-amber-500'
+fillsc: 'fill-amber-600'
+fillth: 'fill-amber-900'
 
-bdr: 'border-gray-900'
+bdr: 'border-amber-100'
 display: 'block'
 primary: 'block'
 styleBs: 'rounded-full border-4'
-font: 'font-dyna text-5xl md:text-6xl'
-button: 'rounded-full w-max mx-auto px-4 py-2 border'
+font: 'font-cormorant text-4xl md:text-5xl'
+button: 'rounded-full w-max mx-auto px-4 py-2'
 
-# Img Header
-cover: '/assets/img-3.webp'
-cvrsc: '/assets/img-14.webp'
-cvrth: '/assets/dekor-24.webp'
-cvrfr: '/assets/img-7.webp'
-cvrfv: '/assets/img-8.webp'
 
 # Dekor
-dekorfs: '/assets/dekor141.webp'
-dekorsc: '/assets/dekor141.webp'
-dekorth: '/assets/dekor152.webp'
+dekorfs: '/assets/dekor33.webp'
+dekorsc: '/assets/dekor33.webp'
+dekorth: '/assets/dekor24.webp'
 dekorfr: '/assets/dekor64.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor67.webp'
 
 # Img Kedua Mempelai
-pm1: '/assets/img-1.webp'
-pm2: '/assets/img-2.webp'
+pm1: '/assets/img-48.webp'
+pm2: '/assets/img-43.webp'
+
+# Img Header
+cover: '/assets/img-43.webp'
+cvrsc: '/assets/img-44.webp'
+cvrth: '/assets/img-45.webp'
+cvrfr: '/assets/img-46.webp'
+cvrfv: '/assets/img-47.webp'
 
 # Img Our Moment
-imgstory1: '/assets/img-3.webp'
-imgstory2: '/assets/img-4.webp'
-imgstory3: '/assets/img-5.webp'
-imgstory4: '/assets/img-6.webp'
-imgstory5: '/assets/img-7.webp'
-imgstory6: '/assets/img-8.webp'
-imgstory7: '/assets/img-9.webp'
-imgstory8: '/assets/img-10.webp'
+imgstory1: '/assets/img-43.webp'
+imgstory2: '/assets/img-44.webp'
+imgstory3: '/assets/img-45.webp'
+imgstory4: '/assets/img-46.webp'
+imgstory5: '/assets/img-47.webp'
+imgstory6: '/assets/img-48.webp'
+imgstory7: '/assets/img-44.webp'
+imgstory8: '/assets/img-43.webp'
 
 images:
-  - src: '/assets/img-3.webp'
-  - src: '/assets/img-4.webp'
-  - src: '/assets/img-5.webp'
-  - src: '/assets/img-6.webp'
-  - src: '/assets/img-7.webp'
-  - src: '/assets/img-8.webp'
-  - src: '/assets/img-9.webp'
-  - src: '/assets/img-10.webp'
+  - src: '/assets/img-43.webp'
+  - src: '/assets/img-44.webp'
+  - src: '/assets/img-45.webp'
+  - src: '/assets/img-48.webp'
+  - src: '/assets/img-46.webp'
+  - src: '/assets/img-47.webp'
+  - src: '/assets/img-44.webp'
+  - src: '/assets/img-43.webp'
 
 
 # Data Mempelai
-male: "Remeo"
-fullmale: "Remeo Alexa"
-female: "Juliet"
-fullfemale: "Juliet Kapolo"
-music: "Lagu Pernikahan Kita"
-actor: "dennycaknan-music"
-api: "1563297490"
+male: "Angga"
+fullmale: "Angga Alexa"
+female: "Fitri"
+fullfemale: "Cinta Fitri"
+music: andmesh-kamaleng-cinta-luar-biasa
 
 childmale: "Putra kelima dari Pasangan"
 childfemale: "Putri Pertama dari Pasangan"
@@ -104,10 +103,20 @@ namebankfml: "Juliet Kapolo"
 numberbankfml: "0987654321"
 
 # Waktu & Tempat Acara
-countdown: "June 5, 2025 15:37:25"
-datefs: Jumat, 05 Januari 2030
-datesc: Jumat, 05 Januari 2030
-dateth: Jumat, 05 Januari 2030
+countdown: "Oct 5, 2028 15:37:25"
+dateakd: "05 Oktober 2028"
+datersp: "10 Oktober 2028"
+dayfs: "Jum'at"
+daysc: "Sabtu"
+dayth: "Minggu"
+datefs: "05"
+datesc: "12"
+dateth: "05"
+monthfs: "10"
+monthsc: "11"
+monthth: "12"
+yearfs: "28"
+yearsc: "28"
 
 timefs: 08:00 - 09:00 WIB
 timesc: 10:00 - 11:00 WIB

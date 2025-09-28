@@ -1,5 +1,6 @@
 ---
 import Button from '../components/button.astro';
+import Icon from '../components/icon.astro'
 interface Props {
   title: string;
   desc: string;
@@ -18,7 +19,7 @@ const { primary, aspect, link, slug, src, alt, title, desc, price, unprice, numb
 ---
 
 
-<div class="relative pb-8 bg-white rounded-lg shadow-xl">
+<div class="relative pb-8 bg-white rounded-lg shadow-xl border">
     <div class="relative">
       <div class="overflow-hidden rounded-t-lg">
         <div class="w-full overflow-hidden">
@@ -29,28 +30,25 @@ const { primary, aspect, link, slug, src, alt, title, desc, price, unprice, numb
               class=`object-cover aspect-${aspect} transition-all duration-700	ease-linear hover:scale-125 hover:duration-700 hover:transition-all hover:ease-linear rounded-t-lg`
             />
           </a>
+          <div class="absolute bottom-14 flex flex-row justify-between w-full">
+            <p class="bg-amber-600 px-3 !w-max rounded-tr-lg font-bold text-white text-center text-lg italic flex items-center">
+              {price}
+            </p>
+            <a href={"/"+slug}>
+              <Icon path="M10 4.4C3.439 4.4 0 9.232 0 10c0 .766 3.439 5.6 10 5.6c6.56 0 10-4.834 10-5.6c0-.768-3.44-5.6-10-5.6zm0 9.907c-2.455 0-4.445-1.928-4.445-4.307c0-2.379 1.99-4.309 4.445-4.309s4.444 1.93 4.444 4.309c0 2.379-1.989 4.307-4.444 4.307zM10 10c-.407-.447.663-2.154 0-2.154c-1.228 0-2.223.965-2.223 2.154s.995 2.154 2.223 2.154c1.227 0 2.223-.965 2.223-2.154c0-.547-1.877.379-2.223 0z" primary="w-10 h-10 text-white bg-amber-600 rounded-tl-lg p-2" />
+            </a>
+          </div>
         </div>
       </div>
       <div class="px-4 pt-4">
-        <div class="font-poppins font-bold text-sm md:text-lg text-left text-gray-800 *:capitalize">
-          <p class=`${primary}`>
-            {title} 
-          </p>
-          <p class="text-[3vw] sm:text-[1.5vw]"><span class="bg-amber-600 rounded-md px-1 text-[10px] text-white">UW {number}</span> 
+        <div class=" absolute top-0 left-1/2 transform -translate-x-1/2 px-3 bg-blue-900 rounded-b-lg font-poppins text-left text-white w-max *:capitalize">
+          
+          <p>
            {desc}
           </p>
         </div>
-        <div>
-          <!-- <p class="font-bold text-red-700 text-start text-sm line-through">
-            {unprice}
-          </p> -->
-        <p class="font-bold text-blue-700 text-left text-lg italic">
-          {price}
-        </p>
-        </div>
-        <div class="flex flex-col gap-2 items-center justify-between mt-2 *:w-full mx-auto">
-          <Button href={"/"+slug} button="px-4 py-2 text-[3vw] sm:text-[2vw] lg:text-[1.2vw] rounded-md border shadow-none" path="" title="Preview" />
-          <Button href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${desc}* ya` button="px-4 py-2 text-[2.5vw] sm:text-[1.5vw] lg:text-[1.2vw] rounded-md text-white bg-amber-600 shadow-none" path="" title="ORDER NOW" />
+        <div class="">
+          <Button href=`https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau buat undangan tema *${desc}* ya` button="px-4 py-2 rounded-md text-white bg-blue-900 shadow-none" path="" title="ORDER NOW" />
         </div>
       </div>
     </div>

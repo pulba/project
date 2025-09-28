@@ -14,26 +14,26 @@ const {
 <div class="splide h-full overflow-hidden my-10 max-w-screen-lg mx-auto">
   <div class="splide__track h-full overflow-visible">
     <ul
-      class="splide__list flex gap-4 *:bg-white *:p-4 *:rounded-xl *:space-y-2"
+      class="splide__list  flex gap-4 h-full items-stretch *:bg-white *:w-full *:overflow-hidden *:p-4 *:rounded-xl *:space-y-2"
     >
-      <li class="splide__slide w-full h-full bg-white overflow-hidden">
+      <li class="splide__slide">
         <img src={imgstory1} alt="Foto 1" class="object-cover aspect-square" />
         <p class=`!text-3xl ${font} ${txth}`>Awal Cerita</p>
-        <p class=`max-w-prose font-poppins text-sm  ${txth}`>
+        <p class=`max-w-prose font-poppins text-xs  ${txth}`>
           {storyfs}
         </p>
       </li>
-      <li class="splide__slide w-full bg-white overflow-hidden">
+      <li class="splide__slide">
         <img src={imgstory2} alt="Foto 1" class="object-cover aspect-square" />
         <p class=`!text-3xl ${font} ${txth}`>Lamaran</p>
-        <p class=`max-w-prose font-poppins text-sm ${txth}`>
+        <p class=`max-w-prose font-poppins text-xs ${txth}`>
           {storysc}
         </p>
       </li>
-      <li class="splide__slide w-full bg-white overflow-hidden">
+      <li class="splide__slide">
         <img src={imgstory3} alt="Foto 1" class="object-cover aspect-square" />
         <p class=`!text-3xl ${font} ${txth}`>Pernikahan</p>
-        <p class=`max-w-prose font-poppins text-sm ${txth}`>
+        <p class=`max-w-prose font-poppins text-xs ${txth}`>
           {storyth}
         </p>
       </li>

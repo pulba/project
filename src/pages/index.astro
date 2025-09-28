@@ -5,7 +5,7 @@ import Product from '../layouts/product.astro';
 import Button from '../components/button.astro';
 import Splide from '../layouts/autoscroll.astro';
 import Icon from '../components/icon.astro';
-
+import Panoramic from '../layouts/panoramic.astro';
 type MarkdownModule = {
   metadata: {
     title?: string;
@@ -52,92 +52,178 @@ const [nature, adat, floral, popular, flip] = await Promise.all([
   loadFiles(flipFiles),
 ]);
 
+let {frontmatter} = Astro.props;
+
+if(!frontmatter) {
+  let data = {};
+  data["cover"] = '/assets/img-3.webp'
+  data["cvrsc"] = '/assets/img-21.webp'
+  data["cvrth"] = '/assets/img-15.webp'
+  data["cvrfr"] = '/assets/img-5.webp'
+  data["cvrfv"] = '/assets/img-38.webp'
+  data["cvrsx"] = '/assets/img-42.webp'
+  data["cvrsv"] = '/assets/img-46.webp'
+  data["cvreg"] = '/assets/img-49.webp'
+  data["cvrnn"] = '/assets/img-52.webp'
+
+  frontmatter=data;
+}
 ---
 
-<Home title="" desc="Jasa pernikahan digital emang masih zaman undangan kertas? pake undangan digital dong langsung kirim ke semua kontak Anda!">
-  <section class="bg-blue-900">
-    <div class="container overflow-hidden pt-16 lg:pt-0 mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="w-full py-8">
-            <div class="px-6 font-poppins text-white">
-                <h2 class="text-3xl min-[500px]:text-5xl sm:text-6xl">Platform Undangan Pernikahan Digital<h2/>
-                <p class="mt-4 max-w-lg"> <span class="italic font-bold text-amber-400 text-xl">Modern, Instant, dan Ekonomis.</span> <br> Membuat Setiap Jejak Menuju Kebahagiaan.</p>
-                <Button href="/katalog" button="bg-amber-500 w-max px-6 py-2 rounded-md mt-8 capitalize shadow-none hover:bg-blue-600 hover:text-white hover:ring-0" path="" title="Lihat Katalog" />
-            </div>
+<Home title="" desc="Jasa pernikahan digital lampung, lampung barat sekincau">
+  
+  <section class="relative">
+    <div class="container mx-auto max-w-7xl px-4 pt-16 text-center font-poppins">
+      <p class="text-xl md:text-2xl text-neutral-700">Permudah Pernikahan Anda</p>
+      <h1 class="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-tight">Website Undangan Nikah Digital<br class=""/> <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-yellow-600 relative inline-block"> <span class="relative text-white text-2xl md:text-4xl">Sehari Jadi!!!</span></span></h1>
+      <p class="mt-4 max-w-2xl mx-auto text-neutral-600">Solusi pernikahanmu jadi lebih Praktis, hemat dan kekinian.</p>
+      <div class="mt-6 flex items-center justify-center gap-3 relative z-20">
+        <a class="inline-flex items-center rounded-xl bg-blue-900 text-white px-5 py-3 shadow-soft" href="https://api.whatsapp.com/send/?phone=6281532094978&text=Hallo+Admin+Jejak+Bahagia%2C+saya+mau+buat+undangan+digital+dong%21&type=phone_number&app_absent=0">Coba Sekarang</a>
+        <a href="/katalog" class="inline-flex items-center rounded-xl bg-white px-5 py-3 border border-black/10 shadow-soft">Lihat Demo</a>
+      </div>
+      <div class="-mt-12 md:-mt-24">
+        <Panoramic cover={frontmatter.cover} cvrsc={frontmatter.cvrsc} cvrth={frontmatter.cvrth} cvrfr={frontmatter.cvrfr} cvrfv={frontmatter.cvrfv} cvrsx={frontmatter.cvrsx} cvrsv={frontmatter.cvrsv} cvreg={frontmatter.cvreg} cvrnn={frontmatter.cvrnn} />
+      </div>
+    </div>
+  </section>
+  <section class="relative">
+    <div class="container px-6 mx-auto">
+      <div class="flex flex-col md:flex-row gap-4 *:w-full">
+        <div class="hidden md:block relative h-screen before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-t before:from-amber-50 before:via-transparent before:to-amber-50">
+          <img src="/assets/img-80.jpg" alt="" class="w-full h-full object-cover object-center" />
         </div>
-        <div class="mx-auto relative grid place-items-center overflow-hidden">
-          <div class="h-screen grid place-items-center overflow-hidden">
-            <div class="grid grid-cols-[repeat(5,_100px)] auto-rows-[100px] gap-2 place-items-center mb-[100px] *:object-cover object-center *:w-[200px] *:h-[200px] *:rounded-[5px] max-[639px]:[&>*:nth-child(4n-1)]:col-[2_/_span_2] min-[640px]:grid-cols-[repeat(6,_100px)] min-[640px]:[&>*:nth-child(5n-1)]:col-[2_/_span_2] *:col-[auto_/_span_2]">
-            <img src="/assets/img-23.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-46.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-49.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-42.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-38.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-21.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-34.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            <img src="/assets/img-52.webp" alt="Jejak Bahagia" style="clip-path: path('M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z');">
-            </div>
+        <div class="font-poppins order-first md:order-last">
+          <h2 class="font-bold text-2xl md:text-4xl text-gray-700">Lebih dari <span class="text-3xl md:text-5xl text-blue-900 before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-yellow-600 relative inline-block"><span class="relative text-white text-2xl md:text-4xl">1.528</span></span> Pasangan<br class="hidden md:block">  Telah Berbahagia</h2>
+          <p class="mt-2">Sejak 2022 mereka sudah membuat undangannya disini. Sekarang giliran kamu untuk mencoba :)</p>
+          <div class="grid grid-cols-4 gap-2 mt-5 *:h-full *:rounded-xl *:aspect-[9:16] *:object-cover *:object-center">
+            <img src="/assets/alawiyah4.webp" alt="">
+            <img src="/assets/img-10.webp" alt="">
+            <img src="/assets/img-61.webp" alt="">
+            <img src="/assets/indah2.webp" alt="">
+            <img src="/assets/niken9.webp" alt="">
+            <img src="/assets/okta8.webp" alt="">
+            <img src="/assets/img-69.webp" alt="">
+            <img src="/assets/img-52.webp" alt="">
+          </div>
+          <div class="mt-6">
+            <a class="inline-flex items-center justify-center rounded-xl bg-white text-center px-5 py-3 border" href="/klien">Lihat Portofolio 
+            </a>
+            
           </div>
         </div>
+      </div>
     </div>
   </section>
   <section>
     <div class="container overflow-hidden py-12 px-6 mx-auto">
       <div class="text-blue-900">
-        <h2 class="font-poppins font-bold text-4xl">Undangan Impian</h2>
-        <p class="font-poppins mx-auto text-md leading-7">dengan beragam fitur andalan
-        </p>
+        <h2 class="font-poppins font-bold text-3xl sm:text-4xl">Fitur lengkap</h2>
+        <div class="mt-2">
+          <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
+        </div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6 w-full *:w-full *:mx-auto *:p-3 *:bg-gray-200 *:text-gray-700 *:shadow-lg *:rounded-md *:flex *:flex-col *:items-center text-md *:text-center *:relative">
-        <div class="group">
-          <Icon path="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" primary="w-8" />
-          <h4>Domain Ekslusif</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-4 mt-6 w-full max-w-screen-lg mx-auto">
+        <div class="space-y-4 font-poppins *:bg-white *:border *:relative *:rounded-full *:drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] *:flex *:gap-2 [*&>div>div>p]:text-sm [*&>div>div]:pr-14 [*&>div>span]:absolute [*&>div>span]:rounded-full [*&>div>span]:text-xl [*&>div>span]:text-white [*&>div>span]:font-bold [*&>div>span]:right-0 [*&>div>span]:-top-3 [*&>div>span]:bg-blue-900 [*&>div>span]:p-4 [*&>div>span]:flex [*&>div>span]:items-center [*&>div>span]:justify-center [*&>div>span]:w-12 [*&>div>span]:h-12">
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Domain Ekslusif</h4>
+              <p class="">Anda bisa menggunakan domain yang anda mau sendiri jadi lebih ekslusif</p>
+            </div>
+            <span>01</span>
+          </div>
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Custom Nama Tamu</h4>
+              <p class="">
+                Anda bisa share dengan nama tamu agar lebih ekslusif.</p>
+            </div>
+            <span>02</span>
+          </div>
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Design Modern</h4>
+              <p class="">Say good bye untuk design jadul. biar undanganmu makin wow.</p>
+            </div>
+            <span>03</span>
+          </div>
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Amplop Digital</h4>
+              <p class="">
+                Tamu bisa mengirim amplop digital dengan mudah.</p>
+            </div>
+            <span>04</span>
+          </div>
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Rsvp & Buku Tamu</h4>
+              <p class="">
+                Tamu undangan bisa berbagi doa dan ucapan.</p>
+            </div>
+            <span>05</span>
+          </div>
+          <div class="">
+            <div class="text-right p-2">
+              <h4 class="font-bold text-lg text-blue-900">Profil Mempelai</h4>
+              <p class="">
+                Menampilkan biodata singkat dan cerita singkat perjalanan cinta kalian</p>
+            </div>
+            <span>06</span>
+          </div>
         </div>
-        <div class="group">
-          <Icon path="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" primary="w-8" />
-          <h4>Custom Nama Tamu</h4>
+        <div class="space-y-4 font-poppins *:bg-white *:border *:relative *:rounded-full *:drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] *:flex *:gap-2 [*&>div>div>p]:text-sm [*&>div>div]:pl-14 [*&>div>span]:absolute [*&>div>span]:rounded-full [*&>div>span]:text-xl [*&>div>span]:text-white [*&>div>span]:font-bold [*&>div>span]: [*&>div>span]:-top-3 [*&>div>span]:bg-blue-900 [*&>div>span]:p-4 [*&>div>span]:flex [*&>div>span]:items-center [*&>div>span]:justify-center [*&>div>span]:w-12 [*&>div>span]:h-12">
+          <div class="">
+            <span>07</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Info Detail Acara</h4>
+              <p class="">
+                Tamu mengetahui detail acara dengan jelas momen penting hari bahagia Anda</p>
+            </div>
+          </div>
+          <div class="">
+            <span>08</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Google Maps</h4>
+              <p class="">
+                Navigasi lengkap, agar para tamu tidak tersesat saat ke tempat kamu</p>
+            </div>
+          </div>
+          <div class="">
+            <span>09</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Countdown Timer</h4>
+              <p class="">
+                Hitung mundur tanggal acara pernikahanmu.</p>
+            </div>
+          </div>
+          <div class="">
+            <span>10</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Background Music</h4>
+              <p class="">
+                Pilih musik sesuai keinginan kamu agar undanganmu lebih romantis.</p>
+            </div>
+          </div>
+          <div class="">
+            <span>11</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Gallery Foto</h4>
+              <p class="">
+                Share moment indah kamu dengan pasanganmu dengan slideshow.</p>
+            </div>
+          </div>
+          <div class="">
+            <span>12</span>
+            <div class="p-2">
+              <h4 class="font-bold text-lg text-blue-900">Love Stories</h4>
+              <p class="">
+                Ceritakan Kisah Cinta kamu dengan leluasa.</p>
+            </div>
+          </div>
         </div>
-        <div class="group">
-          <Icon path="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" primary="w-8" />
-          <h4>Hadiah</h4>
-        </div>
-        <div class="group">
-          <Icon path="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" primary="w-8" />
-          <h4>Amplop Digital</h4>
-        </div>
-        <div class="group">
-          <Icon path="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" primary="w-8" />
-          <h4>Reservasi & Buku Tamu</h4>
-        </div>
-        <div class="group">
-          <Icon path="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" primary="w-8" />
-          <h4>Profil Detail Mempelai</h4>
-        </div>
-        <div class="group">
-          <Icon path="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" primary="w-8" />
-          <h4>Info Detail Acara</h4>
-        </div>
-        <div class="group">
-          <Icon path="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" primary="w-8" />
-          <h4>GoogleMaps</h4>
-        </div>
-        <div class="group">
-          <Icon path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" primary="w-8" />
-          <h4>Countdown Timer</h4>
-        </div>
-        <div class="group">
-          <Icon path="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" primary="w-8" />
-          <h4>Background Music</h4>
-        </div>
-        <div class="group">
-          <Icon path="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" primary="w-8" />
-          <h4>Gallery Foto</h4>
-        </div>
-        <div class="group">
-          <Icon path="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" primary="w-8" />
-          <h4>Love Stories</h4>
-        </div>
-    </div>
+      </div>
   </section>
   <section class="hidden">
     <div class="container relative overflow-hidden mx-auto py-12 px-6 text-center">
@@ -186,94 +272,89 @@ const [nature, adat, floral, popular, flip] = await Promise.all([
       </div>
     </div>
   </section>
-
+<section>
+  <div class="container overflow-hidden pb-12 px-6 mx-auto text-center">
+    <div>
+      <h2 class="text-center font-bold text-gray-700 mt-12 text-3xl">Tema Flipbook</h2>
+      <div class="-mt-2 mb-12">
+        <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+          flip
+            .filter(post => post.frontmatter.number !== undefined) 
+            .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+            .slice(0, 4)
+            .map((post) => (
+            <Product
+              primary=""
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+          />
+            ))
+        }
+      </div>
+      <Button href=`/flip` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Lihat Lebih Banyak" />
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container overflow-hidden px-6 mx-auto text-center">
+    
+    <div>
+      <h2 class="text-center font-bold text-gray-700 mt-12 text-3xl">Tema Adat</h2>
+      <div class="-mt-2 mb-12">
+        <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+          adat
+            .filter(post => post.frontmatter.number !== undefined) 
+            .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
+            .slice(0, 4)
+            .map((post) => (
+            <Product
+              primary="hidden"
+              aspect="square"
+              slug={post.frontmatter.slug || ""}
+              link={post.frontmatter.link || ""}
+              src={post.frontmatter.img?.url || ""}
+              title={post.frontmatter.title || ""}
+              alt={post.frontmatter.img?.alt || ""}
+              desc={post.frontmatter.desc || ""}
+              price={post.frontmatter.price || ""}
+              unprice={post.frontmatter.unprice || ""}
+              number={post.frontmatter.number || ""}
+          />
+            ))
+        }
+      </div>
+      <Button href=`/adat` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Lihat Lebih Banyak" />
+    </div>
+  </div>
+</section>
   <section>
-    <div class="container overflow-hidden pb-20 px-6 mx-auto text-center">
+    <div class="container overflow-hidden px-6 mx-auto text-center">
       <div>
-        <h2 class="text-center font-bold text-gray-700 mb-6 text-3xl">Tema Terlaris</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {
-            popular
-              .filter(post => post.frontmatter.number !== undefined) 
-              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-              .slice(0, 4)
-              .map((post) => (
-                <Product
-                  primary="hidden"
-                  aspect="video"
-                  slug={post.frontmatter.slug || ""}
-                  link={post.frontmatter.link || ""}
-                  src={post.frontmatter.img?.url || ""}
-                  title={post.frontmatter.title || ""}
-                  alt={post.frontmatter.img?.alt || ""}
-                  desc={post.frontmatter.desc || ""}
-                  price={post.frontmatter.price || ""}
-                  unprice={post.frontmatter.unprice || ""}
-                  number={post.frontmatter.number || ""}
-                  
-                />
-              ))
-          }
+        <h2 class="text-center font-bold text-gray-700 mt-12 text-3xl">Wedding Floral</h2>
+        <div class="-mt-2 mb-12">
+          <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
         </div>
-        
-      </div>
-      <div>
-        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Tema Flipbook</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {
-            flip
-              .filter(post => post.frontmatter.number !== undefined) 
-              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-              .slice(0, 4)
-              .map((post) => (
-              <Product
-                primary="hidden"
-                aspect="square"
-                slug={post.frontmatter.slug || ""}
-                link={post.frontmatter.link || ""}
-                src={post.frontmatter.img?.url || ""}
-                title={post.frontmatter.title || ""}
-                alt={post.frontmatter.img?.alt || ""}
-                desc={post.frontmatter.desc || ""}
-                price={post.frontmatter.price || ""}
-                unprice={post.frontmatter.unprice || ""}
-                number={post.frontmatter.number || ""}
-            />
-              ))
-          }
-        </div>
-        <Button href=`/flip` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
-      </div>
-      <div>
-        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Tema Adat</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {
-            adat
-              .filter(post => post.frontmatter.number !== undefined) 
-              .sort((a, b) => a.frontmatter.number - b.frontmatter.number) 
-              .slice(0, 4)
-              .map((post) => (
-              <Product
-                primary="hidden"
-                aspect="square"
-                slug={post.frontmatter.slug || ""}
-                link={post.frontmatter.link || ""}
-                src={post.frontmatter.img?.url || ""}
-                title={post.frontmatter.title || ""}
-                alt={post.frontmatter.img?.alt || ""}
-                desc={post.frontmatter.desc || ""}
-                price={post.frontmatter.price || ""}
-                unprice={post.frontmatter.unprice || ""}
-                number={post.frontmatter.number || ""}
-            />
-              ))
-          }
-        </div>
-        <Button href=`/adat` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
-      </div>
-      <div>
-        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Wedding Floral</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {
             floral
               .filter(post => post.frontmatter.number !== undefined) 
@@ -296,11 +377,20 @@ const [nature, adat, floral, popular, flip] = await Promise.all([
               ))
           }
         </div>
-        <Button href=`/floral` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+        <Button href=`/floral` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Lihat Lebih Banyak" />
       </div>
+    </div>
+  </section>
+  <section>
+    <div class="container overflow-hidden px-6 mx-auto text-center">
       <div>
-        <h2 class="text-center font-bold text-gray-700 mb-5 mt-12 text-3xl">Wedding Nature</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <h2 class="text-center font-bold text-gray-700 mt-12 text-3xl">Wedding Nature</h2>
+        <div class="-mt-2 mb-12">
+          <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+          <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {
             nature
               .filter(post => post.frontmatter.number !== undefined) 
@@ -323,59 +413,168 @@ const [nature, adat, floral, popular, flip] = await Promise.all([
               ))
           }
         </div>
-        <Button href=`/nature` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Tampilkan Lebih Banyak" />
+        <Button href=`/nature` button="px-4 py-2 w-max mx-auto mt-12 rounded-md text-white bg-blue-900 shadow-none" path="" title="Lihat Lebih Banyak" />
       </div>
     </div>
   </section>
+  
+
 <section>
   <div class="container overflow-hidden px-6 py-20 max-w-screen-lg mx-auto">
-    <div class="mb-12 font-poppins">
-      <h1 class="font-bold text-4xl md:text-5xl text-blue-700">FAQ</h1>
-      <p class="leading-7 mt-2 text-gray-500">Dibawah ini adalah daftar pertanyaan yang sering ditanyakan
-      </p>
-    </div>
-    <div class="grid grid cols-1 sm:grid-cols-2 gap-8 *:font-poppins *:h-full">
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Bagaimana cara order?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Silahkan pilih Tema yang anda sukai kemudian klik Pesan, nanti anda akan diarahkan ke form pemesanan.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apa itu masa edit undangan ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Masa edit undangan adalah masa aktif akun anda untuk dapat melakukan edit terhadap undangan yang telah anda buat.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apakah bisa ganti tema ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Anda dapat mengganti Tema sesuai dengan paket yang anda beli.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Berapa Lama pengerjaannya ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Untuk pengerjaannya 1-2 hari, setelah semua data kamu terkumpul dengan lengkap.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apakah ada batasan kirim undangan ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Tidak ada batas untuk kirim undangan, Cukup satu undangan untuk banyak tamu.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apakah ada batasan revisi undangan ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Tdak ada batas revisi, kamu dapat merevisi kapan saja di mana saja selama masa edit undangan masih aktif.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apa itu masa aktif undangan ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Masa aktif pada undangan adalah masa undangan online dapat diakses. Jika masa aktif berakhir maka undangan masih dapat diakses.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-md text-gray-700 tracking-wide">Apakah bisa refund ?</h4>
-        <p class="leading-7 mt-2 text-gray-500">Setelah melakukan pembayaran pesanan Anda tidak dapat dibatalkan.</p>
+    <div class="mb-6 font-poppins">
+      <h1 class="font-bold text-4xl md:text-5xl text-blue-900">FAQ</h1>
+      <div class="-mt-2">
+        <span class="inline-block w-40 h-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-3 h-1 ml-1 bg-blue-900 rounded-full"></span>
+        <span class="inline-block w-1 h-1 ml-1 bg-blue-900 rounded-full"></span>
       </div>
     </div>
+    <div x-data="{ selectedAccordionItem: 'one' }" class="font-poppins w-full divide-y divide-outline overflow-hidden rounded-sm bg-surface-alt/40 text-on-surface [*&>div>button]:flex [*&>div>button]:w-full [*&>div>button]:items-center [*&>div>button]:justify-between [*&>div>button]:gap-4 [*&>div>button]:bg-surface-alt [*&>div>button]:p-4 [*&>div>button]:text-left [*&>div>button]:underline-offset-2 [*&>div>button]:hover:bg-surface-alt/75 [*&>div>button]:focus-visible:bg-surface-alt/75 [*&>div>button]:focus-visible:underline [*&>div>button]:focus-visible:outline-hidden [*&>div>button]:font-bold">
+      <div>
+          <button id="controlsAccordionItemOne" type="button" aria-controls="accordionItemOne" x-on:click="selectedAccordionItem = 'one'" x-bind:class="selectedAccordionItem === 'one' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'one' ? 'true' : 'false'">
+            Bagaimana cara order?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'one'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'one'" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Silahkan pilih Tema yang anda sukai kemudian klik Pesan, nanti anda akan diarahkan ke form pemesanan.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemTwo" type="button" aria-controls="accordionItemTwo" x-on:click="selectedAccordionItem = 'two'" x-bind:class="selectedAccordionItem === 'two' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'two' ? 'true' : 'false'">
+              Apa itu masa edit undangan ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'two'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'two'" id="accordionItemTwo" role="region" aria-labelledby="controlsAccordionItemTwo" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                  Masa edit undangan adalah masa aktif akun anda untuk dapat melakukan edit terhadap undangan yang telah anda buat.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemThree" type="button" aria-controls="accordionItemThree" x-on:click="selectedAccordionItem = 'three'" x-bind:class="selectedAccordionItem === 'three' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'three' ? 'true' : 'false'">
+            Berapa Lama pengerjaannya ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'three'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'three'" id="accordionItemThree" role="region" aria-labelledby="controlsAccordionItemThree" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Untuk pengerjaannya 1-2 hari, setelah semua data kamu terkumpul dengan lengkap.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemFour" type="button" aria-controls="accordionItemFour" x-on:click="selectedAccordionItem = 'four'" x-bind:class="selectedAccordionItem === 'four' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'four' ? 'true' : 'false'">
+            Apakah ada batasan revisi undangan ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'four'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'four'" id="accordionItemFour" role="region" aria-labelledby="controlsAccordionItemFour" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Tdak ada batas revisi, kamu dapat merevisi kapan saja di mana saja selama masa edit undangan masih aktif.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemFive" type="button" aria-controls="accordionItemFive" x-on:click="selectedAccordionItem = 'five'" x-bind:class="selectedAccordionItem === 'five' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'five' ? 'true' : 'false'">
+            Apakah bisa refund ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'five'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'five'" id="accordionItemFive" role="region" aria-labelledby="controlsAccordionItemFive" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Setelah melakukan pembayaran pesanan Anda tidak dapat dibatalkan.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemSix" type="button" aria-controls="accordionItemSix" x-on:click="selectedAccordionItem = 'six'" x-bind:class="selectedAccordionItem === 'six' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'six' ? 'true' : 'false'">
+            Apakah bisa ganti tema ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'six'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'six'" id="accordionItemSix" role="region" aria-labelledby="controlsAccordionItemSix" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Anda dapat mengganti Tema sesuai dengan paket yang anda beli.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemSeven" type="button" aria-controls="accordionItemSeven" x-on:click="selectedAccordionItem = 'seven'" x-bind:class="selectedAccordionItem === 'seven' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'seven' ? 'true' : 'false'">
+            Apakah ada batasan kirim undangan ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'seven'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'seven'" id="accordionItemSeven" role="region" aria-labelledby="controlsAccordionItemSeven" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Tidak ada batas untuk kirim undangan, Cukup satu undangan untuk banyak tamu.
+              </div>
+          </div>
+      </div>
+      <div>
+          <button id="controlsAccordionItemEight" type="button" aria-controls="accordionItemEight" x-on:click="selectedAccordionItem = 'eight'" x-bind:class="selectedAccordionItem === 'eight' ? 'text-on-surface-strong '  : 'text-on-surface dark:text-on-surface-dark font-medium'" x-bind:aria-expanded="selectedAccordionItem === 'eight' ? 'true' : 'false'">
+            Apa itu masa aktif undangan ?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="selectedAccordionItem === 'eight'  ?  'rotate-180'  :  ''">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+          </button>
+          <div x-cloak x-show="selectedAccordionItem === 'eight'" id="accordionItemEight" role="region" aria-labelledby="controlsAccordionItemEight" x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Masa aktif pada undangan adalah masa undangan online dapat diakses. Jika masa aktif berakhir maka undangan masih dapat diakses.
+              </div>
+          </div>
+      </div>
+  </div>
+  
 </section>
-<section class="fixed bottom-5 right-5 z-20">
-  <div class="container overflow-hidden flex items-center justify-center mx-auto bg-green-500 rounded-full w-14 h-14 md:w-16 md:h-16 mb-5 p-3 drop-shadow-2xl border border-2">
-    <a href="https://wa.me/6281532094978?text=Hallo Admin Jejak Bahagia, saya mau konsultasi undangan digital dong!" target="_blank">
-      <Icon path="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" primary="w-8 h-8 md:w-10 md:h-10 text-white " />
-    </a>
+<section class="fixed bottom-12 right-5 z-20">
+  <div class="container overflow-hidden mx-auto flex flex-col justify-end items-end">
+    <div id="myPopup" class="hidden relative -mb-9 z-10 bg-white text-sm border rounded-md py-2 px-6 w-full max-w-xs drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] before:content-[''] before:absolute before:w-0 before:h-0 before:border-l-[12px] before:border-l-transparent before:border-r-transparent before:border-r-[12px] before:border-t-[12px] before:border-t-white before:right-3 before:-bottom-3">
+      <h6 class="font-bold text-2xl text-gray-600">Butuh bantuan? Kami siap membantu</h6>
+      <p>Silahkan hubungi channel support kita.</p>
+      <a href="" class="relative bg-gray-200 text-sm flex gap-4 rounded-md p-2 my-4  flex items-center font-bold">
+        <Icon path="M16.6 14c-.2-.1-1.5-.7-1.7-.8c-.2-.1-.4-.1-.6.1c-.2.2-.6.8-.8 1c-.1.2-.3.2-.5.1c-.7-.3-1.4-.7-2-1.2c-.5-.5-1-1.1-1.4-1.7c-.1-.2 0-.4.1-.5c.1-.1.2-.3.4-.4c.1-.1.2-.3.2-.4c.1-.1.1-.3 0-.4c-.1-.1-.6-1.3-.8-1.8c-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3c-.6.6-.9 1.3-.9 2.1c.1.9.4 1.8 1 2.6c1.1 1.6 2.5 2.9 4.2 3.7c.5.2.9.4 1.4.5c.5.2 1 .2 1.6.1c.7-.1 1.3-.6 1.7-1.2c.2-.4.2-.8.1-1.2l-.4-.2m2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2c5.5 0 9.9-4.4 9.9-9.9c.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2l-3.1.8l.8-3l-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4" primary="w-10 h-10 text-green-800" />
+        Admin Jejak Bahagia
+      </a>
+    </div>
+    <span class="relative bg-white text-sm rounded-md p-2 drop-shadow-[0.0px_4.0px_6.0px_rgba(0,0,0,0.35)] before:content-[''] before:absolute before:w-0 before:h-0 before:border-l-[12px] before:border-l-transparent before:border-r-transparent before:border-r-[12px] before:border-t-[12px] before:border-t-white before:right-3 before:-bottom-3">Ada yang ingin ditanyakan?</span>
+
+    <div id="popupBtn" class="bg-green-800 rounded-md mt-4 w-24 h-10 flex justify-center items-center cursor-pointer">
+      <Icon path="M20 2H4c-1.103 0-2 .894-2 1.992v12.016C2 17.106 2.897 18 4 18h3v4l6.351-4H20c1.103 0 2-.894 2-1.992V3.992A1.998 1.998 0 0 0 20 2zm-6 11H7v-2h7v2zm3-4H7V7h10v2z" primary="w-8 h-8 text-white" />
+    </div>
   </div>
 </section>
 <Splide />
+<script defer>
+  (function () {
+    const btn   = document.getElementById('popupBtn');
+    const popup = document.getElementById('myPopup');
 
+    if (btn && popup) {
+      btn.addEventListener('click', () => {
+        popup.classList.toggle('hidden');
+      });
+    }
+  })();
+
+  document.addEventListener('alpine:init', () => {
+        Alpine.data('dropdown', () => ({
+            open: false,
+ 
+            toggle() {
+                this.open = ! this.open
+            },
+        }))
+    })
+</script>
 </Home>

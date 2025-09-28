@@ -119,7 +119,8 @@ if(!frontmatter) {
   data["dayfs"] = "Jum'at";
   data["daysc"] = "Sabtu";
   data["dayth"] = "Minggu";
-  data["month"] = "Januari";
+  data["monthfs"] = "Januari";
+  data["monthsc"] = "Januari";
   data["year"] = "2030";
   data["timefs"] = "08:00 - 09:00 WIB"
   data["timesc"] = "10:00 - 11:00 WIB"
@@ -191,7 +192,7 @@ const dekorProps = {
           <p class="fade-right opacity-0 mt-2">di Tempat</p>
         </div>
         <label for="toggle" id="toaudio" class=`fade-left opacity-0 mt-5 px-5 py-2 w-max flex items-center relative rounded-full shadow-xl font-bold flex gap-1 ${frontmatter.txfs} ${frontmatter.bgth}`>Buka Undangan
-          <Icon path="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" primary="w-5 h-5"/>
+          <Icon path="M11.36 1.842a.75.75 0 0 0-.72 0l-7.81 4.26a1.59 1.59 0 0 0-.436.35L11 11.145l8.606-4.695a1.591 1.591 0 0 0-.436-.349l-7.81-4.26ZM2 15.75V7.945l8.64 4.713a.75.75 0 0 0 .72 0L20 7.945v7.805A3.25 3.25 0 0 1 16.75 19H5.25A3.25 3.25 0 0 1 2 15.75Zm19.001-8.239a3.247 3.247 0 0 1 1.5 2.739v6a5.25 5.25 0 0 1-5.25 5.25h-9A3.247 3.247 0 0 1 5.51 20h11.74A3.75 3.75 0 0 0 21 16.25V7.511Z" primary="w-5 h-5"/>
         </label>
       </div>
     </div>
@@ -201,12 +202,12 @@ const dekorProps = {
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
       <div class="container relative z-20 md:py-36 px-6 py-20 mx-auto h-max relative font-poppins">
       <div class="mx-auto text-center min-h-screen">
-        <p class="fade-down opacity-0 my-5 max-w-xs mx-auto">The Wedding Of</p>
+        <p class="fade-down opacity-0 max-w-xs mx-auto">The Wedding Of</p>
+        <h2 class=`flip-left opacity-0 text-center mb-12 *:leading-7 ${frontmatter.txsc} ${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h2>
         <BorderSingle image={frontmatter.cvrsc} dekorth={frontmatter.dekorfv} styleBs={frontmatter.styleBs} primary={frontmatter.primary}  />
         <div class=`fade-left opacity-0 flex flex-col sm:flex-row items-center justify-center font-dyna gap-x-8 mt-5 text-center text-6xl md:text-8xl leading-10`>
-        <h2 class=`flip-left opacity-0 text-center *:leading-7 ${frontmatter.txsc} ${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h2>
         </div>
-        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} txsc={frontmatter.txsc} txth={frontmatter.txth} />
       </div>
       </div>
       <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
@@ -223,8 +224,8 @@ const dekorProps = {
     style={`background-image:url(${frontmatter.cvrth})`}>
     <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" animations='fade-left', 'fade-right', 'fade-left', 'fade-right' />
       <div class="container mx-auto py-28 px-6 relative min-h-screen">
-        <div class=`text-center font-poppins max-w-md mx-auto ${frontmatter.txfs}`>
-          <h5 class=`fade-left opacity-0 !text-2xl ${frontmatter.font}`>
+        <div class=`text-center font-poppins max-w-xl mx-auto ${frontmatter.txfs}`>
+          <h5 class=`fade-left opacity-0 max-[600px]:!text-2xl ${frontmatter.font}`>
             Assalamualaikum Wr. Wb.
           </h5>
           <p class="fade-right opacity-0 font-poppins text-xs mt-2">Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
@@ -237,7 +238,7 @@ const dekorProps = {
       <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="hidden" hidden3="hidden" hidden4="absolute" />
       <div class="container mx-auto py-20 sm:py-36 px-6 min-h-screen">
-        <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} month={frontmatter.month} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
+        <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} monthfs={frontmatter.monthfs} monthsc={frontmatter.monthsc} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
       </div>
     </section>
     <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:opacity-80 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.display}` style=`background-image: url('${frontmatter.cvrsc}')`>
@@ -252,7 +253,12 @@ const dekorProps = {
     </section>
     <section class=`relative overflow-hidden ${frontmatter.display}`>
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
-      <Gallery images={frontmatter.images} txsc={frontmatter.txsc} font={frontmatter.font} />
+      <div class="container mx-auto px-6 py-20 min-h-screen">
+        <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txfs} ${frontmatter.font}`}>
+          Our Gallery
+        </h2>
+      <Gallery images={frontmatter.images}/>
+      </div>
       <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
     </section>
     <section class=`relative bg-cover bg-center bg-fixed overflow-hidden before:content-[''] before:absolute before:h-full before:w-full before:bg-gradient-to-b ${frontmatter.bfr}`
@@ -265,7 +271,7 @@ const dekorProps = {
             <h2 class="text-center text-xl">Kirim <br> <span class=`!text-4xl ${frontmatter.font}`>Kado</span></h2>
             <img src=`${frontmatter.dekorsx}` class="w-28 h-28" alt="JejakBahagia">
             <div class=`flip-left opacity-0 relative py-8 px-4 mx-auto rounded-lg w-full ${frontmatter.bgsc} ${frontmatter.txfs}`>
-              <Icon path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" primary="w-8 h-8 mb-5 mx-auto" />
+              <Icon path="M19.527 4.799c1.212 2.608.937 5.678-.405 8.173c-1.101 2.047-2.744 3.74-4.098 5.614c-.619.858-1.244 1.75-1.669 2.727c-.141.325-.263.658-.383.992c-.121.333-.224.673-.34 1.008c-.109.314-.236.684-.627.687h-.007c-.466-.001-.579-.53-.695-.887c-.284-.874-.581-1.713-1.019-2.525c-.51-.944-1.145-1.817-1.79-2.671L19.527 4.799zM8.545 7.705l-3.959 4.707c.724 1.54 1.821 2.863 2.871 4.18c.247.31.494.622.737.936l4.984-5.925l-.029.01c-1.741.601-3.691-.291-4.392-1.987a3.377 3.377 0 0 1-.209-.716c-.063-.437-.077-.761-.004-1.198l.001-.007zM5.492 3.149l-.003.004c-1.947 2.466-2.281 5.88-1.117 8.77l4.785-5.689l-.058-.05l-3.607-3.035zM14.661.436l-3.838 4.563a.295.295 0 0 1 .027-.01c1.6-.551 3.403.15 4.22 1.626c.176.319.323.683.377 1.045c.068.446.085.773.012 1.22l-.003.016l3.836-4.561A8.382 8.382 0 0 0 14.67.439l-.009-.003zM9.466 5.868L14.162.285l-.047-.012A8.31 8.31 0 0 0 11.986 0a8.439 8.439 0 0 0-6.169 2.766l-.016.018l3.665 3.084z" primary="w-8 h-8 mb-5 mx-auto" />
               <p class="max-w-max">{frontmatter.addressfs}</p>
             </div>
             <div class="mt-4 font-poppins">

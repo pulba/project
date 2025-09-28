@@ -161,7 +161,7 @@ const dekorProps = {
           <p class="fade-right opacity-0 mt-2">di Tempat</p>
         </div>
         <label for="toggle" id="toaudio" class=`fade-left opacity-0 mt-5 px-5 py-2 w-max flex items-center relative rounded-full shadow-xl font-bold flex gap-1 ${frontmatter.txfs} ${frontmatter.bgth}`>Buka Undangan
-          <Icon path="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" primary="w-5 h-5"/>
+          <Icon path="M11.36 1.842a.75.75 0 0 0-.72 0l-7.81 4.26a1.59 1.59 0 0 0-.436.35L11 11.145l8.606-4.695a1.591 1.591 0 0 0-.436-.349l-7.81-4.26ZM2 15.75V7.945l8.64 4.713a.75.75 0 0 0 .72 0L20 7.945v7.805A3.25 3.25 0 0 1 16.75 19H5.25A3.25 3.25 0 0 1 2 15.75Zm19.001-8.239a3.247 3.247 0 0 1 1.5 2.739v6a5.25 5.25 0 0 1-5.25 5.25h-9A3.247 3.247 0 0 1 5.51 20h11.74A3.75 3.75 0 0 0 21 16.25V7.511Z" primary="w-5 h-5"/>
         </label>
       </div>
     </div>
@@ -218,7 +218,7 @@ const dekorProps = {
           <h5 class=`fade-right opacity-0 text-center ${frontmatter.txfs} ${frontmatter.font}`> Save The Date
           </h1>
         </div>
-        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
+        <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} txsc={frontmatter.txsc} txth={frontmatter.txfs} />
         <div class=`relative overflow-hidden z-50 flex flex-col items-center max-w-screen-md mt-12 pb-12 w-full mx-auto bg-white rounded-xl border-4 [&>div]:px-3 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] ${frontmatter.bgfs}`>
           <img src={frontmatter.cvrfr} alt="jejakbahagia" class="w-full aspect-video rounded-t-xl object-cover object-center">
           <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgth} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} month={frontmatter.month} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
@@ -227,7 +227,12 @@ const dekorProps = {
     </section>
     <section class=`overflow-hidden relative ${frontmatter.display}`>
       <Decor {...dekorProps} animations={['fade-left', 'fade-right', 'fade-left', 'fade-right']} hiddenProps={['', `${frontmatter.display}`, `${frontmatter.display}`, '']} />
-      <Gallery images={frontmatter.images} txsc={frontmatter.txsc} font={frontmatter.font} />
+      <div class="container mx-auto px-6 py-20 min-h-screen">
+        <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txfs} ${frontmatter.font}`}>
+          Our Gallery
+        </h2>
+      <Gallery images={frontmatter.images}/>
+      </div>
     </section>
     <section
       class="relative overflow-hidden">

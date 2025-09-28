@@ -6,6 +6,15 @@ interface Props {
 const { path, primary } = Astro.props as Props;
 ---
 
-<svg data-slot="icon" fill="none" class=`${primary}` stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" d={path}></path>
-  </svg>
+<svg
+  data-slot="icon"
+  class={primary}
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  fill="none"
+  stroke="currentColor"
+  stroke-width=".5"
+>
+  <path d={path} fill="currentColor"></path>
+</svg>

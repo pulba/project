@@ -1,5 +1,5 @@
 ---
-const { txfs, bgfs, countdown, animation } = Astro.props;
+const { txfs, txsc, txth, bgfs, countdown, animation } = Astro.props;
 
 ---
 
@@ -8,26 +8,28 @@ data-count={countdown}
   id="timer"
   class=`hidden flip-left opacity-0 px-6 grid grid-cols-2 md:grid-cols-2 gap-8 justify-center text-center items-center mt-12 sm:px-20 max-w-3xl mx-auto *:${bgfs} ${txfs} *:text-center *:text-5xl *:sm:text-6xl *:font-medium *:border *:rounded-xl *:p-2 ${animation}`>
 </div>
-<div id="countdown-display" class=`flip-left opacity-0 grid grid-cols-4 gap-2 justify-center text-center items-center sm:px-20 max-w-3xl mx-auto *:text-center [&>div>span]:sm:text-5xl [&>div>span]:text-3xl *:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] *:border *:rounded-xl *:p-2 *:opacity-70 ${txfs} ${animation}`>
-  <div class=`${bgfs}`>
-    <span id="days" class="value data-avatar">0</span>
+<div id="countdown-display" class=`flip-left opacity-0 flex flex-col gap-2 justify-center text-center items-center font-poppins font-bold sm:px-12 max-w-3xl mx-auto *:text-center [&>div>div]:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] [&>div>div]:border [&>div>div]:rounded-xl [&>div>div]:p-2 [&>div>div]:opacity-70 ${txfs} ${animation} ${animation}`>
+  <div class=`${txth} p-2 rounded-xl opacity-70`>
+    <span id="days" class="value data-avatar text-7xl">0</span>
     <br />
     <p>Hari</p>
   </div>
-  <div class=`${bgfs}`>
-    <span id="hours" class="value data-avatar">0</span>
-    <br />
-    <p>Jam</p>
-  </div>
-  <div class=`${bgfs}`>
-    <span id="minutes" class="value data-avatar">0</span>
-    <br />
-    <p>Menit</p>
-  </div>
-  <div class=`${bgfs}`>
-    <span id="seconds" class="value data-avatar">0</span>
-    <br />
-    <p>Detik</p>
+  <div class="flex gap-2 w-full *:w-full [&>div>span]:text-2xl">
+    <div class=`${bgfs}`>
+      <span id="hours" class="value data-avatar">0</span>
+      <br />
+      <p>Jam</p>
+    </div>
+    <div class=`${bgfs}`>
+      <span id="minutes" class="value data-avatar">0</span>
+      <br />
+      <p>Menit</p>
+    </div>
+    <div class=`${bgfs}`>
+      <span id="seconds" class="value data-avatar">0</span>
+      <br />
+      <p>Detik</p>
+    </div>
   </div>
 </div>
 
