@@ -30,7 +30,7 @@ bto: 'before:to-[#120B09]'
 display: 'block'
 styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
 primary: 'hidden'
-font: 'font-great text-3xl md:text-5xl'
+font: 'font-aref text-2xl md:text-4xl'
 button: 'rounded-tl-xl px-6 py-2 border-b mt-5'
 
 # svg
@@ -45,6 +45,7 @@ dekorth: '/assets/dekor70.webp'
 dekorfr: '/assets/dekor70.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor71.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # Img header
 cover: '/assets/indh1.webp'
@@ -128,7 +129,7 @@ mapsfs: https://maps.app.goo.gl/aLSFppm5GL5sE6Hv6
 mapssc: https://maps.app.goo.gl/wq1YzJWPfLvbNUMx9
 mapsth: https://maps.app.goo.gl/YscKebNKVVe83BCEA?g_st=ac
 linkmaps: https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7948.706792819864!2d104.32451134639025!3d-5.046326482633631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMDInNDYuNCJTIDEwNMKwMTknNDYuNCJF!5e0!3m2!1sid!2sid!4v1758694360276!5m2!1sid!2sid
-akad: "Akad "
+akad: "Akad & Resepsi"
 resepsi: "Unduh Mantu"
 
 # story love

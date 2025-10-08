@@ -63,9 +63,6 @@ const [undangan] = await Promise.all([
                 title={post.frontmatter.name || ""}
                 alt={post.frontmatter.img?.alt || ""}
                 desc={post.frontmatter.desc || ""}
-                price={post.frontmatter.price || ""}
-                unprice={post.frontmatter.unprice || ""}
-                number={post.frontmatter.number || ""}
               />
             ))
         }

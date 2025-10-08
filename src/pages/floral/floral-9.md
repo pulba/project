@@ -7,7 +7,6 @@ desc: 'Floral 09'
 price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 29
-countdown: "June 5, 2025 15:37:25"
 img:
   url: '/assets/demo-29.webp'
   alt: jejak bahagia
@@ -43,7 +42,7 @@ dekorfs: '/assets/dekor15.webp'
 dekorsc: '/assets/dekor15.webp'
 dekorth: '/assets/dekor16.webp'
 dekorfr: '/assets/dekor64.webp'
-dekorfv: '/assets/dekor65.webp'
+dekorfv: '/assets/dekor16.webp'
 dekorsx: '/assets/dekor67.webp'
 
 # Cover
@@ -103,6 +102,7 @@ namebankfml: "Juliet Kapolo"
 numberbankfml: "0987654321"
 
 # Waktu & Tempat Acara
+countdown: "June 5, 2025 15:37:25"
 datefs: Jumat, 05 Januari 2030
 datesc: Jumat, 05 Januari 2030
 dateth: Jumat, 05 Januari 2030

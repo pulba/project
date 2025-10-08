@@ -66,6 +66,7 @@ if(!frontmatter) {
   data["dekorfr"] = '/assets/dekor64.webp'
   data["dekorfv"] = '/assets/dekor65.webp'
   data["dekorsx"] = '/assets/dekor67.webp'
+  data["dekorsv"] = '/assets/dekor67.webp'
 
   // Img kedua mempelai
   data["pm1"] = '/assets/img-27.webp'
@@ -204,8 +205,8 @@ const dekorProps = {
       <div class="mx-auto text-center min-h-screen">
         <p class="fade-down opacity-0 max-w-xs mx-auto">The Wedding Of</p>
         <h2 class=`flip-left opacity-0 text-center mb-12 *:leading-7 ${frontmatter.txsc} ${frontmatter.font}`>{frontmatter.female} & {frontmatter.male}</h2>
-        <BorderSingle image={frontmatter.cvrsc} dekorth={frontmatter.dekorfv} styleBs={frontmatter.styleBs} primary={frontmatter.primary}  />
-        <div class=`fade-left opacity-0 flex flex-col sm:flex-row items-center justify-center font-dyna gap-x-8 mt-5 text-center text-6xl md:text-8xl leading-10`>
+        <BorderSingle image={frontmatter.cvrsc} dekorfv={frontmatter.dekorfv} styleBs={frontmatter.styleBs} primary={frontmatter.primary}  />
+        <div class=`fade-left opacity-0 flex flex-col sm:flex-row items-center justify-center font-niconne gap-x-8 mt-5 text-center text-6xl md:text-8xl leading-10`>
         </div>
         <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} txsc={frontmatter.txsc} txth={frontmatter.txth} />
       </div>
@@ -224,13 +225,13 @@ const dekorProps = {
     style={`background-image:url(${frontmatter.cvrth})`}>
     <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" animations='fade-left', 'fade-right', 'fade-left', 'fade-right' />
       <div class="container mx-auto py-28 px-6 relative min-h-screen">
-        <div class=`text-center font-poppins max-w-xl mx-auto ${frontmatter.txfs}`>
-          <h5 class=`fade-left opacity-0 max-[600px]:!text-2xl ${frontmatter.font}`>
+        <div class=`text-center font-poppins w-full max-w-xl mx-auto ${frontmatter.txfs}`>
+          <h5 class=`fade-left opacity-0 font-niconne text-2xl md:text-4xl`>
             Assalamualaikum Wr. Wb.
           </h5>
           <p class="fade-right opacity-0 font-poppins text-xs mt-2">Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta Kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
         </div>
-        <Bride primary={frontmatter.primary} pm1={frontmatter.pm1} pm2={frontmatter.pm2} dekorth={frontmatter.dekorfv} txsc={frontmatter.txfs} styleBs={frontmatter.styleBs} txfs={frontmatter.txfs} bgth={frontmatter.bgth} font={frontmatter.font} fullfemale={frontmatter.fullfemale} childfemale={frontmatter.childfemale} parentfemale={frontmatter.parentfemale} instagramfemale={frontmatter.instagramfemale} male={frontmatter.male} fullmale={frontmatter.fullmale} childmale={frontmatter.childmale} parentmale={frontmatter.parentmale} instagrammale={frontmatter.instagrammale} />
+        <Bride primary={frontmatter.primary} pm1={frontmatter.pm1} pm2={frontmatter.pm2} dekorfv={frontmatter.dekorfv} txsc={frontmatter.txfs} styleBs={frontmatter.styleBs} txfs={frontmatter.txfs} bgth={frontmatter.bgth} font={frontmatter.font} fullfemale={frontmatter.fullfemale} childfemale={frontmatter.childfemale} parentfemale={frontmatter.parentfemale} instagramfemale={frontmatter.instagramfemale} male={frontmatter.male} fullmale={frontmatter.fullmale} childmale={frontmatter.childmale} parentmale={frontmatter.parentmale} instagrammale={frontmatter.instagrammale} />
       </div>
     </section>
     <section class="animasi5 relative overflow-hidden">
@@ -238,14 +239,14 @@ const dekorProps = {
       <Shapes fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary="-rotate-180 -mb-1 absolute bottom-0 left-0 z-20" />
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="hidden" hidden3="hidden" hidden4="absolute" />
       <div class="container mx-auto py-20 sm:py-36 px-6 min-h-screen">
-        <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} monthfs={frontmatter.monthfs} monthsc={frontmatter.monthsc} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
+        <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorsv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} monthfs={frontmatter.monthfs} monthsc={frontmatter.monthsc} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
       </div>
     </section>
     <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:opacity-80 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.display}` style=`background-image: url('${frontmatter.cvrsc}')`>
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" />
       <div class="container mx-auto py-20 px-6 my-10 text-center relative">
         <div class=`max-w-md mx-auto ${frontmatter.txfs}`>
-          <h2 class="fade-left opacity-0 text-center font-dyna text-5xl md:text-6xl">Our Story</h2>
+          <h2 class="fade-left opacity-0 text-center font-niconne text-5xl md:text-6xl">Our Story</h2>
           <p class="fade-right opacity-0 font-poppins text-xs">Kisah hubungan yang tidak banyak orang ketahui. Penuh suka dan duka, namun akhirnya sepakat berkomitmen untuk melalui semuanya bersama.</p>
         </div>
         <StorySlide imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} storyfs={frontmatter.storyfs} storysc={frontmatter.storysc} storyth={frontmatter.storyth} txth={frontmatter.txth} font={frontmatter.font} />
@@ -254,7 +255,7 @@ const dekorProps = {
     <section class=`relative overflow-hidden ${frontmatter.display}`>
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
       <div class="container mx-auto px-6 py-20 min-h-screen">
-        <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txfs} ${frontmatter.font}`}>
+        <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txth} ${frontmatter.font}`}>
           Our Gallery
         </h2>
       <Gallery images={frontmatter.images}/>
@@ -305,7 +306,7 @@ const dekorProps = {
           
       </div>
     </section>
-    <Footerpost styleBs={frontmatter.styleBs} dekorProps={dekorProps} txfs={frontmatter.txfs} txcs={frontmatter.txcs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgsc={frontmatter.bgsc} bgth={frontmatter.bgth} font={frontmatter.font} image={frontmatter.cvrsc} dekorth={frontmatter.dekorfv} female={frontmatter.female} male={frontmatter.male} fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary={frontmatter.primary} /> 
+    <Footerpost styleBs={frontmatter.styleBs} dekorProps={dekorProps} txfs={frontmatter.txfs} txcs={frontmatter.txcs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgsc={frontmatter.bgsc} bgth={frontmatter.bgth} font={frontmatter.font} image={frontmatter.cvrsc} dekorfv={frontmatter.dekorfv} female={frontmatter.female} male={frontmatter.male} fillfs={frontmatter.fillfs} fillsc={frontmatter.fillsc} fillth={frontmatter.fillth} primary={frontmatter.primary} /> 
     <Audio txfs={frontmatter.txfs} bgth={frontmatter.bgth} bdr={frontmatter.bdr} />
     <audio id="myAudio" loop class="hidden">
       <source src=`/assets/music/${frontmatter.music}.mp3` type="audio/mpeg">

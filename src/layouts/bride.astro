@@ -7,7 +7,7 @@ export interface CoupleProps {
   brideflex: string;
   pm1: string;
   pm2: string;
-  dekorth: string;
+  dekorfv: string;
   txsc: string;
   styleBs: string;
   primary: string;
@@ -31,7 +31,7 @@ const {
   brideflex,
   pm1,
   pm2,
-  dekorth,
+  dekorfv,
   txsc,
   styleBs,
   primary,
@@ -51,7 +51,7 @@ const {
 
 <div class="relative z-30 flex flex-col lg:flex-row justify-center items-center gap-y-8 w-full max-w-4xl mx-auto mt-5 *:text-center *:w-full *:flex *:flex-col *:justify-evenly *:gap-4 *:items-center">
   <div class=`${brideflex}`>
-      <BorderSingle image={pm1} dekorth={dekorth} styleBs={styleBs} primary={primary} important={important} animation={animation}/>
+      <BorderSingle image={pm1} dekorfv={dekorfv} styleBs={styleBs} primary={primary} important={important} animation={animation}/>
     <div class="">
       <h3 class=`fade-up opacity-0 mt-6 ${important} ${animation} ${txsc} ${font}`>
         {fullfemale}
@@ -73,9 +73,9 @@ const {
     </div>
   </div>
   <div class=`${brideflex}`>
-    <BorderSingle image={pm2} dekorth={dekorth} styleBs={styleBs} primary={primary} important={important} animation={animation} />
+    <BorderSingle image={pm2} dekorfv={dekorfv} styleBs={styleBs} primary={primary} important={important} animation={animation} />
     <div class="">
-      <h3 class=`fade-up opacity-0 text-4xl mt-6 ${animation} ${important} ${txsc} ${font}`>
+      <h3 class=`fade-up opacity-0 mt-6 ${animation} ${important} ${txsc} ${font}`>
         {fullmale}
       </h3>
       <div class=`fade-up opacity-0 space-y-3 ${animation}  ${important} ${txsc}`>

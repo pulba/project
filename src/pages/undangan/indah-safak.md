@@ -41,6 +41,7 @@ dekorth: '/assets/dekor31.webp'
 dekorfr: '/assets/dekor64.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor67.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # Img header
 cover: '/assets/indah10.webp'

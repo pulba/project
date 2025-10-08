@@ -44,6 +44,7 @@ dekorth: '/assets/dekor25.webp'
 dekorfr: '/assets/dekor64.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor67.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # Cover
 cover: '/assets/eka.webp'

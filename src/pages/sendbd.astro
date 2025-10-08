@@ -29,37 +29,46 @@ import Noheader from '../layouts/noheader.astro';
 </section>
 
 <script>
-
   const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get('username');
-    const urlValue = urlParams.get('url');
-    
-    document.getElementById('username').value = username;
+  const usernameFromUrl = urlParams.get('username'); // Mengganti nama variabel agar lebih jelas
+  const urlValue = urlParams.get('url');
 
-    urlParams.append('url', 'jejakbahagia.com');
-    const newUrl = `${window.location.origin}${window.location.pathname}?${urlParams.toString()}`;
-    console.log(newUrl);
+  // Mengisi input username dari URL jika ada
+  if (usernameFromUrl) {
+    document.getElementById('username').value = usernameFromUrl;
+  }
 
+  /**
+   * Fungsi baru yang lebih cerdas untuk memformat nama dan gelar.
+   * Fungsi ini akan mengapitalisasi setiap kata DAN setiap huruf setelah titik.
+   * Contoh: "indah yunitasari, s.pd" -> "Indah Yunitasari, S.Pd"
+   */
+  function formatNameAndTitle(sentence) {
+    if (!sentence) return ''; // Mengembalikan string kosong jika input tidak ada
 
-    function capitalizeAllWords(sentence) {
-    let words = sentence.toLowerCase().split(' ');
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-    }
-    return words.join(' ');
-    }
+    // Langkah 1: Kapitalisasi awal setiap kata (misal: "indah" -> "Indah")
+    let basicCapitalized = sentence.toLowerCase().split(' ').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+
+    // Langkah 2: Gunakan Regular Expression untuk mencari ".<hurufkecil>" dan ubah menjadi ".<HURUF BESAR>"
+    // Contoh: menemukan "s.p" di "Indah Yunitasari, S.p" dan mengubahnya menjadi "S.P"
+    let finalFormatted = basicCapitalized.replace(/\.([a-z])/g, match => match.toUpperCase());
+
+    return finalFormatted;
+  }
 
   function updateMessage() {
-    var username = capitalizeAllWords(document.getElementById("username").value.trim());
-    var Penerima = capitalizeAllWords(document.getElementById("Penerima").value.trim());
+    // Gunakan fungsi baru 'formatNameAndTitle'
+    var username = formatNameAndTitle(document.getElementById("username").value.trim());
+    var Penerima = formatNameAndTitle(document.getElementById("Penerima").value.trim());
     var detailURL = urlValue;
+
+    // Template pesan Anda (tidak diubah)
     var message = `*Kepada Yth.*
 Bapak/Ibu/Saudara/i 
 
-*${Penerima}* 
-
-
-*_Assalamualaikum Warahmatullahi Wabarakaatuh_*
+*${Penerima}* *_Assalamualaikum Warahmatullahi Wabarakaatuh_*
 
 Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Ulang Tahun kami:
 
@@ -74,30 +83,34 @@ Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
 *_Wassalamualaikum Warahmatullahi Wabarakaatuh_*
 
 
-*${username}* 
+*${username}* `;
 
-`;
-
-document.getElementById('message').innerHTML = message;
+    document.getElementById('message').innerHTML = message;
   }
 
   document.getElementById("formSend").addEventListener("submit", function(e) {
     e.preventDefault();
-    updateMessage();  
+    updateMessage(); // Pastikan pesan terupdate sebelum dikirim
 
-    var Number = document.getElementById("number").value.trim();
+    var number = document.getElementById("number").value.trim();
+    // Tambahkan '62' jika nomor diawali dengan '0' dan hapus karakter non-digit
+    var formattedNumber = number.replace(/\D/g, '');
+    if (formattedNumber.startsWith('0')) {
+        formattedNumber = '62' + formattedNumber.substring(1);
+    }
+    
     var message = document.getElementById("message").value.trim();
-    var whatsapp = "https://api.whatsapp.com/send?phone=" + Number + "&text=" + encodeURIComponent(message);
-    window.open(whatsapp, "_blank");
+    var whatsappURL = "https://api.whatsapp.com/send?phone=" + formattedNumber + "&text=" + encodeURIComponent(message);
+    window.open(whatsappURL, "_blank");
   });
 
+  // Event listener untuk update real-time
   document.getElementById("username").addEventListener("input", updateMessage);
   document.getElementById("Penerima").addEventListener("input", updateMessage);
 
+  // Panggil saat halaman pertama kali dimuat
   window.onload = updateMessage;
-
 </script>
-
 
 </Noheader>
 

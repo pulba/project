@@ -48,8 +48,9 @@ dekorfs: '/assets/dekor110.webp'
 dekorsc: '/assets/dekor110.webp'
 dekorth: '/assets/dekor111.webp'
 dekorfr: '/assets/dekor64.webp'
-dekorfv: '/assets/dekor65.webp'
+dekorfv: '/assets/dekor111.webp'
 dekorsx: '/assets/dekor67.webp'
+dekorsv: '/assets/dekor67.webp'
 
 # Img Kedua Mempelai
 pm1: '/assets/img-1.webp'

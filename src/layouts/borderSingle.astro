@@ -1,5 +1,5 @@
 ---
-const { image, dekorth, styleBs, primary, important, animation } = Astro.props;
+const { image, dekorfv, styleBs, primary, important, animation } = Astro.props;
 const primaryClassesFirst = primary === "hidden" ? "hidden" : "block";
 const primaryClassesSecond = primary === "hidden" ? "block" : "hidden";
 ---
@@ -9,14 +9,14 @@ const primaryClassesSecond = primary === "hidden" ? "block" : "hidden";
     style=`background-image:url(${image})`>
   </div>
   <img
-    src={dekorth}
+    src={dekorfv}
     alt="JejakBahagia"
-    class={`absolute ${dekorth ? "" : "hidden"}`}/>
+    class={`absolute ${dekorfv ? "" : "hidden"}`}/>
 </div>
 
 <div class=`flip-right opacity-0 relative flex items-center justify-center ${important} ${animation} ${primaryClassesSecond}`>
   <div class=`bg-cover bg-center relative ${styleBs}`
-  style=`background-image: url('${dekorth}')`>
+  style=`background-image: url('${dekorfv}')`>
   </div>
   <img src=`${image}` alt="JejakBahagia" class=`absolute p-2 bg-cover bg-center ${styleBs}`>
 </div>

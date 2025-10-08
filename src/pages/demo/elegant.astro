@@ -8,6 +8,7 @@ import Countdown from "../../layouts/countdown.astro";
 import Footerpost from "../../layouts/footer-post.astro";
 import Audio from "../../layouts/audio.astro";
 import Animation from "../../layouts/animation.astro";
+import LoveStory from "../../layouts/loveStory.astro";
 import Gallery from "../../layouts/gallery.astro";
 import Card from '../../layouts/card.astro';
 import Bride from "../../layouts/bride.astro";
@@ -274,9 +275,17 @@ const dekorProps = {
           </h1>
         </div>
         <Countdown countdown={frontmatter.countdown} bgfs={frontmatter.bgth} txfs={frontmatter.txfs} />
-        <p class=`mx-auto max-w-md text-center my-6 ${frontmatter.txfs}`>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami:</p>
-          <img src={frontmatter.cvrfr} alt="jejakbahagia" class="w-full max-w-md mx-auto aspect-square object-cover object-center">
+        <p class=`fade-up opacity-0 mx-auto max-w-md text-center my-6 ${frontmatter.txfs}`>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami:</p>
+          <img src={frontmatter.cvrfr} alt="jejakbahagia" class="fade-up opacity-0 w-full max-w-md mx-auto aspect-square object-cover object-center">
           <Card txfs={frontmatter.txth} txth={frontmatter.txfs} bgth={frontmatter.bgfs} font={frontmatter.font} datefs={frontmatter.dateakd} datesc={frontmatter.datersp} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorfv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} month={frontmatter.month} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
+      </div>
+    </section>
+    <section class=`overflow-hidden relative ${frontmatter.display}`>
+      <div class="container mx-auto py-20 min-h-screen">
+        <h2 class={`fade-right opacity-0 text-center ${frontmatter.animation} ${frontmatter.txth} ${frontmatter.font}`}>
+          Love Story
+        </h2>
+        <LoveStory imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} storyfs={frontmatter.storyfs} storysc={frontmatter.storysc} storyth={frontmatter.storyth} txfs={frontmatter.txfs} txth={frontmatter.txth} bgth={frontmatter.bgth} font={frontmatter.font} />
       </div>
     </section>
     <section class=`overflow-hidden relative ${frontmatter.bgth} ${frontmatter.display}`>
@@ -284,7 +293,7 @@ const dekorProps = {
         <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txfs} ${frontmatter.font}`}>
           Our Gallery
         </h2>
-        <hr class=`h-px my-8 border-0 w-full max-w-xl mx-auto ${frontmatter.bgfs}`>
+        <hr class=`flip-right opacity-0 h-px my-8 border-0 w-full max-w-xl mx-auto ${frontmatter.bgfs}`>
       <Gallery images={frontmatter.images}/>
       <div class="fade-right opacity-0 flex flex-row gap-2 items-center justify-center max-w-sm ml-auto *:w-full">
         <hr class=`h-px my-8 border-0 ${frontmatter.bgfs}`> 
@@ -318,7 +327,7 @@ const dekorProps = {
     </section>
     <section class=`relative overflow-hidden bg-cover bg-center bg-fixed before:content-[''] before:absolute before:opacity-70 before:inset-0 ${frontmatter.before}` style={`background-image:url(${frontmatter.cvrfv})`}>
       <div class="container relative px-6">
-        <div class=`flex flex-col items-center justify-center gap-y-4 h-screen max-w-xl mx-auto ${frontmatter.txfs}`>
+        <div class=`fade-up opacity-0 flex flex-col items-center justify-center gap-y-4 h-screen max-w-xl mx-auto ${frontmatter.txfs}`>
           <h6 class="text-3xl font-dafoe">Terima Kasih</h6>
           <p class="text-center">Suatu kebahagiaan & kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami</p>
           <p class="font-bold">Kami Yang Berbahagia</p>
@@ -326,22 +335,22 @@ const dekorProps = {
         </div>
       </div>
     </section>
-    <section class=` ${frontmatter.bgth}`>
+    <section class=`relative overflow-hidden ${frontmatter.bgth}`>
       <div class="container px-6 py-20 mx-auto">
         <div class=`flex flex-row justify-evenly ${frontmatter.txfs}`>
-          <div class="space-y-2 text-center">
+          <div class="fade-left opacity-0 space-y-2 text-center">
             <p class="italic">Keluarga Besar</p>
             <p class="text-md font-bold">Mempelai Wanita</p>
             <p class="italic">{frontmatter.parentfemale}</p>
           </div>
-          <div class="space-y-2 text-center">
+          <div class="fade-right opacity-0 space-y-2 text-center">
             <p class="italic">Keluarga Besar</p>
             <p class="text-md font-bold">Mempelai Pria</p>
             <p class="italic">{frontmatter.parentmale}</p>
           </div>
         </div>
-        <hr class=`h-px w-full max-w-lg mx-auto my-8 border-0 ${frontmatter.bgfs}`>
-        <div class=`space-y-2 text-center ${frontmatter.txfs}`>
+        <hr class=`flip-right opacity-0 h-px w-full max-w-lg mx-auto my-8 border-0 ${frontmatter.bgfs}`>
+        <div class=`fade-up opacity-0 space-y-2 text-center ${frontmatter.txfs}`>
           <p class="italic text-md">Turut Mengundang:</p>
           <p class="italic">Keluarga Besar {frontmatter.parentfemale}</p>
           <p class="italic">Keluarga Besar {frontmatter.parentmale}</p>

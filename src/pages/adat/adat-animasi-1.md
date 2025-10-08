@@ -54,6 +54,7 @@ dekorth: '/assets/dekor63.webp'
 dekorfr: '/assets/dekor64.webp'
 dekorfv: '/assets/dekor60.webp'
 dekorsx: '/assets/dekor67.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
 pm1: '/assets/ant26.webp'

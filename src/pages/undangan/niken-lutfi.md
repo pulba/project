@@ -46,6 +46,7 @@ dekorth: '/assets/dekor70.webp'
 dekorfr: '/assets/dekor70.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor71.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # Img header
 cover: '/assets/niken12.webp'

@@ -41,6 +41,7 @@ dekorth: '/assets/dekor103.webp'
 dekorfr: '/assets/dekor64.webp'
 dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor67.webp'
+dekorsv: '/assets/dekor65.webp'
 
 # cover
 cover: '/assets/ant4.webp'

@@ -3,7 +3,7 @@ import Icon from '../components/icon.astro';
 import BorderSingle from './borderSingle.astro';
 import Decor from './decor.astro';
 import Shapes from './shapes.astro';
-const { bgfs, txfs, txsc, txth, bgth, styleBs, font, dekorth, image, female, male, fillfs, fillsc, fillth, primary } = Astro.props;
+const { bgfs, txfs, txsc, txth, bgth, styleBs, font, dekorfv, image, female, male, fillfs, fillsc, fillth, primary } = Astro.props;
 const { dekorProps } = Astro.props;
 --- 
 
@@ -12,7 +12,7 @@ const { dekorProps } = Astro.props;
   <Decor {...dekorProps} animations={['fade-left', 'fade-right', 'fade-left', 'fade-right']} hiddenProps={['hidden', `hidden`, ``, '']} />
   <div class="container px-6 py-12 text-center mx-auto relative z-10">
     <div class="relative min-h-screen flex flex-col justify-evenly items-center w-full">
-      <BorderSingle image={image} dekorth={dekorth} styleBs={styleBs} primary={primary} />
+      <BorderSingle image={image} dekorfv={dekorfv} styleBs={styleBs} primary={primary} />
       <p class=`fade-left opacity-0 text-center text-sm max-w-prose mx-auto ${txsc}`>Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih. <br>
         <span class=`fade-right opacity-0 text-center capitalize !text-2xl md:!text-4xl ${font}`>Wassalamu’alaikum Wr. Wb.</span>
       </p>

@@ -42,7 +42,7 @@ dekorfs: '/assets/dekor85.webp'
 dekorsc: '/assets/dekor85.webp'
 dekorth: '/assets/dekor48.webp'
 dekorfr: '/assets/dekor64.webp'
-dekorfv: '/assets/dekor65.webp'
+dekorfv: '/assets/dekor48.webp'
 dekorsx: '/assets/dekor67.webp'
 
 # Img Header

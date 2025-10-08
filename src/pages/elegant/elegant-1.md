@@ -33,7 +33,7 @@ bdr: 'border-neutral-100'
 display: 'block'
 primary: 'block'
 styleBs: 'rounded-full border-4'
-font: 'font-cinzel text-3xl md:text-5xl'
+font: 'font-dmserif text-2xl md:text-4xl'
 button: 'rounded-full w-max mx-auto px-4 py-2'
 
 # Dekor
@@ -136,6 +136,11 @@ linkmaps: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3953.144855136041
 akad: "Akad"
 resepsi: "Resepsi"
 
-quote: "“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”"
-atribusi: "(Qs. Ar-Rum : 21)"
+# story love
+storyfs: "Di sebuah kafe yang nyaman di tengah kota, dua orang asing, Yanti dan Yanto, tak sengaja bertemu. Yanto, seorang fotografer yang sedang mencari inspirasi untuk proyek terbarunya, sedangkan Yanti, seorang penulis lepas yang sedang mencatat ide-ide baru untuk novel romantisnya, tak menyadari bahwa matanya sedang bertatapan dengan seorang pria tampan di sisi lain kafe."
+storysc: "Beberapa bulan kemudian, Romeo memutuskan bahwa dia tidak ingin kehilangan Juliet dari hidupnya. Dengan hati yang penuh harap, dia menyiapkan proposal yang tak terlupakan. Di bawah langit malam yang cerah, di taman yang dihiasi dengan ratusan lentera, Romeo berlutut di hadapan Juliet."
+storyth: "Dari pertemuan tak terduga di kafe hingga momen indah pertunangan mereka di taman yang dipenuhi lentera, cerita cinta Juliet dan Romeo adalah bukti bahwa takdir bisa membawa dua hati yang saling mencari dan membuat mereka bersatu dalam cinta yang abadi."
+
+quote: " Tidak ada yang lebih indah selain berbagi hidup dengan seseorang yang mengerti dan mendukungmu tanpa syarat.  Dan tidak ada perasaan yang lebih indah selain menemukan seseorang yang menjadi tempat pulang terbaik. "
+atribusi: "(Anonim)"
 ---
