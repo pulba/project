@@ -30,7 +30,8 @@ before: 'before:bg-green-950'
 bfr: 'before:from-green-950'
 bto: 'before:to-green-950'
 
-display: 'block'
+galery: 'block' 
+story: 'block'
 styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
 primary: 'hidden'
 font: 'font-great text-5xl md:text-6xl'
@@ -42,10 +43,10 @@ fillsc: 'fill-green-950'
 fillth: 'fill-green-950'
 
 # Img header
-cover: '/assets/img-20.webp'
-cvrsc: '/assets/img-21.webp'
-cvrth: '/assets/img-22.webp'
-cvrfr: '/assets/img-23.webp'
+cover: '/assets/img-82.webp'
+cvrsc: '/assets/img-83.webp'
+cvrth: '/assets/img-80.webp'
+cvrfr: '/assets/img-84.webp'
 
 #dekor
 dekorfs: '/assets/frame6.webp'
@@ -57,28 +58,28 @@ dekorsx: '/assets/dekor96.webp'
 dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
-pm1: '/assets/img-20.webp'
-pm2: '/assets/img-21.webp'
+pm1: '/assets/img-80.webp'
+pm2: '/assets/img-81.webp'
 
 # Img story mempelai
-imgstory1: '/assets/img-20.webp'
-imgstory2: '/assets/img-21.webp'
-imgstory3: '/assets/img-22.webp'
-imgstory4: '/assets/img-23.webp'
-imgstory5: '/assets/img-24.webp'
-imgstory6: '/assets/img-25.webp'
-imgstory7: '/assets/img-23.webp'
-imgstory8: '/assets/img-24.webp'
+imgstory1: '/assets/img-80.webp'
+imgstory2: '/assets/img-81.webp'
+imgstory3: '/assets/img-82.webp'
+imgstory4: '/assets/img-83.webp'
+imgstory5: '/assets/img-84.webp'
+imgstory6: '/assets/img-80.webp'
+imgstory7: '/assets/img-83.webp'
+imgstory8: '/assets/img-82.webp'
 
 images:
-  - src: '/assets/img-20.webp'
-  - src: '/assets/img-21.webp'
-  - src: '/assets/img-22.webp'
-  - src: '/assets/img-23.webp'
-  - src: '/assets/img-24.webp'
-  - src: '/assets/img-25.webp'
-  - src: '/assets/img-22.webp'
-  - src: '/assets/img-21.webp'
+  - src: '/assets/img-80.webp'
+  - src: '/assets/img-81.webp'
+  - src: '/assets/img-82.webp'
+  - src: '/assets/img-83.webp'
+  - src: '/assets/img-84.webp'
+  - src: '/assets/img-80.webp'
+  - src: '/assets/img-83.webp'
+  - src: '/assets/img-82.webp'
 
 
 

@@ -30,7 +30,8 @@ before: 'before:bg-[#120B09]'
 bfr: 'before:from-[#120B09]'
 bto: 'before:to-[#120B09]'
 
-display: 'block'
+galery: 'block' 
+story: 'block'
 styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
 primary: 'hidden'
 font: 'font-great text-5xl md:text-6xl'
@@ -42,10 +43,10 @@ fillsc: 'fill-[#120B09]'
 fillth: 'fill-[#120B09]'
 
 # Img header
-cover: '/assets/img-46.webp'
-cvrsc: '/assets/img-44.webp'
-cvrth: '/assets/img-45.webp'
-cvrfr: '/assets/img-46.webp'
+cover: '/assets/img-91.webp'
+cvrsc: '/assets/img-92.webp'
+cvrth: '/assets/img-93.webp'
+cvrfr: '/assets/img-94.webp'
 
 #dekor
 dekorfs: '/assets/frame4.webp'
@@ -57,28 +58,28 @@ dekorsx: '/assets/dekor71.webp'
 dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
-pm1: '/assets/img-43.webp'
-pm2: '/assets/img-44.webp'
+pm1: '/assets/img-92.webp'
+pm2: '/assets/img-91.webp'
 
 # Img story mempelai
-imgstory1: '/assets/img-43.webp'
-imgstory2: '/assets/img-44.webp'
-imgstory3: '/assets/img-45.webp'
-imgstory4: '/assets/img-46.webp'
-imgstory5: '/assets/img-47.webp'
-imgstory6: '/assets/img-43.webp'
-imgstory7: '/assets/img-44.webp'
-imgstory8: '/assets/img-45.webp'
+imgstory1: '/assets/img-91.webp'
+imgstory2: '/assets/img-92.webp'
+imgstory3: '/assets/img-93.webp'
+imgstory4: '/assets/img-94.webp'
+imgstory5: '/assets/img-95.webp'
+imgstory6: '/assets/img-91.webp'
+imgstory7: '/assets/img-92.webp'
+imgstory8: '/assets/img-93.webp'
 
 images:
-  - src: '/assets/img-43.webp'
-  - src: '/assets/img-44.webp'
-  - src: '/assets/img-45.webp'
-  - src: '/assets/img-46.webp'
-  - src: '/assets/img-47.webp'
-  - src: '/assets/img-43.webp'
-  - src: '/assets/img-44.webp'
-  - src: '/assets/img-45.webp'
+  - src: '/assets/img-91.webp'
+  - src: '/assets/img-92.webp'
+  - src: '/assets/img-93.webp'
+  - src: '/assets/img-94.webp'
+  - src: '/assets/img-95.webp'
+  - src: '/assets/img-91.webp'
+  - src: '/assets/img-92.webp'
+  - src: '/assets/img-93.webp'
 
 
 # data mempelai

@@ -24,7 +24,7 @@ before: 'before:bg-gray-200'
 
 txfs: 'text-gray-100'
 txsc: 'text-gray-200'
-txth: 'text-gray-200'
+txth: 'text-gray-400'
 
 fillfs: 'fill-gray-900'
 fillsc: 'fill-gray-900'

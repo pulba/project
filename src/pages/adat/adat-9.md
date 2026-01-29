@@ -1,9 +1,9 @@
 ---
 layout: '../demo/adat.astro'
 slug: 'adat/adat-8'
-title: 'Tema Melayu |'
-name: 'Tema Melayu'
-desc: 'Tema Melayu'
+title: 'Tema Chinese |'
+name: 'Tema Chinese'
+desc: 'Tema Chinese'
 price: 'Rp125.000'
 unprice: 'Rp200.000'
 number: 09
@@ -30,7 +30,8 @@ before: 'before:bg-red-950'
 bfr: 'before:from-red-950'
 bto: 'before:to-red-950'
 
-display: 'block'
+galery: 'block' 
+story: 'block'
 styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
 primary: 'hidden'
 font: 'font-great text-5xl md:text-6xl'
@@ -42,10 +43,10 @@ fillsc: 'fill-red-950'
 fillth: 'fill-red-950'
 
 # Img header
-cover: '/assets/img-20.webp'
-cvrsc: '/assets/img-21.webp'
-cvrth: '/assets/bg16.webp'
-cvrfr: '/assets/bg16.webp'
+cover: '/assets/img-85.webp'
+cvrsc: '/assets/img-86.webp'
+cvrth: '/assets/img-87.webp'
+cvrfr: '/assets/img-88.webp'
 
 #dekor
 dekorfs: '/assets/frame18.webp'
@@ -57,28 +58,28 @@ dekorsx: '/assets/dekor99.webp'
 dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
-pm1: '/assets/img-20.webp'
-pm2: '/assets/img-21.webp'
+pm1: '/assets/img-90.webp'
+pm2: '/assets/img-87.webp'
 
 # Img story mempelai
-imgstory1: '/assets/img-20.webp'
-imgstory2: '/assets/img-21.webp'
-imgstory3: '/assets/img-22.webp'
-imgstory4: '/assets/img-23.webp'
-imgstory5: '/assets/img-24.webp'
-imgstory6: '/assets/img-25.webp'
-imgstory7: '/assets/img-23.webp'
-imgstory8: '/assets/img-24.webp'
+imgstory1: '/assets/img-85.webp'
+imgstory2: '/assets/img-86.webp'
+imgstory3: '/assets/img-87.webp'
+imgstory4: '/assets/img-88.webp'
+imgstory5: '/assets/img-89.webp'
+imgstory6: '/assets/img-90.webp'
+imgstory7: '/assets/img-85.webp'
+imgstory8: '/assets/img-86.webp'
 
 images:
-  - src: '/assets/img-20.webp'
-  - src: '/assets/img-21.webp'
-  - src: '/assets/img-22.webp'
-  - src: '/assets/img-23.webp'
-  - src: '/assets/img-24.webp'
-  - src: '/assets/img-25.webp'
-  - src: '/assets/img-22.webp'
-  - src: '/assets/img-21.webp'
+  - src: '/assets/img-85.webp'
+  - src: '/assets/img-86.webp'
+  - src: '/assets/img-87.webp'
+  - src: '/assets/img-88.webp'
+  - src: '/assets/img-89.webp'
+  - src: '/assets/img-90.webp'
+  - src: '/assets/img-85.webp'
+  - src: '/assets/img-86.webp'
 
 
 

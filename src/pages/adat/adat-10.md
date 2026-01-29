@@ -1,9 +1,9 @@
 ---
 layout: '../demo/adat.astro'
 slug: 'adat/adat-8'
-title: 'Tema Melayu |'
-name: 'Tema Melayu'
-desc: 'Tema Melayu'
+title: 'Tema Jakarta |'
+name: 'Tema Jakarta'
+desc: 'Tema Jakarta'
 price: 'Rp125.000'
 unprice: 'Rp200.000'
 number: 10
@@ -13,39 +13,40 @@ img:
 categories: ["Tema Adat"]
 
 #colors
-bgfs: 'bg-yellow-100'
-bgsc: 'bg-yellow-950'
-bgth: 'bg-yellow-900'
+bgfs: 'bg-gray-100'
+bgsc: 'bg-gray-950'
+bgth: 'bg-gray-900'
 
 txfs: 'text-white'
-txsc: 'text-yellow-950'
-txth: 'text-yellow-950'
-txfr: 'text-yellow-950'
+txsc: 'text-gray-950'
+txth: 'text-gray-950'
+txfr: 'text-gray-950'
 
 bdr: 'border-white'
-from: 'from-yellow-100'
-via: 'via-yellow-200'
-to: 'to-yellow-950'
-before: 'before:bg-yellow-950'
-bfr: 'before:from-yellow-950'
-bto: 'before:to-yellow-950'
+from: 'from-gray-100'
+via: 'via-gray-200'
+to: 'to-gray-950'
+before: 'before:bg-gray-950'
+bfr: 'before:from-gray-950'
+bto: 'before:to-gray-950'
 
-display: 'block'
+galery: 'block' 
+story: 'block'
 styleBs: 'rounded-full w-36 h-56 md:w-48 md:h-72 '
 primary: 'hidden'
 font: 'font-great text-5xl md:text-6xl'
 button: 'rounded-tl-xl !bg-white !text-black px-6 py-2 border-b mt-5'
 
 # svg
-fillfs: 'fill-yellow-950'
-fillsc: 'fill-yellow-950'
-fillth: 'fill-yellow-950'
+fillfs: 'fill-gray-950'
+fillsc: 'fill-gray-950'
+fillth: 'fill-gray-950'
 
 # Img header
-cover: '/assets/img-17.webp'
-cvrsc: '/assets/img-16.webp'
-cvrth: '/assets/img-14.webp'
-cvrfr: '/assets/img-13.webp'
+cover: '/assets/img-98.webp'
+cvrsc: '/assets/img-99.webp'
+cvrth: '/assets/img-100.webp'
+cvrfr: '/assets/img-102.webp'
 
 #dekor
 dekorfs: '/assets/frame20.webp'
@@ -57,28 +58,28 @@ dekorsx: '/assets/dekor101.webp'
 dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
-pm1: '/assets/img-16.webp'
-pm2: '/assets/img-17.webp'
+pm1: '/assets/img-96.webp'
+pm2: '/assets/img-99.webp'
 
 # Img story mempelai
-imgstory1: '/assets/img-13.webp'
-imgstory2: '/assets/img-14.webp'
-imgstory3: '/assets/img-15.webp'
-imgstory4: '/assets/img-16.webp'
-imgstory5: '/assets/img-17.webp'
-imgstory6: '/assets/img-13.webp'
-imgstory7: '/assets/img-14.webp'
-imgstory8: '/assets/img-15.webp'
+imgstory1: '/assets/img-96.webp'
+imgstory2: '/assets/img-97.webp'
+imgstory3: '/assets/img-98.webp'
+imgstory4: '/assets/img-99.webp'
+imgstory5: '/assets/img-100.webp'
+imgstory6: '/assets/img-101.webp'
+imgstory7: '/assets/img-102.webp'
+imgstory8: '/assets/img-96.webp'
 
 images:
-  - src: '/assets/img-13.webp'
-  - src: '/assets/img-14.webp'
-  - src: '/assets/img-15.webp'
-  - src: '/assets/img-16.webp'
-  - src: '/assets/img-17.webp'
-  - src: '/assets/img-13.webp'
-  - src: '/assets/img-14.webp'
-  - src: '/assets/img-15.webp'
+  - src: '/assets/img-96.webp'
+  - src: '/assets/img-97.webp'
+  - src: '/assets/img-98.webp'
+  - src: '/assets/img-99.webp'
+  - src: '/assets/img-100.webp'
+  - src: '/assets/img-101.webp'
+  - src: '/assets/img-102.webp'
+  - src: '/assets/img-96.webp'
 
 
 

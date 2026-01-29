@@ -105,7 +105,7 @@ numberbankfml: "901663201306"
 phone: "6285788174700"
 
 # waktu & tempat acara
-countdown: "Nov 11, 2025 08:00:00"
+countdown: "Nov 16, 2025 08:00:00"
 datefs: "11"
 datesc: "16"
 dateth: "23"

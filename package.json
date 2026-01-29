@@ -11,8 +11,8 @@
     "wdeploy": "wrangler pages deploy --project-name=$project_name ./dist --branch=$release_branch"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "0.4.5",
-    "@astrojs/cloudflare": "^12.4.0",
+    "@astrojs/alpinejs": "^0.4.9",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/tailwind": "6.0.2",
     "@fontsource-variable/cormorant": "^5.1.0",
     "@fontsource-variable/josefin-sans": "^5.1.0",
@@ -40,7 +40,7 @@
     "@types/node": "^22.15.3",
     "alpinejs": "^3.14.1",
     "animejs": "^3.2.2",
-    "astro": "^5.7.9",
+    "astro": "^5.16.6",
     "astro-icon": "^1.1.1",
     "drizzle-orm": "^0.30.10",
     "gsap": "^3.13.0",

@@ -8,28 +8,28 @@ price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 21
 img:
-  url: '/assets/img-43.webp'
+  url: '/assets/img-88.webp'
   alt: jejak bahagia
 
 # Colors
-bgfs: 'bg-amber-100'
-bgsc: 'bg-amber-300'
-bgth: 'bg-amber-900'
+bgfs: 'bg-red-100'
+bgsc: 'bg-red-300'
+bgth: 'bg-red-900'
 
-from: 'from-amber-900'
-via: 'via-amber-900'
-to: 'to-amber-900'
-before: 'before:bg-amber-900'
+from: 'from-red-900'
+via: 'via-red-900'
+to: 'to-red-900'
+before: 'before:bg-red-900'
 
-txfs: 'text-amber-100'
-txsc: 'text-amber-900'
-txth: 'text-amber-900'
+txfs: 'text-red-100'
+txsc: 'text-red-900'
+txth: 'text-red-900'
 
-fillfs: 'fill-amber-500'
-fillsc: 'fill-amber-600'
-fillth: 'fill-amber-900'
+fillfs: 'fill-red-500'
+fillsc: 'fill-red-600'
+fillth: 'fill-red-900'
 
-bdr: 'border-amber-100'
+bdr: 'border-red-100'
 display: 'block'
 primary: 'block'
 styleBs: 'rounded-full border-4'
@@ -46,35 +46,35 @@ dekorfv: '/assets/dekor65.webp'
 dekorsx: '/assets/dekor67.webp'
 
 # Img Kedua Mempelai
-pm1: '/assets/img-48.webp'
-pm2: '/assets/img-43.webp'
+pm1: '/assets/img-90.webp'
+pm2: '/assets/img-87.webp'
 
 # Img Header
-cover: '/assets/img-43.webp'
-cvrsc: '/assets/img-44.webp'
-cvrth: '/assets/img-45.webp'
-cvrfr: '/assets/img-46.webp'
-cvrfv: '/assets/img-47.webp'
+cover: '/assets/img-85.webp'
+cvrsc: '/assets/img-86.webp'
+cvrth: '/assets/img-87.webp'
+cvrfr: '/assets/img-88.webp'
+cvrfv: '/assets/img-89.webp'
 
-# Img Our Moment
-imgstory1: '/assets/img-43.webp'
-imgstory2: '/assets/img-44.webp'
-imgstory3: '/assets/img-45.webp'
-imgstory4: '/assets/img-46.webp'
-imgstory5: '/assets/img-47.webp'
-imgstory6: '/assets/img-48.webp'
-imgstory7: '/assets/img-44.webp'
-imgstory8: '/assets/img-43.webp'
+# Img story mempelai
+imgstory1: '/assets/img-85.webp'
+imgstory2: '/assets/img-86.webp'
+imgstory3: '/assets/img-87.webp'
+imgstory4: '/assets/img-88.webp'
+imgstory5: '/assets/img-89.webp'
+imgstory6: '/assets/img-90.webp'
+imgstory7: '/assets/img-85.webp'
+imgstory8: '/assets/img-86.webp'
 
 images:
-  - src: '/assets/img-43.webp'
-  - src: '/assets/img-44.webp'
-  - src: '/assets/img-45.webp'
-  - src: '/assets/img-48.webp'
-  - src: '/assets/img-46.webp'
-  - src: '/assets/img-47.webp'
-  - src: '/assets/img-44.webp'
-  - src: '/assets/img-43.webp'
+  - src: '/assets/img-85.webp'
+  - src: '/assets/img-86.webp'
+  - src: '/assets/img-87.webp'
+  - src: '/assets/img-88.webp'
+  - src: '/assets/img-89.webp'
+  - src: '/assets/img-90.webp'
+  - src: '/assets/img-85.webp'
+  - src: '/assets/img-86.webp'
 
 
 # Data Mempelai

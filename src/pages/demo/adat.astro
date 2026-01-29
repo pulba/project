@@ -47,7 +47,8 @@ if(!frontmatter) {
   data["bfr"] = 'before:from-[#120B09]'
   data["bto"] = 'before:to-[#120B09]'
 
-  data["display"] = "block";
+  data["galery"] = "block";
+  data["story"] = "block";
   data["styleBs"] = "rounded-full";
   data["primary"] = "block";
   data["font"] = "font-great";
@@ -242,7 +243,7 @@ const dekorProps = {
         <Card txfs={frontmatter.txfs} txth={frontmatter.txth} bgfs={frontmatter.bgfs} bgth={frontmatter.bgsc} font={frontmatter.font} datefs={frontmatter.datefs} datesc={frontmatter.datesc} timefs={frontmatter.timefs} timesc={frontmatter.timesc} locationfs={frontmatter.locationfs} locationsc={frontmatter.locationsc} addressfs={frontmatter.addressfs} addresssc={frontmatter.addresssc} mapsfs={frontmatter.mapsfs} mapssc={frontmatter.mapssc} akad={frontmatter.akad} resepsi={frontmatter.resepsi} dekorfv={frontmatter.dekorsv} imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} dekorsx={frontmatter.dekorsx} dayfs={frontmatter.dayfs} daysc={frontmatter.daysc} monthfs={frontmatter.monthfs} monthsc={frontmatter.monthsc} year={frontmatter.year} button={frontmatter.button} primary={frontmatter.primary} />
       </div>
     </section>
-    <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:opacity-80 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.display}` style=`background-image: url('${frontmatter.cvrsc}')`>
+    <section class=`animasi7 relative bg-cover bg-center overflow-hidden before:content-[''] before:opacity-80 before:inset-0 before:bg-cover before:absolute ${frontmatter.before} ${frontmatter.story}` style=`background-image: url('${frontmatter.cvrsc}')`>
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="absolute" hidden4="absolute" />
       <div class="container mx-auto py-20 px-6 my-10 text-center relative">
         <div class=`max-w-md mx-auto ${frontmatter.txfs}`>
@@ -252,7 +253,7 @@ const dekorProps = {
         <StorySlide imgstory1={frontmatter.imgstory1} imgstory2={frontmatter.imgstory2} imgstory3={frontmatter.imgstory3} storyfs={frontmatter.storyfs} storysc={frontmatter.storysc} storyth={frontmatter.storyth} txth={frontmatter.txth} font={frontmatter.font} />
       </div>
     </section>
-    <section class=`relative overflow-hidden ${frontmatter.display}`>
+    <section class=`relative overflow-hidden ${frontmatter.galery}`>
       <Decor dekortop={frontmatter.dekorfs} dekorbt={frontmatter.dekorsc} dekorlf={frontmatter.dekorth} dekorend={frontmatter.dekorfr} hidden1="hidden" hidden2="absolute" hidden3="hidden" hidden4="absolute" />
       <div class="container mx-auto px-6 py-20 min-h-screen">
         <h2 class={`fade-right opacity-0 text-center my-5 ${frontmatter.animation} ${frontmatter.txth} ${frontmatter.font}`}>

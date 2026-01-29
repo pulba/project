@@ -12,24 +12,24 @@ img:
   alt: jejak bahagia
 
 # Colors
-bgfs: 'bg-gray-300'
-bgsc: 'bg-gray-300'
-bgth: 'bg-gray-900'
+bgfs: 'bg-amber-100'
+bgsc: 'bg-amber-700'
+bgth: 'bg-amber-900'
 
-from: 'from-gray-900'
-via: 'via-gray-900'
-to: 'to-gray-900'
-before: 'before:bg-gray-900'
+from: 'from-amber-900'
+via: 'via-amber-900'
+to: 'to-amber-900'
+before: 'before:bg-amber-900'
 
-txfs: 'text-gray-100'
-txsc: 'text-gray-900'
-txth: 'text-gray-900'
+txfs: 'text-amber-100'
+txsc: 'text-amber-900'
+txth: 'text-amber-900'
 
-fillfs: 'fill-gray-500'
-fillsc: 'fill-gray-600'
-fillth: 'fill-gray-900'
+fillfs: 'fill-amber-500'
+fillsc: 'fill-amber-600'
+fillth: 'fill-amber-900'
 
-bdr: 'border-gray-100'
+bdr: 'border-amber-100'
 display: 'block'
 primary: 'block'
 styleBs: 'rounded-full border-4'
