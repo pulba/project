@@ -47,15 +47,15 @@ dekorsx: '/assets/dekor67.webp'
 
 # Img header
 cover: '/assets/udin1.webp'
-cvrsc: '/assets/udin2.webp'
+cvrsc: '/assets/udin6.webp'
 cvrth: '/assets/udin3.webp'
-cvrfr: '/assets/udin4.webp'
-cvrfv: '/assets/udin5.webp'
+cvrfr: '/assets/udin7.webp'
+cvrfv: '/assets/udin3.webp'
 
 
 # Img kedua mempelai
 pm1: '/assets/udin5.webp'
-pm2: '/assets/udin2.webp'
+pm2: '/assets/udin4.webp'
 
 # Img Our Moment
 imgstory1: '/assets/udin1.webp'
@@ -63,8 +63,8 @@ imgstory2: '/assets/udin2.webp'
 imgstory3: '/assets/udin3.webp'
 imgstory4: '/assets/udin4.webp'
 imgstory5: '/assets/udin5.webp'
-imgstory6: '/assets/udin3.webp'
-imgstory7: '/assets/udin2.webp'
+imgstory6: '/assets/udin6.webp'
+imgstory7: '/assets/udin7.webp'
 imgstory8: '/assets/udin1.webp'
 
 images:
@@ -73,8 +73,8 @@ images:
   - src: '/assets/udin3.webp'
   - src: '/assets/udin4.webp'
   - src: '/assets/udin5.webp'
-  - src: '/assets/udin3.webp'
-  - src: '/assets/udin2.webp'
+  - src: '/assets/udin6.webp'
+  - src: '/assets/udin7.webp'
   - src: '/assets/udin1.webp'
 
 
@@ -93,7 +93,7 @@ instagramfemale: ""
 facebookmale: ""
 facebookfemale: ""
 citymale: "Lampung Barat"
-cityfemale: "Lampung Barat"
+cityfemale: "Ogan Komering"
 
 # name bank
 logoml: /assets/bri.png
@@ -114,10 +114,10 @@ dateth: Minggu, 08 Februari 2026
 timefs: "09:00 - Selesai"
 timesc: "09:00 - Selesai"
 timeth: "09:00 - Selesai"
-addressfs: "Pekon Waspada, Kec. Sekincau, Kab. Lampung Barat"
+addressfs: "Buyung Pemaca, Kabupaten Ogan Komering Ulu Selatan"
 addresssc: "Pekon Waspada, Kec. Sekincau, Kab. Lampung Barat"
 addressth: "Pekon Waspada, Kec. Sekincau, Kab. Lampung Barat"
-locationfs: "Kediaman Bapak Mujiono"
+locationfs: "Kediaman Bapak Mahmudin"
 locationsc: "Kediaman Bapak Mujiono"
 locationth: "Kediaman Bapak Mujiono"
 mapsfs: "https://maps.app.goo.gl/AFNKhbk5CihpSAHq5"

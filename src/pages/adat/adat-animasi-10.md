@@ -1,9 +1,9 @@
 ---
 layout: '../demo/adat.astro'
 slug: 'adat/adat-animasi-10'
-title: 'Tema Chinese Animasi |'
-name: 'Tema Chinese Animasi'
-desc: 'Tema Chinese Animasi'
+title: 'Tema Jakarta Animasi |'
+name: 'Tema Jakarta Animasi'
+desc: 'Tema Jakarta Animasi'
 price: 'Rp99.000'
 unprice: 'Rp200.000'
 number: 20
@@ -55,7 +55,7 @@ dekorth: '/assets/dekor100.webp'
 dekorfr: '/assets/dekor100.webp'
 dekorfv: '/assets/dekor60.webp'
 dekorsx: '/assets/dekor101.webp'
-dekorsv: '/assets/dekor65.webp'
+dekorsv: '/assets/bg8.webp'
 
 # Img kedua mempelai
 pm1: '/assets/ant50.webp'
@@ -117,7 +117,9 @@ dateth: "05"
 dayfs: "Jum'at"
 daysc: "Sabtu"
 dayth: "Minggu"
-month: "Januari"
+monthfs: "June"
+monthsc: "June"
+monthth: "June"
 year: "2028"
 timefs: "08:00 - 09:00 WIB"
 timesc: "10:00 - 11:00 WIB"

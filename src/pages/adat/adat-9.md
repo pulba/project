@@ -1,6 +1,6 @@
 ---
 layout: '../demo/adat.astro'
-slug: 'adat/adat-8'
+slug: 'adat/adat-9'
 title: 'Tema Chinese |'
 name: 'Tema Chinese'
 desc: 'Tema Chinese'
@@ -119,7 +119,9 @@ dateth: "05"
 dayfs: "Jum'at"
 daysc: "Sabtu"
 dayth: "Minggu"
-month: "Januari"
+monthfs: "June"
+monthsc: "June"
+monthth: "June"
 year: "2028"
 timefs: "08:00 - 09:00 WIB"
 timesc: "10:00 - 11:00 WIB"

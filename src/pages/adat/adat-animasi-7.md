@@ -8,7 +8,7 @@ price: 'Rp99.000'
 unprice: 'Rp200.000'
 number: 17
 img:
-  url: '/assets/demo-17.webp'
+  url: '/assets/demo-16.webp'
   alt: jejak bahagia
 categories: ["Tema Adat"]
 
@@ -55,7 +55,7 @@ dekorth: '/assets/dekor95.webp'
 dekorfr: '/assets/dekor95.webp'
 dekorfv: '/assets/dekor60.webp'
 dekorsx: '/assets/dekor94.webp'
-dekorsv: '/assets/dekor65.webp'
+dekorsv: '/assets/bg9.webp'
 
 # Img kedua mempelai
 pm1: '/assets/ant47.webp'
@@ -117,7 +117,9 @@ dateth: "05"
 dayfs: "Jum'at"
 daysc: "Sabtu"
 dayth: "Minggu"
-month: "Januari"
+monthfs: "June"
+monthsc: "June"
+monthth: "June"
 year: "2028"
 timefs: "08:00 - 09:00 WIB"
 timesc: "10:00 - 11:00 WIB"

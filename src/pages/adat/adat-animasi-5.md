@@ -55,7 +55,7 @@ dekorth: '/assets/dekor73.webp'
 dekorfr: '/assets/dekor73.webp'
 dekorfv: '/assets/dekor60.webp'
 dekorsx: '/assets/dekor73.webp'
-dekorsv: '/assets/dekor65.webp'
+dekorsv: '/assets/bg13.webp'
 
 # Img kedua mempelai
 pm1: '/assets/ant17.webp'
@@ -117,7 +117,9 @@ dateth: "05"
 dayfs: "Jum'at"
 daysc: "Sabtu"
 dayth: "Minggu"
-month: "Januari"
+monthfs: "June"
+monthsc: "June"
+monthth: "June"
 year: "2028"
 timefs: "08:00 - 09:00 WIB"
 timesc: "10:00 - 11:00 WIB"
