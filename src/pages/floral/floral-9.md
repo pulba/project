@@ -102,7 +102,7 @@ namebankfml: "Juliet Kapolo"
 numberbankfml: "0987654321"
 
 # Waktu & Tempat Acara
-countdown: "June 5, 2025 15:37:25"
+countdown: "June 5, 2027 15:37:25"
 datefs: Jumat, 05 Januari 2030
 datesc: Jumat, 05 Januari 2030
 dateth: Jumat, 05 Januari 2030

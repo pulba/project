@@ -7,7 +7,7 @@ desc: 'Animasi 01'
 price: 'Rp85.000'
 unprice: 'Rp120.000'
 number: 31
-countdown: "June 5, 2025 15:37:25"
+countdown: "June 5, 2027 15:37:25"
 img:
   url: '/assets/demo-31.webp'
   alt: jejak bahagia

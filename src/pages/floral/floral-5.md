@@ -7,7 +7,7 @@ desc: 'Floral 05'
 price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 25
-countdown: "June 5, 2025 15:37:25"
+countdown: "June 5, 2027 15:37:25"
 img:
   url: '/assets/demo-25.webp'
   alt: jejak bahagia

@@ -7,7 +7,7 @@ desc: 'Floral 08'
 price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 28
-countdown: "June 5, 2025 15:37:25"
+countdown: "June 5, 2027 15:37:25"
 img:
   url: '/assets/demo-28.webp'
   alt: jejak bahagia
@@ -40,9 +40,9 @@ button: 'rounded-full w-max mx-auto px-4 py-2'
 # Dekor
 dekorfs: '/assets/dekor7.webp'
 dekorsc: '/assets/dekor7.webp'
-dekorth: ''
+dekorth: '/assets/dekor31.webp'
 dekorfr: '/assets/dekor64.webp'
-dekorfv: '/assets/dekor65.webp'
+dekorfv: ''
 dekorsx: '/assets/dekor67.webp'
 
 # Img Header
@@ -50,7 +50,7 @@ cover: '/assets/img-13.webp'
 cvrsc: '/assets/img-15.webp'
 cvrth: '/assets/dekor24.webp'
 cvrfr: '/assets/img-13.webp'
-cvrfv: '/assets/img-31.webp'
+cvrfv: '/assets/img-14.webp'
 
 # Img Kedua Mempelai
 pm1: '/assets/img-11.webp'
