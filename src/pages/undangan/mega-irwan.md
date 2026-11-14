@@ -3,7 +3,7 @@ layout: '../demo/floral.astro'
 slug: 'undangan/mega-irwan'
 title: 'Mega & Irwan |'
 name: 'Mega & Irwan'
-desc: 'Undangan Pernikahan Mega & Irwan - Tema Floral 09'
+desc: 'Mega & Irwan'
 price: 'Rp99.000'
 unprice: 'Rp150.000'
 number: 29
