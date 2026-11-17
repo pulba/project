@@ -58,13 +58,13 @@ dekorsx: '/assets/dekor71.webp'
 dekorsv: '/assets/dekor65.webp'
 
 # Img kedua mempelai
-pm1: '/assets/heru1.webp'
-pm2: '/assets/heru2.webp'
+pm1: '/assets/heru5.webp'
+pm2: '/assets/heru6.webp'
 
 # Img story mempelai
-imgstory1: '/assets/heru1.webp'
+imgstory1: '/assets/heru3.webp'
 imgstory2: '/assets/heru2.webp'
-imgstory3: '/assets/heru3.webp'
+imgstory3: '/assets/heru1.webp'
 imgstory4: '/assets/heru4.webp'
 imgstory5: '/assets/heru5.webp'
 imgstory6: '/assets/heru6.webp'
@@ -100,12 +100,12 @@ cityfemale: "Makkasar"
 # name bank
 logoml: /assets/bri.png
 bankml: "BRI"
-namebankml: "HERU ZAKARIA S.Tr.P"
+namebankml: "HERU ZAKARIA"
 numberbankml: "9801135042508"
 logofml: /assets/dana.png
 bankfml: "Dana"
-namebankfml: "WINDA SAFITRI A.Md.P"
-numberbankfml: "85664319195"
+namebankfml: "WINDA SAFITRI"
+numberbankfml: "0896-3340-9559"
 phone: "6281532094978"
 
 # waktu & tempat acara

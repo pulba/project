@@ -6,7 +6,7 @@ const { images = [], txsc = '', font = '', animation = '' } = Astro.props;
 ---
 
 
-<div class="grid grid-cols-2 md:grid-cols-4 justify-center gap-2 mt-5 max-w-3xl mx-auto">
+<div class="relative grid grid-cols-2 md:grid-cols-4 justify-center gap-2 mt-5 max-w-3xl mx-auto z-30">
   {Array.isArray(images) && images.length > 0 ? (
     images.map((image, index) => (
       <div class={`${animation} fade-${['right', 'down', 'up', 'left'][index % 4]} opacity-0`}>
