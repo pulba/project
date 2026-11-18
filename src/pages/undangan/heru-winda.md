@@ -3,7 +3,7 @@ layout: '../demo/adat.astro'
 slug: 'undangan/heru-winda'
 title: 'Heru & Winda'
 name: 'Heru & Winda'
-desc: 'Tema Adat Jawa'
+desc: 'Heru & Winda'
 price: 'Rp125.000'
 unprice: 'Rp200.000'
 number: 10007
@@ -126,9 +126,9 @@ timeth: "09:00 - selesai"
 addressfs: "PMK Purworejo, Subhan etan, Desa Tambak Jaya, Kec Way Tenong, Lampung Barat."
 addresssc: "PMK Purworejo, Subhan etan, Desa Tambak Jaya, Kec Way Tenong, Lampung Barat."
 addressth: "PMK Purworejo, Subhan etan, Desa Tambak Jaya, Kec Way Tenong, Lampung Barat."
-locationfs: "Rumah Mempelai Pria"
-locationsc: "Rumah Mempelai Pria"
-locationth: "Rumah Mempelai Pria"
+locationfs: "Kediaman Mempelai Pria"
+locationsc: "Kediaman Mempelai Pria"
+locationth: "Kediaman Mempelai Pria"
 mapsfs: https://maps.app.goo.gl/GxcHCARxh7C8h9ak8
 mapssc: https://maps.app.goo.gl/GxcHCARxh7C8h9ak8
 mapsth: https://maps.app.goo.gl/GxcHCARxh7C8h9ak8

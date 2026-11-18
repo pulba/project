@@ -9,7 +9,7 @@ price: 'Rp85.000'
 unprice: 'Rp120.000'
 number: 35
 img:
-  url: '/assets/demo-35.webp'
+  url: '/assets/firli1.webp'
   alt: 'Firli & Alvio Wedding'
 
 # Colors
@@ -93,12 +93,12 @@ instagramfemale: "firlianasani"
 # Name Bank
 logoml: /assets/bsi.png
 bankml: "BSI"
-namebankml: "Alvio Afrizal"
+namebankml: "Firliana Sani"
 numberbankml: "7153590146"
 
 logofml: /assets/bsi.png
 bankfml: "BSI"
-namebankfml: "Alvio Afrizal"
+namebankfml: "Firliana Sani"
 numberbankfml: "7153590146"
 
 # Waktu & Tempat Acara
@@ -112,8 +112,8 @@ timefs: 09:00 WIB
 timesc: 12:00 WIB
 timeth: 12:00 WIB
 
-locationfs: 41 A Batangharjo
-locationsc: 41 A Batangharjo
+locationfs: Kediaman Mempelai Wanita
+locationsc: Kediaman Mempelai Wanita
 
 addressfs: 41 A Batangharjo, Kecamatan Batanghari, Kabupaten Lampung Timur
 addresssc: 41 A Batangharjo, Kecamatan Batanghari, Kabupaten Lampung Timur
