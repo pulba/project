@@ -1,8 +1,74 @@
 ---
-import Main from './main.astro';
-const { title, desc } = Astro.props;
+import Main from "./main.astro";
+
+const { frontmatter } = Astro.props;
+const { 
+    title, 
+    desc, 
+    img, 
+    namaLengkapPria, 
+    namaLengkapWanita, 
+    tanggalAkad, 
+    waktuAkad, 
+    tempatAkad, 
+    alamatAkad 
+} = frontmatter;
+
+// Function to convert Indonesian date string to ISO 8601 format for Schema.org
+const toISOString = (dateStr, timeStr) => {
+    if (!dateStr || !timeStr) return null;
+    
+    const monthMap = {
+        "Januari": "01", "Februari": "02", "Maret": "03", "April": "04", "Mei": "05", "Juni": "06",
+        "Juli": "07", "Agustus": "08", "September": "09", "Oktober": "10", "November": "11", "Desember": "12"
+    };
+    
+    const dateParts = dateStr.split(" ");
+    if (dateParts.length < 3) return null;
+    
+    const [day, monthName, year] = dateParts;
+    const month = monthMap[monthName];
+    if (!month) return null;
+
+    const timeMatch = timeStr.match(/(\d{2}\.\d{2})/);
+    const time = timeMatch ? timeMatch[0].replace('.', ':') : '00:00';
+    
+    return `${year}-${month}-${day.padStart(2, '0')}T${time}:00`;
+};
+
+const eventStartDate = toISOString(tanggalAkad, waktuAkad);
+
+// Schema.org structured data for Wedding Event
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WeddingEvent",
+  "name": `Pernikahan ${namaLengkapWanita} & ${namaLengkapPria}`,
+  "description": desc,
+  "startDate": eventStartDate,
+  "image": new URL(img, Astro.url.origin).href,
+  "location": {
+    "@type": "Place",
+    "name": tempatAkad,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": alamatAkad
+    }
+  },
+   "performer": [
+    {
+      "@type": "Person",
+      "name": namaLengkapWanita
+    },
+    {
+      "@type": "Person",
+      "name": namaLengkapPria
+    }
+  ]
+};
 ---
 
-<Main title={title} desc={desc}>
+<Main title={title} desc={desc} img={img}>
+  <!-- Inject the JSON-LD schema into the page. This helps SEO. -->
+  {eventStartDate && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   <slot />
 </Main>
